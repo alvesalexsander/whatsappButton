@@ -1,0 +1,22 @@
+div .whatsapp_cta
+    input #form_checkbox .form_checkbox type="checkbox"
+    a .whatsapp_button href=`https://api.whatsapp.com/send?phone={PHONE NUMBER VARIABLE HERE}&text{encodeURLComponent({MESSAGE VARIABLE HERE.trim()})}
+        svg .icon
+            use xlink:href="wpp_icons/My icons collection-SVG-sprite.svg#whatsapp"
+        /svg
+    /a
+    div .whatsapp_hover
+        span .hover_text => Fale conosco /span
+    /div
+    div .whatsapp_form
+        form .form_container onsubmit="return sendMessage()"
+            textarea #message .form_text name="mensagem" placeholder"Como podemos te ajudar?" required="" /textarea
+            label #send_label .send_label for="send"
+                input #send type="submit" name="send" value=""
+                svg .icon_send
+                    use xlink:href="wpp_icons/My icons collection-SVG-sprite.svg#send-button"
+                /svg
+            /label
+        /form
+    /div
+/div
