@@ -73,6 +73,7 @@ class WhatsappButton {
         this.svgLabelSend = this.newElem("svg", "class", "icon_send")
         this.svgLabelUse = this.newElem("use", ["xlink:href", "class"], ["wpp_icons/My icons collection-SVG-sprite.svg#send-button", "svgLabelUse"])
 
+        return window.sendMessage = this.sendMessage;
     }
 
     mountButtonStructure(){
