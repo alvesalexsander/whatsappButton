@@ -152,6 +152,7 @@ class WhatsappButton {
         return mounted;
     }
 
+    //Função para enviar/abrir mensagem pré-programada em modo mobile
     sendMessage(){
         var userInput = document.getElementById("message").value;
         userInput = encodeURIComponent(userInput.trim());
@@ -160,5 +161,10 @@ class WhatsappButton {
         document.getElementById("message").value = "";
         return false;
     }
+
+    /* 
+        Criado por Alexsander Alves (https://github.com/sashaclimax)
+        Este projeto é e sempre será de graça para usar. Por favor, não remova os créditos do autor.
+    */
     
 }
