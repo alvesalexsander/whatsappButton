@@ -19,6 +19,9 @@ class WhatsappButton {
 
         //Montando Arrays de pares [parent, child]
         this.mountButtonStructure();
+
+        this.mountPairs();
+
     }
 
     newElem(tag, attr, attrValue, inHTML){
@@ -43,9 +46,12 @@ class WhatsappButton {
             elem.innerHTML = inHTML
         }
 
-        // console.log(elem)
+        // console.log(typeof(elem))
 
-        return elem;
+        let HTMLElem = document.body.appendChild(elem)
+        document.body.removeChild(elem)
+
+        return HTMLElem;
     }
 
     initButtonElements(){
@@ -55,16 +61,16 @@ class WhatsappButton {
         this.inputCheckbox = this.newElem("input", ["id", "class", "type"], ["form_checkbox", "form_checkbox", "checkbox"])
         this.linkButton = this.newElem("a", ["class", "href"], ["whatsapp_button", "https://api.whatsapp.com/send?phone="+ this.phoneNumber +"&text=" + encodeURIComponent(this.defaultMessage.trim())])
         this.svgButton = this.newElem("svg", "class", "icon")
-        this.svgButtonUse = this.newElem("use", "xlink:href", "wpp_icons/My icons collection-SVG-sprite.svg#whatsapp")
+        this.svgButtonUse = this.newElem("use", ["xlink:href", "class"], ["wpp_icons/My icons collection-SVG-sprite.svg#whatsapp", "svgButtonUse"])
         this.hoverText = this.newElem("div", "class", "whatsapp_hover")
         this.spanHoverText = this.newElem("span", "class", "hover_text", "Fale conosco")
         this.formWrapper = this.newElem("div", "class", "whatsapp_form")
         this.buttonForm = this.newElem("form", ["class", "onsubmit"], ["form_container", "return sendMessage()"])
         this.textarea = this.newElem("textarea", ["id", "class", "name", "placeholder", "required"], ["message", "form_text", "mensagem", "Como podemos te ajudar?", ""])
         this.label = this.newElem("label", ["id", "class", "for"], ["send_label", "send_label", "send"])
-        this.labelInput = this.newElem("input", ["id", "type", "name", "value"], ["send", "submit", "send", ""])
+        this.labelInput = this.newElem("input", ["id", "type", "name", "value", "class"], ["send", "submit", "send", "", "labelInput"])
         this.svgLabelSend = this.newElem("svg", "class", "icon_send")
-        this.svgLabelUse = this.newElem("use", "xlink:href", "wpp_icons/My icons collection-SVG-sprite.svg#send-button")
+        this.svgLabelUse = this.newElem("use", ["xlink:href", "class"], ["wpp_icons/My icons collection-SVG-sprite.svg#send-button", "svgLabelUse"])
 
         console.log("Elementos iniciados com sucesso")
     }
@@ -96,8 +102,27 @@ class WhatsappButton {
         this.HTMLElementsPairs.push([this.buttonWrapper, this.linkButton])
         this.HTMLElementsPairs.push([this.buttonWrapper, this.hoverText])
         this.HTMLElementsPairs.push([this.buttonWrapper, this.formWrapper])
+    }
 
-        console.log(this.HTMLElementsPairs)
+    mountPairs(){
+        /*Este método monta os pares[parent, child]
+        gerados pelo método mountButtonStructure
+        
+        */
+
+        var parent = 0
+        var child = 1
+        var mounted
+
+        function attachPair(pair, parent, child){
+        }
+
+        this.HTMLElementsPairs.forEach((pair) => {
+            pair[parent].appendChild(pair[child])
+            mounted = pair[parent]
+        })
+
+        console.log(mounted)
     }
     
 }
