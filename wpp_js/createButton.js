@@ -20,7 +20,8 @@ class WhatsappButton {
         //Montando Arrays de pares [parent, child]
         this.mountButtonStructure();
 
-        this.mountPairs();
+        //Montando elementos HTML indexados com os pares [parent, child]
+        document.body.appendChild(this.mountPairs());
 
     }
 
@@ -72,7 +73,6 @@ class WhatsappButton {
         this.svgLabelSend = this.newElem("svg", "class", "icon_send")
         this.svgLabelUse = this.newElem("use", ["xlink:href", "class"], ["wpp_icons/My icons collection-SVG-sprite.svg#send-button", "svgLabelUse"])
 
-        console.log("Elementos iniciados com sucesso")
     }
 
     mountButtonStructure(){
@@ -91,11 +91,9 @@ class WhatsappButton {
         this.HTMLElementsPairs.push([this.buttonForm, this.label]) // form > label
         this.HTMLElementsPairs.push([this.buttonForm, this.textarea]) // form > textarea
         this.HTMLElementsPairs.push([this.formWrapper, this.buttonForm]) // form > textarea
-        // whatsappForm(formWrapper) complete
 
         // whatsappHover elements
-        this.HTMLElementsPairs.push([this.hoverText, this.spanHoverText])
-        // whatsappHover(hoverText) complete
+        this.HTMLElementsPairs.push([this.hoverText, this.spanHoverText]) // span > div
 
         // whatsappWrapper elements
         this.HTMLElementsPairs.push([this.buttonWrapper, this.inputCheckbox])
@@ -107,7 +105,6 @@ class WhatsappButton {
     mountPairs(){
         /*Este método monta os pares[parent, child]
         gerados pelo método mountButtonStructure
-        
         */
 
         var parent = 0
@@ -123,6 +120,8 @@ class WhatsappButton {
         })
 
         console.log(mounted)
+
+        return mounted;
     }
     
 }
