@@ -6,6 +6,8 @@ class WhatsappButton {
     placeHolder_Message = "Como podemos te ajudar?"
     defaultMessage = "Olá! Estou entrando em contato e gostaria de saber:"
     HTMLElementsPairs = new Array();
+
+    svgWhatsapp = "wpp_icons/My_icons_collection-SVG-sprite.svg#whatsapp"
     
     constructor(pNumber, phMessage, dMessage){
         //Inicia a class com valores personalizados para as
@@ -28,18 +30,43 @@ class WhatsappButton {
     newElem(tag, attr, attrValue, inHTML){
         //Cria a variável elem para referenciar ao elemento criado
         //a partir do parametro tag<string>
-        var elem = document.createElement(tag)
+        var elem;
+
+        //Função para detectar se a tag é SVG ou USE
+        //se for, aplica tratativas especiais createElementNS
+        function SVGorUSE(){
+            if(tag == "svg"){
+                return "svg"
+            } else if (tag == "use") {
+                return "use"
+            } else {
+                return false
+            }
+        }
+
+        if(SVGorUSE()){
+            elem = document.createElementNS("http://www.w3.org/2000/svg", tag)
+        } else {
+            elem = document.createElement(tag)
+        }
 
         if(Array.isArray(attr)){
             //Testa se existe mais de um atributo para ser settado.
             //Caso exista, atribui ao elemento pareando os attr: string[] com os attrValue: string[] pelo índice
             for(let i = 0; i < attr.length; i++){
-                elem.setAttribute(attr[i], attrValue[i])
+                if(SVGorUSE() === "svg"){
+                    elem.setAttributeNS("http://www.w3.org/2000/svg", attr[i], attrValue[i])
+                } else if(SVGorUSE() == "use"){
+                    elem.setAttributeNS("http://www.w3.org/1999/xlink", attr[i], attrValue[i])
+                } else {
+                    elem.setAttribute(attr[i], attrValue[i])
+                }
             }
 
         } else {
             //Caso não exista mais de um atributo para ser settado,
             //Atribui apenas o attr: string simples ao attrValue: string simples
+            
             elem.setAttribute(attr, attrValue)
         }
 
@@ -62,7 +89,7 @@ class WhatsappButton {
         this.inputCheckbox = this.newElem("input", ["id", "class", "type"], ["form_checkbox", "form_checkbox", "checkbox"])
         this.linkButton = this.newElem("a", ["class", "href"], ["whatsapp_button", "https://api.whatsapp.com/send?phone="+ this.phoneNumber +"&text=" + encodeURIComponent(this.defaultMessage.trim())])
         this.svgButton = this.newElem("svg", "class", "icon")
-        this.svgButtonUse = this.newElem("use", ["xlink:href", "class"], ["wpp_icons/My icons collection-SVG-sprite.svg#whatsapp", "svgButtonUse"])
+        this.svgButtonUse = this.newElem("use", ["xlink:href", "class"], [this.svgWhatsapp, "svgButtonUse"])
         this.hoverText = this.newElem("div", "class", "whatsapp_hover")
         this.spanHoverText = this.newElem("span", "class", "hover_text", "Fale conosco")
         this.formWrapper = this.newElem("div", "class", "whatsapp_form")
@@ -135,5 +162,3 @@ class WhatsappButton {
     }
     
 }
-
-var run = new WhatsappButton();

@@ -20,3 +20,24 @@ div .whatsapp_cta
         /form
     /div
 /div
+
+<div class="whatsapp_cta">
+        <input id="form_checkbox" class="form_checkbox" type="checkbox">
+        <a class="whatsapp_button" href="https://api.whatsapp.com/send?phone=5522997055388&text=Ola,%20gostaria%20de%20saber%20sobre%20o%20Make%20Hair%20for%20Man!">
+            <svg class="icon">
+                <use xlink:href="wpp_icons/My_icons_collection-SVG-sprite.svg#whatsapp" />
+            </svg>
+        </a>
+        <div class="whatsapp_hover"><span class="hover_text">Fale conosco!</span></div>
+        <div class="whatsapp_form">
+            <form class="form_container" onsubmit="return sendMessage()">
+                <textarea id="message" class="form_text" name="mensagem" placeholder="Como podemos te ajudar?" required=""></textarea>
+                <label id="send_label" class="send_label" for="send">
+                    <input id="send" type="submit" name="send" value=""> 
+                    <svg class="icon_send">
+                        <use xlink:href="wpp_icons/My icons collection-SVG-sprite.svg#send-button" />
+                    </svg>
+                </label>
+            </form>
+        </div>
+    </div>
