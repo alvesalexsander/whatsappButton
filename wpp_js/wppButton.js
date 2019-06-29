@@ -171,4 +171,4 @@ class WhatsappButton {
     
 }
 
-var run = new WhatsappButton("5522997055388", "oi", "tchau", 4)
+// var run = new WhatsappButton("5522997055388", "oi", "tchau", 0)
