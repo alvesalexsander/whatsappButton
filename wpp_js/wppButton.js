@@ -6,15 +6,18 @@ class WhatsappButton {
     placeHolder_Message = "Como podemos te ajudar?"
     defaultMessage = "Olá! Estou entrando em contato e gostaria de saber:"
     HTMLElementsPairs = new Array();
-
-    svgWhatsapp = "wpp_icons/My_icons_collection-SVG-sprite.svg#whatsapp"
     
-    constructor(pNumber, phMessage, dMessage){
+    constructor(pNumber, phMessage, dMessage, iconStyle){
         //Inicia a class com valores personalizados para as
         //propriedades principais 
+        this.whatsappIcon = iconStyle != 0 ? "whatsapp-"+iconStyle : "whatsapp"
+        this.svgWhatsappPath = (this.whatsappIcon ? `wpp_icons/My icons collection-SVG-sprite.svg#${this.whatsappIcon}` : "wpp_icons/My icons collection-SVG-sprite.svg#whatsapp")
         this.phoneNumber = pNumber ? pNumber : this.pNumber
+        console.log(this.phoneNumber)
         this.placeHolder_Message = phMessage ? phMessage : this.placeHolder_Message
+        console.log(this.placeHolder_Message)
         this.defaultMessage = dMessage ? dMessage : this.defaultMessage
+        console.log(this.defaultMessage)
 
         //Iniciando elementos HTML
         this.initButtonElements();
@@ -89,12 +92,12 @@ class WhatsappButton {
         this.inputCheckbox = this.newElem("input", ["id", "class", "type"], ["form_checkbox", "form_checkbox", "checkbox"])
         this.linkButton = this.newElem("a", ["class", "href"], ["whatsapp_button", "https://api.whatsapp.com/send?phone="+ this.phoneNumber +"&text=" + encodeURIComponent(this.defaultMessage.trim())])
         this.svgButton = this.newElem("svg", "class", "icon")
-        this.svgButtonUse = this.newElem("use", ["xlink:href", "class"], [this.svgWhatsapp, "svgButtonUse"])
+        this.svgButtonUse = this.newElem("use", ["xlink:href", "class"], [this.svgWhatsappPath, "svgButtonUse"])
         this.hoverText = this.newElem("div", "class", "whatsapp_hover")
         this.spanHoverText = this.newElem("span", "class", "hover_text", "Fale conosco")
         this.formWrapper = this.newElem("div", "class", "whatsapp_form")
         this.buttonForm = this.newElem("form", ["class", "onsubmit"], ["form_container", "return sendMessage()"])
-        this.textarea = this.newElem("textarea", ["id", "class", "name", "placeholder", "required"], ["message", "form_text", "mensagem", "Como podemos te ajudar?", ""])
+        this.textarea = this.newElem("textarea", ["id", "class", "name", "placeholder", "required"], ["message", "form_text", "mensagem", this.placeHolder_Message, ""])
         this.label = this.newElem("label", ["id", "class", "for"], ["send_label", "send_label", "send"])
         this.labelInput = this.newElem("input", ["id", "type", "name", "value", "class"], ["send", "submit", "send", "", "labelInput"])
         this.svgLabelSend = this.newElem("svg", "class", "icon_send")
@@ -139,9 +142,6 @@ class WhatsappButton {
         var child = 1
         var mounted
 
-        function attachPair(pair, parent, child){
-        }
-
         this.HTMLElementsPairs.forEach((pair) => {
             pair[parent].appendChild(pair[child])
             mounted = pair[parent]
@@ -166,5 +166,9 @@ class WhatsappButton {
         Criado por Alexsander Alves (https://github.com/sashaclimax)
         Este projeto é e sempre será de graça para usar. Por favor, não remova os créditos do autor.
     */
+
+    
     
 }
+
+var run = new WhatsappButton("5522997055388", "oi", "tchau", 4)
