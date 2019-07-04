@@ -1,3 +1,25 @@
+/*
+
+Whatsapp Button Plugin
+
+Utilização básica ->
+
+1 - Insira o seguinte código HTML na página que desejar implementar o Whatsapp Button:
+<script src="https://sashaclimax.github.io/whatsappButton/wpp_js/wppButton.js"></script>
+
+2 - Crie ou adicione em um arquivo .js a instanciação do objeto WhatsappButton:
+new WhatsappButton()
+
+3 - Personalize o seu Whatsapp Button:
+Um objeto WhatsappButton pode ser instanciado com 4 parametros básicos. São estes respectivamente:
+
+pNumber (string) = Referente ao número de telefone que será utilizado para enviar a mensagem pela Whatsapp API.
+phMessage (string) = Mensagem placeholder da caixa de texto que será exibida na versão desktop/landscape mobile/big screen
+dMessage (string) = Mensagem padronizada que será exibida na caixa de texto do Whatsapp na versão mobile.
+iconStyle (number) = Opções de icones para a exibição no plugin.
+
+*/
+
 class WhatsappButton {
 
     //Propriedades principais
@@ -10,9 +32,9 @@ class WhatsappButton {
     constructor(pNumber, phMessage, dMessage, iconStyle){
         //Inicia a class com valores personalizados para as
         //propriedades principais 
-        this.whatsappIcon = iconStyle != 0 ? "whatsapp-"+iconStyle : "whatsapp"
+        this.whatsappIcon = iconStyle != (0 || undefined) ? "whatsapp-"+iconStyle : "whatsapp"
         this.svgWhatsappPath = (this.whatsappIcon ? `wpp_icons/My icons collection-SVG-sprite.svg#${this.whatsappIcon}` : "wpp_icons/My icons collection-SVG-sprite.svg#whatsapp")
-        this.phoneNumber = pNumber ? pNumber : this.pNumber
+        this.phoneNumber = pNumber ? pNumber : ''
         console.log(this.phoneNumber)
         this.placeHolder_Message = phMessage ? phMessage : this.placeHolder_Message
         console.log(this.placeHolder_Message)
@@ -171,4 +193,4 @@ class WhatsappButton {
     
 }
 
-// var run = new WhatsappButton("5522997055388", "oi", "tchau", 0)
+var run = new WhatsappButton();
