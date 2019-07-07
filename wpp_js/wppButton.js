@@ -26,29 +26,32 @@ class WhatsappButton {
     
     placeHolder_Message = "Como podemos te ajudar?"
     defaultMessage = "Olá! Estou entrando em contato e gostaria de saber:"
-    HTMLElementsPairs = new Array();
+    HTMLElementsPairs = new Array()
     
-    constructor(pNumber, phMessage, dMessage, iconStyle){
+    constructor(pNumber, phMessage, dMessage, iconStyle, color){
         //Inicia a class com valores personalizados para as
         //propriedades principais 
         this.whatsappIcon = ((iconStyle != 0) && (iconStyle != undefined)) ? "whatsapp-"+iconStyle : "whatsapp"
         this.svgWhatsappPath = (this.whatsappIcon ? `wpp_icons/My icons collection-SVG-sprite.svg#${this.whatsappIcon}` : "wpp_icons/My icons collection-SVG-sprite.svg#whatsapp")
         this.phoneNumber = pNumber ? pNumber : ''
-        console.log(this.phoneNumber)
+        // console.log(this.phoneNumber)
         this.placeHolder_Message = phMessage ? phMessage : this.placeHolder_Message
-        console.log(this.placeHolder_Message)
+        // console.log(this.placeHolder_Message)
         this.defaultMessage = dMessage ? dMessage : this.defaultMessage
-        console.log(this.defaultMessage)
+        // console.log(this.defaultMessage)
 
         //Iniciando elementos HTML
         this.initButtonElements();
+        
+        if(color){
+            this.styleParameters(color);
+        }
 
         //Montando Arrays de pares [parent, child]
         this.mountButtonStructure();
 
         //Montando elementos HTML indexados com os pares [parent, child]
         document.body.appendChild(this.mountPairs());
-
     }
 
     newElem(tag, attr, attrValue, inHTML){
@@ -168,9 +171,24 @@ class WhatsappButton {
             mounted = pair[parent]
         })
 
-        console.log(mounted)
+        // console.log(mounted)
 
         return mounted;
+    }
+
+    styleParameters(color){
+        if((typeof(color) === "string") && (color.substring(0,1) != "#")){
+        this.spanHoverText.classList.add(`bg-${color}`)
+        this.formWrapper.classList.add(`bg-${color}`)
+        this.textarea.classList.add(`bg-${color}`)
+        this.svgLabelSend.classList.add(`bg-${color}`)
+        } else if((color.substring(0,1) === "#") && ((color.length == 7) || (color.length == 4))){
+            console.log("HEXColor = " + color)
+
+            this.spanHoverText.style.cssText = `background-color: ${color}; `
+            this.formWrapper.style.cssText = `background-color: ${color};`
+            this.textarea.style.cssText = `background-color: ${color};`
+        }
     }
 
     //Função para enviar/abrir mensagem pré-programada em modo mobile
@@ -188,8 +206,6 @@ class WhatsappButton {
         Este projeto é e sempre será de graça para usar. Por favor, não remova os créditos do autor.
     */
 
-    
-    
 }
 
-// var run = new WhatsappButton();
+// var run = new WhatsappButton('5522997055388');
