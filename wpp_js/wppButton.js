@@ -7,7 +7,7 @@ Utilização básica ->
 1 - Insira o seguinte código HTML na página que desejar implementar o Whatsapp Button:
 <script src="https://sashaclimax.github.io/whatsappButton/wpp_js/wppButton.js"></script>
 
-2 - Crie ou adicione em um arquivo .js a instanciação do objeto WhatsappButton:
+2 - Crie ou adicione em um arquivo .js para instanciar um objeto WhatsappButton:
 new WhatsappButton()
 
 3 - Personalize o seu Whatsapp Button:
@@ -23,8 +23,7 @@ iconStyle (number) = Opções de icones para a exibição no plugin.
 class WhatsappButton {
 
     //Propriedades principais
-
-    phoneNumber = ''
+    
     placeHolder_Message = "Como podemos te ajudar?"
     defaultMessage = "Olá! Estou entrando em contato e gostaria de saber:"
     HTMLElementsPairs = new Array();
@@ -32,7 +31,7 @@ class WhatsappButton {
     constructor(pNumber, phMessage, dMessage, iconStyle){
         //Inicia a class com valores personalizados para as
         //propriedades principais 
-        this.whatsappIcon = iconStyle != (0 || undefined) ? "whatsapp-"+iconStyle : "whatsapp"
+        this.whatsappIcon = ((iconStyle != 0) && (iconStyle != undefined)) ? "whatsapp-"+iconStyle : "whatsapp"
         this.svgWhatsappPath = (this.whatsappIcon ? `wpp_icons/My icons collection-SVG-sprite.svg#${this.whatsappIcon}` : "wpp_icons/My icons collection-SVG-sprite.svg#whatsapp")
         this.phoneNumber = pNumber ? pNumber : ''
         console.log(this.phoneNumber)
@@ -193,4 +192,4 @@ class WhatsappButton {
     
 }
 
-var run = new WhatsappButton();
+// var run = new WhatsappButton();
