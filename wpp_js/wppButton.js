@@ -17,6 +17,7 @@ pNumber (string) = Referente ao número de telefone que será utilizado para env
 phMessage (string) = Mensagem placeholder da caixa de texto que será exibida na versão desktop/landscape mobile/big screen
 dMessage (string) = Mensagem padronizada que será exibida na caixa de texto do Whatsapp na versão mobile.
 iconStyle (number) = Opções de icones para a exibição no plugin.
+color(string) = Opções para cores. Aceita cores hexadecimais (#xxxxxx ou #xxx)
 
 */
 
