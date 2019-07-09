@@ -25,6 +25,8 @@ div .whatsapp_cta
         <input id="form_checkbox" class="form_checkbox" type="checkbox">
         <a class="whatsapp_button" href="https://api.whatsapp.com/send?phone=5522997055388&text=Ola,%20gostaria%20de%20saber%20sobre%20o%20Make%20Hair%20for%20Man!">
             <svg class="icon">
+                <circle cx="33" cy="33" r="30" style="fill: #ed3a17;" />
+                <rect x="5" y="51" width="8" height="5" style="fill: #ed3a17;"/>
                 <use xlink:href="wpp_icons/My_icons_collection-SVG-sprite.svg#whatsapp" />
             </svg>
         </a>

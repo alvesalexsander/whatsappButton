@@ -28,19 +28,21 @@ class WhatsappButton {
     placeHolder_Message = "Como podemos te ajudar?"
     defaultMessage = "Olá! Estou entrando em contato e gostaria de saber:"
     HTMLElementsPairs = new Array()
+    preDefColors = new Array("black", "white", "green","orange", "yellow", "red", "blue", "purple", "gray")
     
     constructor(pNumber, phMessage, dMessage, iconStyle, color){
+        
         //Inicia a class com valores personalizados para as
         //propriedades principais 
         this.whatsappIcon = ((iconStyle != 0) && (iconStyle != undefined)) ? "whatsapp-"+iconStyle : "whatsapp"
         this.svgWhatsappPath = (this.whatsappIcon ? `wpp_icons/My icons collection-SVG-sprite.svg#${this.whatsappIcon}` : "wpp_icons/My icons collection-SVG-sprite.svg#whatsapp")
-        this.phoneNumber = pNumber ? pNumber : ''
-        // console.log(this.phoneNumber)
+        
+        this.phoneNumber = pNumber ? this.setPhoneNumber(pNumber) : this.setPhoneNumber('error')
+        
         this.placeHolder_Message = phMessage ? phMessage : this.placeHolder_Message
-        // console.log(this.placeHolder_Message)
+        
         this.defaultMessage = dMessage ? dMessage : this.defaultMessage
-        // console.log(this.defaultMessage)
-
+    
         //Iniciando elementos HTML
         this.initButtonElements();
         
@@ -62,17 +64,21 @@ class WhatsappButton {
 
         //Função para detectar se a tag é SVG ou USE
         //se for, aplica tratativas especiais createElementNS
-        function SVGorUSE(){
+        function svgSpec(){
             if(tag == "svg"){
                 return "svg"
             } else if (tag == "use") {
                 return "use"
+            } else if(tag == "circle"){
+                return "circle"
+            } else if(tag == "rect"){
+                return "rect"
             } else {
                 return false
             }
         }
 
-        if(SVGorUSE()){
+        if(svgSpec()){
             elem = document.createElementNS("http://www.w3.org/2000/svg", tag)
         } else {
             elem = document.createElement(tag)
@@ -82,10 +88,15 @@ class WhatsappButton {
             //Testa se existe mais de um atributo para ser settado.
             //Caso exista, atribui ao elemento pareando os attr: string[] com os attrValue: string[] pelo índice
             for(let i = 0; i < attr.length; i++){
-                if(SVGorUSE() === "svg"){
+                if((svgSpec() === "svg")){
                     elem.setAttributeNS("http://www.w3.org/2000/svg", attr[i], attrValue[i])
-                } else if(SVGorUSE() == "use"){
+                } else if(svgSpec() == "use"){
                     elem.setAttributeNS("http://www.w3.org/1999/xlink", attr[i], attrValue[i])
+                } else if(svgSpec() === "circle"){
+                    elem.setAttributeNS(null, attr[i], attrValue[i])
+        // container.appendChild(circle);
+    
+
                 } else {
                     elem.setAttribute(attr[i], attrValue[i])
                 }
@@ -118,6 +129,8 @@ class WhatsappButton {
         this.linkButton = this.newElem("a", ["class", "href"], ["whatsapp_button", "https://api.whatsapp.com/send?phone="+ this.phoneNumber +"&text=" + encodeURIComponent(this.defaultMessage.trim())])
         this.svgButton = this.newElem("svg", "class", "icon")
         this.svgButtonUse = this.newElem("use", ["xlink:href", "class"], [this.svgWhatsappPath, "svgButtonUse"])
+        this.svgCircle = this.newElem("circle", ["cx", "cy", "r", "style"], ["33", "33", "30", "fill: #ed3a17"])
+        console.log(this.svgCircle)
         this.hoverText = this.newElem("div", "class", "whatsapp_hover")
         this.spanHoverText = this.newElem("span", "class", "hover_text", "Fale conosco")
         this.formWrapper = this.newElem("div", "class", "whatsapp_form")
@@ -137,6 +150,7 @@ class WhatsappButton {
         utilizando document.appendChild()
         */
 
+        this.HTMLElementsPairs.push([this.svgButton, this.svgCircle]) // svg > use
         this.HTMLElementsPairs.push([this.svgButton, this.svgButtonUse]) // svg > use
         this.HTMLElementsPairs.push([this.linkButton, this.svgButton]) // a > svg
         
@@ -178,17 +192,22 @@ class WhatsappButton {
     }
 
     styleParameters(color){
-        if((typeof(color) === "string") && (color.substring(0,1) != "#")){
-        this.spanHoverText.classList.add(`bg-${color}`)
-        this.formWrapper.classList.add(`bg-${color}`)
-        this.textarea.classList.add(`bg-${color}`)
-        this.svgLabelSend.classList.add(`bg-${color}`)
+        if((typeof(color) === "string") && (color.substring(0,1) != "#") && (this.preDefColors.includes(color))){
+            this.spanHoverText.classList.add(`bg-${color}`)
+            this.formWrapper.classList.add(`bg-${color}`)
+            this.textarea.classList.add(`bg-${color}`)
+            this.svgLabelSend.classList.add(`bg-${color}`)
+            this.svgCircle.style.cssText = `fill: ${color}`
+
         } else if((color.substring(0,1) === "#") && ((color.length == 7) || (color.length == 4))){
             console.log("HEXColor = " + color)
 
             this.spanHoverText.style.cssText = `background-color: ${color}; `
             this.formWrapper.style.cssText = `background-color: ${color};`
             this.textarea.style.cssText = `background-color: ${color};`
+            this.svgCircle.style.cssText = `fill: ${color}`
+        } else {
+            throw new Error("Color code has a wrong format. Please, use #xxxxxx, #xxx or check the documentation for pre-defined colors list at: https://github.com/sashaclimax/whatsappButton")
         }
     }
 
@@ -196,10 +215,23 @@ class WhatsappButton {
     sendMessage(){
         var userInput = document.getElementById("message").value;
         userInput = encodeURIComponent(userInput.trim());
-        var apiURL = "https://api.whatsapp.com/send?phone=5522997055388&text=" + userInput;
+        var apiURL = "https://api.whatsapp.com/send?phone=+5522997055388&text=" + userInput;
         window.open(apiURL, "height=200", "width=200");
         document.getElementById("message").value = "";
         return false;
+    }
+
+    setPhoneNumber(data){
+        if(typeof(data) == "number"){
+            data = data.toString()
+        }
+
+        if((!isNaN(data)) && (typeof(data) === "string")){
+            return data
+        } else {
+            throw new Error("Phone number has a wrong format. Please, use only numbers")
+        }
+
     }
 
     /* 
