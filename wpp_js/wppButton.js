@@ -94,7 +94,6 @@ class WhatsappButton {
                     elem.setAttributeNS("http://www.w3.org/1999/xlink", attr[i], attrValue[i])
                 } else if(svgSpec() === "circle"){
                     elem.setAttributeNS(null, attr[i], attrValue[i])
-        // container.appendChild(circle);
     
 
                 } else {
