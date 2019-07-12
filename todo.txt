@@ -1,5 +1,3 @@
 Implementar utilização de custom svg icons passando URL que aponta para arquivo .svg
 
-corrigir apiURL do metodo sendMessage
-
 Implementar blend mode para color black

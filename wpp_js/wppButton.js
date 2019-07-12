@@ -13,10 +13,10 @@ new WhatsappButton()
 3 - Personalize o seu Whatsapp Button:
 Um objeto WhatsappButton pode ser instanciado com 4 parametros básicos. São estes respectivamente:
 
-pNumber (string) = Referente ao número de telefone que será utilizado para enviar a mensagem pela Whatsapp API.
+pNumber *required* (string/number) = Referente ao número de telefone que será utilizado para enviar a mensagem pela Whatsapp API.
 phMessage (string) = Mensagem placeholder da caixa de texto que será exibida na versão desktop/landscape mobile/big screen
 dMessage (string) = Mensagem padronizada que será exibida na caixa de texto do Whatsapp na versão mobile.
-iconStyle (number) = Opções de icones para a exibição no plugin.
+iconStyle (number/string) = Opções de icones para a exibição no plugin.
 color(string) = Opções para cores. Aceita cores hexadecimais (#xxxxxx ou #xxx)
 
 */
@@ -44,25 +44,30 @@ class WhatsappButton {
         this.defaultMessage = dMessage ? dMessage : this.defaultMessage
     
         //Iniciando elementos HTML
-        this.initButtonElements();
+        this.initButtonElements(iconStyle);
         
         if(color){
-            this.styleParameters(color);
+            this.styleParameters(color, iconStyle);
         }
 
         //Montando Arrays de pares [parent, child]
-        this.mountButtonStructure();
+        this.mountButtonStructure(iconStyle);
 
         //Montando elementos HTML indexados com os pares [parent, child]
         document.body.appendChild(this.mountPairs());
+
+        //Setando função responsável por chamar a WhatsApp Web API
+        window.sendMessage = this.setSendMessage(this.phoneNumber);
     }
 
     newElem(tag, attr, attrValue, inHTML){
+        //Função para auxiliar na criação dos elementos HTML
+
         //Cria a variável elem para referenciar ao elemento criado
         //a partir do parametro tag<string>
         var elem;
 
-        //Função para detectar se a tag é SVG ou USE
+        //Função para detectar se a tag é do tipo SVG
         //se for, aplica tratativas especiais createElementNS
         function svgSpec(){
             if(tag == "svg"){
@@ -73,6 +78,8 @@ class WhatsappButton {
                 return "circle"
             } else if(tag == "rect"){
                 return "rect"
+            } else if(tag == "path"){
+                return "path"
             } else {
                 return false
             }
@@ -92,10 +99,8 @@ class WhatsappButton {
                     elem.setAttributeNS("http://www.w3.org/2000/svg", attr[i], attrValue[i])
                 } else if(svgSpec() == "use"){
                     elem.setAttributeNS("http://www.w3.org/1999/xlink", attr[i], attrValue[i])
-                } else if(svgSpec() === "circle"){
+                } else if((svgSpec() === "circle") || (svgSpec() === "rect") || (svgSpec() === "path")){
                     elem.setAttributeNS(null, attr[i], attrValue[i])
-    
-
                 } else {
                     elem.setAttribute(attr[i], attrValue[i])
                 }
@@ -120,16 +125,22 @@ class WhatsappButton {
         return HTMLElem;
     }
 
-    initButtonElements(){
+    initButtonElements(background){
         /* Método para iniciar os elementos HTML*/
+
+        
+        if((background == 1) || (background == 2)){
+            /* Parametro background checa a necessidade de instanciação dos elementos HTML
+            que fazem a cor de fundo do SVG de acordo com o iconStyle escolhido*/
+            this.svgCircle = this.newElem("circle", ["cx", "cy", "r", "style"], ["32", "32", "31", "fill: #ed3a17"])
+            this.svgPath = this.newElem("path", ["d", "style"], ["M 7 51 l 10 7 l -11 3 z", "fill: #ed3a17"])
+        }
 
         this.buttonWrapper = this.newElem("div", "class", "whatsapp_cta")
         this.inputCheckbox = this.newElem("input", ["id", "class", "type"], ["form_checkbox", "form_checkbox", "checkbox"])
         this.linkButton = this.newElem("a", ["class", "href"], ["whatsapp_button", "https://api.whatsapp.com/send?phone="+ this.phoneNumber +"&text=" + encodeURIComponent(this.defaultMessage.trim())])
         this.svgButton = this.newElem("svg", "class", "icon")
         this.svgButtonUse = this.newElem("use", ["xlink:href", "class"], [this.svgWhatsappPath, "svgButtonUse"])
-        this.svgCircle = this.newElem("circle", ["cx", "cy", "r", "style"], ["33", "33", "30", "fill: #ed3a17"])
-        console.log(this.svgCircle)
         this.hoverText = this.newElem("div", "class", "whatsapp_hover")
         this.spanHoverText = this.newElem("span", "class", "hover_text", "Fale conosco")
         this.formWrapper = this.newElem("div", "class", "whatsapp_form")
@@ -140,16 +151,20 @@ class WhatsappButton {
         this.svgLabelSend = this.newElem("svg", "class", "icon_send")
         this.svgLabelUse = this.newElem("use", ["xlink:href", "class"], ["wpp_icons/My icons collection-SVG-sprite.svg#send-button", "svgLabelUse"])
 
-        return window.sendMessage = this.sendMessage;
     }
 
-    mountButtonStructure(){
+    mountButtonStructure(background){
         /* Este método mapeia os elementos HTML em um Map Object
         A partir dos pares [parent, child], o método monta a estrutura HTML do botão
         utilizando document.appendChild()
         */
 
-        this.HTMLElementsPairs.push([this.svgButton, this.svgCircle]) // svg > use
+        if((background == 1) || (background == 2)){
+            /* Parametro background checa a necessidade de instanciação dos elementos HTML
+            que fazem a cor de fundo do SVG de acordo com o iconStyle escolhido*/
+            this.HTMLElementsPairs.push([this.svgButton, this.svgCircle]) // svg > use
+            this.HTMLElementsPairs.push([this.svgButton, this.svgPath]) // svg > use
+        } 
         this.HTMLElementsPairs.push([this.svgButton, this.svgButtonUse]) // svg > use
         this.HTMLElementsPairs.push([this.linkButton, this.svgButton]) // a > svg
         
@@ -190,13 +205,20 @@ class WhatsappButton {
         return mounted;
     }
 
-    styleParameters(color){
+    styleParameters(color, background){
+        /* Caso uma cor seja selecionada, atualiza os estilos dos elementos com a mesma */
+        
         if((typeof(color) === "string") && (color.substring(0,1) != "#") && (this.preDefColors.includes(color))){
             this.spanHoverText.classList.add(`bg-${color}`)
             this.formWrapper.classList.add(`bg-${color}`)
             this.textarea.classList.add(`bg-${color}`)
             this.svgLabelSend.classList.add(`bg-${color}`)
-            this.svgCircle.style.cssText = `fill: ${color}`
+            if((background == 1) || (background == 2)){
+                /* Parametro background checa a necessidade de instanciação dos elementos HTML
+                que fazem a cor de fundo do SVG de acordo com o iconStyle escolhido*/
+                this.svgCircle.style.cssText = `fill: ${color}`
+                this.svgPath.style.cssText = `fill: ${color}`
+            } 
 
         } else if((color.substring(0,1) === "#") && ((color.length == 7) || (color.length == 4))){
             console.log("HEXColor = " + color)
@@ -204,23 +226,28 @@ class WhatsappButton {
             this.spanHoverText.style.cssText = `background-color: ${color}; `
             this.formWrapper.style.cssText = `background-color: ${color};`
             this.textarea.style.cssText = `background-color: ${color};`
-            this.svgCircle.style.cssText = `fill: ${color}`
+            if((background == 1) || (background == 2)){
+                this.svgCircle.style.cssText = `fill: ${color}`
+                this.svgPath.style.cssText = `fill: ${color}`
+            } 
         } else {
             throw new Error("Color code has a wrong format. Please, use #xxxxxx, #xxx or check the documentation for pre-defined colors list at: https://github.com/sashaclimax/whatsappButton")
         }
     }
 
-    //Função para enviar/abrir mensagem pré-programada em modo mobile
-    sendMessage(){
-        var userInput = document.getElementById("message").value;
-        userInput = encodeURIComponent(userInput.trim());
-        var apiURL = "https://api.whatsapp.com/send?phone=+5522997055388&text=" + userInput;
-        window.open(apiURL, "height=200", "width=200");
-        document.getElementById("message").value = "";
-        return false;
+    setSendMessage(pNumber){
+        //Função para enviar/abrir mensagem através da WhatsApp Web API
+
+        return function(){
+            let apiURL = `https://api.whatsapp.com/send?phone=${pNumber}&text=${encodeURIComponent((document.getElementById("message").value).trim())}`;
+            window.open(apiURL, "height=200", "width=200");
+            document.getElementById("message").value = "";
+            return false;
+        }
     }
 
     setPhoneNumber(data){
+        /* Valida o formato de numero de telefone */
         if(typeof(data) == "number"){
             data = data.toString()
         }
