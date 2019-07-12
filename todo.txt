@@ -1,3 +1,1 @@
 Implementar utilização de custom svg icons passando URL que aponta para arquivo .svg
-
-Implementar blend mode para color black

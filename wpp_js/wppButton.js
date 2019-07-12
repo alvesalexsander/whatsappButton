@@ -30,7 +30,7 @@ class WhatsappButton {
     HTMLElementsPairs = new Array()
     preDefColors = new Array("black", "white", "green","orange", "yellow", "red", "blue", "purple", "gray")
     
-    constructor(pNumber, phMessage, dMessage, iconStyle, color){
+    constructor(pNumber, phMessage, dMessage, iconStyle, color, subColor, textColor){
         
         //Inicia a class com valores personalizados para as
         //propriedades principais 
@@ -44,14 +44,22 @@ class WhatsappButton {
         this.defaultMessage = dMessage ? dMessage : this.defaultMessage
     
         //Iniciando elementos HTML
-        this.initButtonElements(iconStyle);
+        this.initButtonElements(iconStyle)
         
         if(color){
-            this.styleParameters(color, iconStyle);
+            this.styleColor(color, iconStyle)
+        }
+
+        if(subColor){
+            this.styleSubColor(subColor)
+        }
+
+        if(textColor){
+            this.styleTextColor(textColor)
         }
 
         //Montando Arrays de pares [parent, child]
-        this.mountButtonStructure(iconStyle);
+        this.mountButtonStructure(iconStyle)
 
         //Montando elementos HTML indexados com os pares [parent, child]
         document.body.appendChild(this.mountPairs());
@@ -205,10 +213,11 @@ class WhatsappButton {
         return mounted;
     }
 
-    styleParameters(color, background){
+    styleColor(color, background){
         /* Caso uma cor seja selecionada, atualiza os estilos dos elementos com a mesma */
         
-        if((typeof(color) === "string") && (color.substring(0,1) != "#") && (this.preDefColors.includes(color))){
+        if(this.checkColorFormat(color) === "preDefColor"){
+            //Tratativa para cores pre-definidas
             this.spanHoverText.classList.add(`bg-${color}`)
             this.formWrapper.classList.add(`bg-${color}`)
             this.textarea.classList.add(`bg-${color}`)
@@ -218,21 +227,43 @@ class WhatsappButton {
                 que fazem a cor de fundo do SVG de acordo com o iconStyle escolhido*/
                 this.svgCircle.style.cssText = `fill: ${color}`
                 this.svgPath.style.cssText = `fill: ${color}`
-            } 
+            }
 
-        } else if((color.substring(0,1) === "#") && ((color.length == 7) || (color.length == 4))){
-            console.log("HEXColor = " + color)
+            if(color == "black"){
+                this.svgButtonUse.style.cssText = 'fill: white'
+            }
 
-            this.spanHoverText.style.cssText = `background-color: ${color}; `
-            this.formWrapper.style.cssText = `background-color: ${color};`
-            this.textarea.style.cssText = `background-color: ${color};`
+        } else if(this.checkColorFormat(color) === "hexColor"){
+            //Tratativa para cores hexadecimais customizadas 
+            this.spanHoverText.style.cssText = `background-color: ${color} !important;`
+            this.formWrapper.style.cssText = `background-color: ${color} !important;`
+            this.textarea.style.cssText = `background-color: ${color} !important;`
             if((background == 1) || (background == 2)){
                 this.svgCircle.style.cssText = `fill: ${color}`
                 this.svgPath.style.cssText = `fill: ${color}`
-            } 
-        } else {
-            throw new Error("Color code has a wrong format. Please, use #xxxxxx, #xxx or check the documentation for pre-defined colors list at: https://github.com/sashaclimax/whatsappButton")
+            }
+
+            if((color == "#000") || (color == "#000000")){
+                this.svgButtonUse.style.cssText = 'fill: white !important;'
+            }
         }
+    }
+
+    styleSubColor(subColor){
+        if(this.checkColorFormat(subColor)){
+            this.svgButtonUse.style.cssText += `fill: ${subColor} !important;`
+            this.textarea.style.cssText += `border-color: ${subColor} !important;;`
+            this.svgLabelSend.style.cssText += `fill: ${subColor} !important;`
+        }
+        
+    }
+
+    styleTextColor(textColor){
+        if(this.checkColorFormat(textColor)){
+            this.textarea.style.cssText += `color: ${textColor} !important;`
+            this.spanHoverText.style.cssText += `color: ${textColor} !important;`
+        }
+        
     }
 
     setSendMessage(pNumber){
@@ -246,6 +277,73 @@ class WhatsappButton {
         }
     }
 
+    checkColorFormat(color){
+        if((typeof(color) === "string") 
+        && (color.substring(0,1) != "#") 
+        && (this.preDefColors.includes(color))) {
+            return 'preDefColor'
+        } 
+        else if((color.substring(0,1) === "#") 
+        && ((color.length == 7) 
+        || (color.length == 4))) {
+            return 'hexColor'
+        } 
+        else if(((color.substring(0, 3) === "rgb") && this.isRGBColor(color))
+        
+        || ((color.substring(0, 4) === "rgba" ) && this.isRBGAColor(color))){
+            return 'rgb'
+        } 
+        else {
+            throw new Error("Color code has a wrong format. Please, use #xxxxxx, #xxx or\ncheck the documentation for pre-defined colors list at: https://github.com/sashaclimax/whatsappButton")
+        }
+    }
+
+    isRGBColor(color){
+        var colorValues = color.substring(4, (color.length-1)).split(',')
+        var checkResult = true
+        colorValues.forEach((valor) => {
+            colorValues[colorValues.indexOf(valor)] = colorValues[colorValues.indexOf(valor)].trim()
+            if((valor >= 0 && valor <=255) && (checkResult == true)){
+                colorValues[colorValues.indexOf(valor)] = true
+                checkResult = true
+            } else {
+                 checkResult = false
+            }
+        })
+
+        if(checkResult
+        && (colorValues.length == 3)){
+            return true
+        } else {
+            return false
+        }
+    }
+
+    isRBGAColor(color){
+        var colorValues = color.substring(5, (color.length-1)).split(',')
+        // console.log(colorValues)
+        var checkResult = true
+
+        colorValues.forEach((valor) => {
+            colorValues[colorValues.indexOf(valor)] = colorValues[colorValues.indexOf(valor)].trim()
+            if((valor >= 0 && valor <=255) 
+            && (checkResult == true)){
+                colorValues[colorValues.indexOf(valor)] = true
+                checkResult = true
+            } else {
+                 checkResult = false
+            }
+        })
+
+        if((checkResult) 
+        && ((colorValues[3] >= 0) && (colorValues[3] <= 1))
+        && (colorValues.length == 4)){
+            return true
+        } else {
+            return false
+        }
+    }
+
     setPhoneNumber(data){
         /* Valida o formato de numero de telefone */
         if(typeof(data) == "number"){
@@ -255,7 +353,7 @@ class WhatsappButton {
         if((!isNaN(data)) && (typeof(data) === "string")){
             return data
         } else {
-            throw new Error("Phone number has a wrong format. Please, use only numbers")
+            throw new Error("Missing phone number or it has a wrong format. Please, use only numbers: eg. 5522123456789.\nFor more information, see documentation at: https://github.com/sashaclimax/whatsappButton")
         }
 
     }
