@@ -14,6 +14,7 @@ new WhatsappButton()
 Um objeto WhatsappButton pode ser instanciado com 4 parametros básicos. São estes respectivamente:
 
 pNumber *required* (string/number) = Referente ao número de telefone que será utilizado para enviar a mensagem pela Whatsapp API.
+wMessage (string) = Mensagem a ser exibida no elemento mostrado ao hover do botão
 phMessage (string) = Mensagem placeholder da caixa de texto que será exibida na versão desktop/landscape mobile/big screen
 dMessage (string) = Mensagem padronizada que será exibida na caixa de texto do Whatsapp na versão mobile.
 iconStyle (number/string) = Opções de icones para a exibição no plugin.
@@ -23,36 +24,31 @@ color(string) = Opções para cores. Aceita cores hexadecimais (#xxxxxx ou #xxx)
 
 class WhatsappButton {
 
-    //Propriedades principais
+    //Propriedades principais com valores default
     
+    welcomeMessage = "Fale conosco"
     placeHolder_Message = "Como podemos te ajudar?"
     defaultMessage = "Olá! Estou entrando em contato e gostaria de saber:"
     HTMLElementsPairs = new Array()
     preDefColors = new Array("black", "white", "green","orange", "yellow", "red", "blue", "purple", "gray")
     
-    constructor(pNumber, phMessage, dMessage, iconStyle, color, subColor, textColor, fontFamily){
+    constructor(pNumber, wMessage, phMessage, dMessage, iconStyle, color, subColor, textColor, fontFamily){
         
-        // var link = document.createElement('link');
-        // link.setAttribute('rel', 'stylesheet');
-        // link.setAttribute('type', 'text/css');
-        // link.setAttribute('href', "https://fonts.googleapis.com/css?family=Bahianita&display=swap");
-        // document.head.appendChild(link);
-
         //Inicia a class com valores personalizados para as
         //propriedades principais 
         this.whatsappIcon = ((iconStyle != 0) && (iconStyle != undefined)) ? "whatsapp-"+iconStyle : "whatsapp"
         this.svgWhatsappPath = (this.whatsappIcon ? `wpp_icons/My icons collection-SVG-sprite.svg#${this.whatsappIcon}` : "wpp_icons/My icons collection-SVG-sprite.svg#whatsapp")
-        
+
         this.phoneNumber = pNumber ? this.setPhoneNumber(pNumber) : this.setPhoneNumber('error')
         
+        this.welcomeMessage = wMessage ? this.setWelcomeMessage(wMessage) : this.welcomeMessage
+
         this.placeHolder_Message = phMessage ? phMessage : this.placeHolder_Message
         
         this.defaultMessage = dMessage ? dMessage : this.defaultMessage
     
         //Iniciando elementos HTML
         this.initButtonElements(iconStyle, fontFamily)
-
-        this.styleFontFamily(fontFamily)
         
         if(color){
             this.styleColor(color, iconStyle)
@@ -64,6 +60,10 @@ class WhatsappButton {
 
         if(textColor){
             this.styleTextColor(textColor)
+        }
+
+        if(fontFamily){
+            this.styleFontFamily(fontFamily)
         }
 
         //Montando Arrays de pares [parent, child]
@@ -143,7 +143,7 @@ class WhatsappButton {
 
     initButtonElements(background, fontFamily){
         /* Método para iniciar os elementos HTML*/
-        if(this.isSecureURL(fontFamily)){
+        if(fontFamily && this.isSecureURL(fontFamily)){
             this.linkFontFamily = this.newElem("link", ["rel", "type", "href"], ["stylesheet", "text/css", fontFamily])
             document.head.appendChild(this.linkFontFamily)
         }
@@ -161,7 +161,7 @@ class WhatsappButton {
         this.svgButton = this.newElem("svg", "class", "icon")
         this.svgButtonUse = this.newElem("use", ["xlink:href", "class"], [this.svgWhatsappPath, "svgButtonUse"])
         this.hoverText = this.newElem("div", "class", "whatsapp_hover")
-        this.spanHoverText = this.newElem("span", "class", "hover_text", "Fale conosco")
+        this.spanHoverText = this.newElem("span", "class", "hover_text", this.welcomeMessage)
         this.formWrapper = this.newElem("div", "class", "whatsapp_form")
         this.buttonForm = this.newElem("form", ["class", "onsubmit"], ["form_container", "return sendMessage()"])
         this.textarea = this.newElem("textarea", ["id", "class", "name", "placeholder", "required"], ["message", "form_text", "mensagem", this.placeHolder_Message, ""])
@@ -278,8 +278,9 @@ class WhatsappButton {
     }
 
     styleFontFamily(fontFamily){
-        if(this.isSecureURL(fontFamily)){
-            console.log('coloca os comandos pra estilizar a font aqui, porra!')
+        if(this.isSecureURL(fontFamily) && this.extractFontFamily(fontFamily)){
+            this.textarea.style.cssText += `font-family: ${this.extractFontFamily(fontFamily)} !important;`
+            this.spanHoverText.style.cssText += `font-family: ${this.extractFontFamily(fontFamily)} !important;`
         }
     }
 
@@ -370,6 +371,22 @@ class WhatsappButton {
         }
     }
 
+    extractFontFamily(URL){
+        let fontName = URL.substring(40, URL.length).split('&')[0]
+
+        if(fontName.includes('|')){
+            throw new Error('Invalid font style. Please, use only one font style. For more information,\ncheck documentation at: https://github.com/sashaclimax/whatsappButton')
+        } else if(fontName.includes('+')){
+            let matches = (fontName.split('+').length) - 1
+            for(let i = 0; i < matches; i++){
+                fontName = fontName.replace('+', ' ')
+            }
+            return fontName
+        } else {
+            return fontName
+        }
+    }
+
     setPhoneNumber(data){
         /* Valida o formato de numero de telefone */
         if(typeof(data) == "number"){
@@ -381,7 +398,13 @@ class WhatsappButton {
         } else {
             throw new Error("Missing phone number or it has a wrong format. Please, use only numbers: eg. 5522123456789.\nFor more information, see documentation at: https://github.com/sashaclimax/whatsappButton")
         }
+    }
 
+    setWelcomeMessage(data){
+        if(typeof(data) !== "string"){
+            data = data.toString()
+        }
+        return data;
     }
 
     /* 
