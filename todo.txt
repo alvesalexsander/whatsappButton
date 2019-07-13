@@ -1,1 +1,4 @@
 Implementar utilização de custom svg icons passando URL que aponta para arquivo .svg
+
+Finalizar a implementação do metodo styleFontFamily
+para alterar a font de acordo com o parametro fontFamily passado

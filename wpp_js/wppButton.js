@@ -30,8 +30,14 @@ class WhatsappButton {
     HTMLElementsPairs = new Array()
     preDefColors = new Array("black", "white", "green","orange", "yellow", "red", "blue", "purple", "gray")
     
-    constructor(pNumber, phMessage, dMessage, iconStyle, color, subColor, textColor){
+    constructor(pNumber, phMessage, dMessage, iconStyle, color, subColor, textColor, fontFamily){
         
+        // var link = document.createElement('link');
+        // link.setAttribute('rel', 'stylesheet');
+        // link.setAttribute('type', 'text/css');
+        // link.setAttribute('href', "https://fonts.googleapis.com/css?family=Bahianita&display=swap");
+        // document.head.appendChild(link);
+
         //Inicia a class com valores personalizados para as
         //propriedades principais 
         this.whatsappIcon = ((iconStyle != 0) && (iconStyle != undefined)) ? "whatsapp-"+iconStyle : "whatsapp"
@@ -44,7 +50,9 @@ class WhatsappButton {
         this.defaultMessage = dMessage ? dMessage : this.defaultMessage
     
         //Iniciando elementos HTML
-        this.initButtonElements(iconStyle)
+        this.initButtonElements(iconStyle, fontFamily)
+
+        this.styleFontFamily(fontFamily)
         
         if(color){
             this.styleColor(color, iconStyle)
@@ -133,9 +141,12 @@ class WhatsappButton {
         return HTMLElem;
     }
 
-    initButtonElements(background){
+    initButtonElements(background, fontFamily){
         /* Método para iniciar os elementos HTML*/
-
+        if(this.isSecureURL(fontFamily)){
+            this.linkFontFamily = this.newElem("link", ["rel", "type", "href"], ["stylesheet", "text/css", fontFamily])
+            document.head.appendChild(this.linkFontFamily)
+        }
         
         if((background == 1) || (background == 2)){
             /* Parametro background checa a necessidade de instanciação dos elementos HTML
@@ -266,6 +277,12 @@ class WhatsappButton {
         
     }
 
+    styleFontFamily(fontFamily){
+        if(this.isSecureURL(fontFamily)){
+            console.log('coloca os comandos pra estilizar a font aqui, porra!')
+        }
+    }
+
     setSendMessage(pNumber){
         //Função para enviar/abrir mensagem através da WhatsApp Web API
 
@@ -344,6 +361,15 @@ class WhatsappButton {
         }
     }
 
+    isSecureURL(URL){
+        if((URL.substring(0,5) === 'https') 
+        && (URL.includes('https://fonts.googleapis.com/css?family='))){
+            return true
+        } else {
+            return false
+        }
+    }
+
     setPhoneNumber(data){
         /* Valida o formato de numero de telefone */
         if(typeof(data) == "number"){
@@ -364,5 +390,3 @@ class WhatsappButton {
     */
 
 }
-
-// var run = new WhatsappButton('5522997055388');

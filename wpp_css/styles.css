@@ -10,8 +10,8 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 22em;
-    height: 14em;
+    width: 22rem;
+    height: 14rem;
     bottom: 0;
     right: 0;
     box-sizing: border-box;
@@ -19,15 +19,15 @@ body{
 }
 
 .whatsapp_button{
-    box-shadow: .5em .5em .5em #000;
+    box-shadow: .5rem .5rem .5rem #000;
     box-sizing: border-box;
     z-index: 20;
 }
 
 .whatsapp_hover{
     position: relative;
-    top: -1em;
-    left: 3.8em;
+    top: 1rem;
+    left: 3.8rem;
     z-index: 1;
     opacity: 0;
     box-sizing: border-box;
@@ -35,7 +35,7 @@ body{
 
 .hover_text{
     font-family: 'Raleway', sans-serif;
-    font-size: .9em;
+    font-size: .9rem;
     color: #fff;
     background-color: #2c8c28;
     border-radius: 14px;
@@ -45,7 +45,7 @@ body{
     justify-content: center;
     align-items: center;
     opacity: 0;
-    box-shadow: .3em .3em 2em #000;
+    box-shadow: .3rem .3rem 2rem #000;
     box-sizing: border-box;
 }
 
@@ -54,12 +54,12 @@ body{
     width: 90%;
     height: 90%;
     background-color: #2c8c28;
-    padding: .3em .5em;
+    padding: .3rem .5rem;
     border-radius: 14px;
     transition: 1s;
     opacity: 0;
     display: flex;
-    box-shadow: .3em .3em 2em #000;
+    box-shadow: .3rem .3rem 2rem #000;
     box-sizing: border-box;
 }
 
@@ -81,8 +81,8 @@ body{
     border-radius: 4px;
     border: 0;
     border-bottom: 2px solid #fff;
-    padding: .9em 1em;
-    font-size: 1.1em;
+    padding: .9rem 1rem;
+    font-size: 1.1rem;
     box-sizing: border-box;
 }
 
@@ -100,10 +100,10 @@ body{
 .form_checkbox{
     position: absolute;
     opacity: 0;
-    top: 28%;
-    right: 19%;
-    width: 5em;
-    height: 5em;
+    top: 40%;
+    right: 18%;
+    width: 4.5rem;
+    height: 4.5rem;
     z-index: 999;
     cursor: pointer;
     box-sizing: border-box;
@@ -111,9 +111,8 @@ body{
 
 .form_checkbox:checked{
     position: absolute;
-    top: 0;
+    top: -2%;
     left: 80%;
-    
 }
 
 .form_checkbox:hover ~ .whatsapp_hover, .hover_text{
@@ -156,9 +155,9 @@ body{
 
 .icon{
     position: absolute;
-    width: 4em;
-    height: 4em;
-    top: 30%;
+    width: 4rem;
+    height: 4rem;
+    top: 5%;
     right: 20%;
     z-index: 20;
     box-sizing: border-box;
@@ -178,8 +177,8 @@ body{
 }
 
 .icon_send{
-    width: 2em;
-    height: 2em;
+    width: 2rem;
+    height: 2rem;
     z-index: 20;
     fill: #fff;
     box-sizing: border-box;
@@ -253,13 +252,13 @@ body{
 @keyframes moveUp{
     0%{
         position: absolute;
-        top: 30%;
+        top: 43%;
         right: 20%;
     }
 
     100%{
         position: absolute;
-        top: 0;
+        top: 0%;
         right: 0;
     }
 }
@@ -267,13 +266,13 @@ body{
 @keyframes moveDown{
     0%{
         position: absolute;
-        top: 0;
+        top: 0%;
         right: 0;
     }
 
     100%{
         position: absolute;
-        top: 30%;
+        top: 43%;
         right: 20%;
     }
 }
@@ -292,6 +291,7 @@ body{
         right: 0%;
         z-index: 20;
         box-sizing: border-box;
+        transform: scale(.7) translateY(8rem);
     }
     
     @keyframes moveDown{
