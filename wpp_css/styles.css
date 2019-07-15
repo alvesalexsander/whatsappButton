@@ -289,7 +289,7 @@ body{
         right: 0%;
         z-index: 20;
         box-sizing: border-box;
-        transform: scale(.7) translateY(8rem);
+        transform: scale(.8) translateY(8rem);
     }
     
     @keyframes moveDown{

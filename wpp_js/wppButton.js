@@ -143,6 +143,8 @@ class WhatsappButton {
 
     initButtonElements(background, fontFamily){
         /* Método para iniciar os elementos HTML*/
+        // this.linkButtonStyle = this.newElem("link", ["rel", "type", "href"], ["stylesheet", "text/css", "https://raw.githubusercontent.com/sashaclimax/whatsappButton/master/wpp_css/styles.css"])
+        // document.head.appendChild(this.linkButtonStyle)
         if(fontFamily && this.isSecureURL(fontFamily)){
             this.linkFontFamily = this.newElem("link", ["rel", "type", "href"], ["stylesheet", "text/css", fontFamily])
             document.head.appendChild(this.linkFontFamily)
@@ -367,7 +369,7 @@ class WhatsappButton {
         && (URL.includes('https://fonts.googleapis.com/css?family='))){
             return true
         } else {
-            return false
+            throw new Error('Custom font URL not compatible.\nPlease use Google Fonts API to select a font.\nFor more information, please\ncheck the documentation at https://github.com/sashaclimax/whatsappButton')
         }
     }
 
@@ -375,7 +377,7 @@ class WhatsappButton {
         let fontName = URL.substring(40, URL.length).split('&')[0]
 
         if(fontName.includes('|')){
-            throw new Error('Invalid font style. Please, use only one font style. For more information,\ncheck documentation at: https://github.com/sashaclimax/whatsappButton')
+            throw new Error('Invalid font style. Please, use only one font style. For more information,\ncheck the documentation at: https://github.com/sashaclimax/whatsappButton')
         } else if(fontName.includes('+')){
             let matches = (fontName.split('+').length) - 1
             for(let i = 0; i < matches; i++){
@@ -396,7 +398,7 @@ class WhatsappButton {
         if((!isNaN(data)) && (typeof(data) === "string")){
             return data
         } else {
-            throw new Error("Missing phone number or it has a wrong format. Please, use only numbers: eg. 5522123456789.\nFor more information, see documentation at: https://github.com/sashaclimax/whatsappButton")
+            throw new Error("Missing phone number or it has a wrong format. Please, use only numbers: eg. 5522123456789.\nFor more information, check the documentation at: https://github.com/sashaclimax/whatsappButton")
         }
     }
 
