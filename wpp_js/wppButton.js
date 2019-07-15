@@ -143,8 +143,6 @@ class WhatsappButton {
 
     initButtonElements(background, fontFamily){
         /* Método para iniciar os elementos HTML*/
-        // this.linkButtonStyle = this.newElem("link", ["rel", "type", "href"], ["stylesheet", "text/css", "https://raw.githubusercontent.com/sashaclimax/whatsappButton/master/wpp_css/styles.css"])
-        // document.head.appendChild(this.linkButtonStyle)
         if(fontFamily && this.isSecureURL(fontFamily)){
             this.linkFontFamily = this.newElem("link", ["rel", "type", "href"], ["stylesheet", "text/css", fontFamily])
             document.head.appendChild(this.linkFontFamily)
