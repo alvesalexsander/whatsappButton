@@ -145,6 +145,4 @@ export default class App {
     createButton(){
         return new WhatsappButton(this.phoneNumber, this.wMessage, this.phMessage, this.dMessage, this.iconStyle, this.mainColor, this.subColor, this.textColor, this.fontFamily)
     }
-
-
 }
