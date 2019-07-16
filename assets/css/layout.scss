@@ -1,0 +1,68 @@
+.app{
+    background: $color-main;
+    margin: 0;
+    padding: 2rem 4rem;
+    border-radius: 10px;
+    box-shadow: 5px 5px 1px $color-black;
+
+    &_panel{
+        background-color: $color-sub;
+        padding: 2rem 4rem;
+        border-radius: 10px;
+        position: relative;
+        height: 35rem;
+
+        &:last-of-type{
+            right: 15px;
+        }
+
+        #createButton{
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+
+        }
+
+        &_form .carousel-indicators{
+            position: absolute;
+            top: 100%;
+        }
+
+        .carousel-control-next{
+            height: 30rem;
+            left: 100%;
+        }
+
+        .carousel-control-prev{
+            height: 30rem;
+            left: -15%;
+
+        }
+
+        &_preview{
+            background-color: #444;
+            border-radius: 4px;
+            height: 300px;
+            width: 100%;
+            position: relative;
+
+            .whatsapp_cta{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+
+            }
+        }
+    }
+}
+
+.form-control {
+    display: inline;
+    width: 55%;
+}
+
+#fontFamily{
+    width: 100%;
+}

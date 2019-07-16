@@ -5,11 +5,135 @@
   <meta name="description" content="Plugin JS para adicionar um botão Whatsapp responsivo e personalizado">
   <meta name="author" content="Alexsander Alves">
   <title>whatsapp Button Plugin - Dev Build</title>
-
+  <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.min.css">
   <link rel="stylesheet" href="wpp_css/styles.css">
+  <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-  
+  <div id="app" class="container app">
+    <div class="row">
+      <div class="col">
+        <h1>Whatsapp Button</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 app_panel">
+        <form id="formPages" class="app_panel_form carousel slide" data-interval="false">
+          <h2>Customize your button!</h2>
+          <h6>Fill the fields below to fit Whatsapp Button to your needs</h3>
+          
+          <div class="carousel-inner">
+              <div class="app_panel_form-1 carousel-item active">
+                  <div class="form-group">
+                    <label for="phoneNumber">Phone number:</label>
+                    <input class="form-control" id="phoneNumber" type="tel" required>
+                    <small id="phoneHelp" class="form-text text-muted">Use only numbers. e.g: 5522123456789</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="wMessage">Welcome Message:</label>
+                    <input class="form-control" id="wMessage" type="text">
+                    <small id="wMessageHelp" class="form-text text-muted">Will be displayed when mouse is over the button.</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="phMessage">Placeholder Message:</label>
+                    <input class="form-control" id="phMessage" type="text">
+                    <small id="phMessageHelp" class="form-text text-muted">This one will be shown while the user didn't type.</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="dMessage">Default Message:</label>
+                    <input class="form-control" id="dMessage" type="text">
+                    <small id="dMessageHelp" class="form-text text-muted">At mobile, this message will start user's conversation.</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="iconStyle">Icon Style:</label>
+                    <select name="iconStyle" class="form-control" id="iconStyle">
+                      <option value="0">Standard Material</option>
+                      <option value="1">Coloured Details</option>
+                      <option value="2">Coloured Background</option>
+                      <option value="3">Drawn Classic</option>
+                      <option value="4">Standard Flat</option>
+                    </select>
+                    <small id="iconStyleHelp" class="form-text text-muted">Pick an icon style of your choice.</small>
+                  </div>
+                </div>
+                <div class="app_panel_form-2 carousel-item">
+                    <div class="form-group">
+                        <label for="mainColor">Main color:</label>
+                        <input id="mainColor" type="text" class="form-control jscolor {hash:true, uppercase:false}">
+                        <small id="mainColor" class="form-text text-muted">Backgrounds color!</small>
+                      </div>
+                      <div class="form-group">
+                        <label for="subColor">Secondary color:</label>
+                        <input id="subColor" type="text" class="form-control jscolor {hash:true, uppercase:false}">
+                        <small id="subColor" class="form-text text-muted">Details color!</small>
+                      </div>
+                      <div class="form-group">
+                        <label for="textColor">Text color:</label>
+                        <input id="textColor" type="text" class="form-control jscolor {hash:true, uppercase:false}">
+                        <small id="textColor" class="form-text text-muted">Pick a color for the typography!</small>
+                      </div>
+                      <div class="form-group ">
+                        <label for="fontFamily">Google Font Family URL:</label>
+                        <input class="form-control" id="fontFamily" type="text">
+                        <small id="fontFamily" class="form-text text-muted">Choose a font from https://fonts.google.com/<br>e.g: https://fonts.googleapis.com/css?family=Roboto&display=swap</small>
+                      </div>
+                      <br>
+                </div>
+          </div>
+          
+          <a class="carousel-control-prev" href="#formPages" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#formPages" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              </ol>
+        </form>
+      </div>
+      <div class="col-md-6 app_panel">
+        <h2>Preview</h2>
+        <h6>This is how your button are looking like:</h3>
+        <div class="app_panel_preview">
+            <div class="whatsapp_cta">
+              <input id="form_checkbox" class="form_checkbox" type="checkbox">
+              <a class="whatsapp_button" href="https://api.whatsapp.com/send?phone=552299788&amp;text=Ol%C3%A1!%20Estou%20entrando%20em%20contato%20e%20gostaria%20de%20saber%3A">
+                <svg class="icon">
+                  <circle class="mainColor-fill" id="circle" cx="32" cy="32" r="31" style="fill: transparent;"></circle>
+                  <path class="mainColor-fill" id="path" d="M 7 51 l 10 7 l -11 3 z" style="fill: transparent;"></path>
+                  <use id="subColor-noFill" class="iconStyle subColor-fill" xlink:href="wpp_icons/My icons collection-SVG-sprite.svg#whatsapp" xlink:class="svgButtonUse"></use>
+                </svg>
+              </a>
+              <div class="whatsapp_hover">
+                <span class="hover_text wMessage mainColor-bg textColor fontFamily">Fale conosco</span>
+              </div>
+              <div class="whatsapp_form mainColor-bg">
+                <form class="form_container" onsubmit="return sendMessage()">
+                  <label id="send_label" class="send_label" for="send">
+                    <svg class="icon_send">
+                      <use id="subColor-fill-3"class="subColor-fill" xlink:href="wpp_icons/My icons collection-SVG-sprite.svg#send-button" xlink:class="svgLabelUse"></use>
+                    </svg><input id="send" type="submit" name="send" value="" class="labelInput">
+                  </label>
+                  <textarea id="message" class="form_text phMessage mainColor-bg subColor-border textColor fontFamily" name="mensagem" placeholder="Como podemos te ajudar?" required=""></textarea>
+                </form>
+              </div>
+            </div>
+        </div>
+        <button id="createButton" class="btn btn-primary" disabled="disabled">I've done. Make my Button!</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="node_modules\jquery\dist\jquery.min.js"></script>
+  <script src="node_modules\popper.js\dist\umd\popper.min.js"></script>
+  <script src="node_modules\bootstrap\dist\js\bootstrap.min.js"></script>
+  <script src="assets/jscolor/jscolor.js"></script>
+  <script type="module" src="assets/js/app.js"></script>
+
   <script src="wpp_js/wppButton.js"></script>
 
 </body>

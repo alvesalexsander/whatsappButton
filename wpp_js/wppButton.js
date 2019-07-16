@@ -151,8 +151,8 @@ class WhatsappButton {
         if((background == 1) || (background == 2)){
             /* Parametro background checa a necessidade de instanciação dos elementos HTML
             que fazem a cor de fundo do SVG de acordo com o iconStyle escolhido*/
-            this.svgCircle = this.newElem("circle", ["cx", "cy", "r", "style"], ["32", "32", "31", "fill: #ed3a17"])
-            this.svgPath = this.newElem("path", ["d", "style"], ["M 7 51 l 10 7 l -11 3 z", "fill: #ed3a17"])
+            this.svgCircle = this.newElem("circle", ["cx", "cy", "r", "style"], ["32", "32", "31", "fill: #2d8b29"])
+            this.svgPath = this.newElem("path", ["d", "style"], ["M 7 51 l 10 7 l -11 3 z", "fill: #2d8b29"])
         }
 
         this.buttonWrapper = this.newElem("div", "class", "whatsapp_cta")
@@ -409,7 +409,12 @@ class WhatsappButton {
 
     /* 
         Criado por Alexsander Alves (https://github.com/sashaclimax)
-        Este projeto é e sempre será de graça para usar. Por favor, não remova os créditos do autor.
+        Este plugin é e sempre será de graça para usar. Por favor, não remova os créditos do autor.
     */
 
 }
+
+
+(function (){
+    // var run = new WhatsappButton('5522997055388')
+})();

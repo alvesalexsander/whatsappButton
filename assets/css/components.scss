@@ -1,0 +1,13 @@
+.form_text{
+    transition: 1s;
+}
+
+.btn-primary{
+    background-color: $color-main !important;
+    border-color: $color-main;
+
+    &:hover{
+        background-color: $color-sub;
+        border-color: $color-main;
+    }
+}
