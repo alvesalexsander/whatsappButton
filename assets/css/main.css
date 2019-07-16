@@ -33,12 +33,12 @@ h1, h2, h6 {
 }
 
 h1 {
-  background: #fff no-repeat;
+  background: #fff url("https://sashaclimax.github.io/whatsappButton/assets/img/15.png") top center no-repeat;
+  background-size: cover;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   font-weight: 1000;
-  line-height: normal;
   opacity: 0;
   transform: translateX(40%);
   animation: titleIn 2s ease-out 1s forwards;
