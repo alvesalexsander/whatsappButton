@@ -1,6 +1,10 @@
 import App from './app.model.js';
-var app = new App()
+const app = new App()
+initEventHandlers();
+app.setTitleFont();
+    
 
+function initEventHandlers(){
     /* Event Handlers */
     //IconStyle Select Input
     $('#iconStyle').change(() => {
@@ -45,3 +49,4 @@ var app = new App()
     $('#createButton').click(() => {
         app.createButton()
     })
+}

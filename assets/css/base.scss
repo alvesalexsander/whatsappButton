@@ -15,3 +15,19 @@ body{
     background: #444;
     position: relative;
 }
+
+h1, h2, h6{
+    font-family: 'Roboto', sans-serif;
+}
+
+h1{
+    background: #fff no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 1000;
+    line-height: normal;
+    opacity: 0;
+    transform: translateX(40%);
+    animation: titleIn 2s ease-out 1s forwards;
+}

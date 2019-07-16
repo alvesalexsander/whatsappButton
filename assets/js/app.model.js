@@ -1,6 +1,8 @@
-export default class App {
+import FontShifter from './fontShifter.model.js';
+export default class App extends FontShifter{
 
     constructor(){
+        super()
         this.phoneNumber = ''
         this.wMessage = ''
         this.phMessage = ''
@@ -140,6 +142,18 @@ export default class App {
         } else {
             return fontName
         }
+    }
+
+    selectNewFontStyle(){
+        return super.selectNewFontStyle()
+    }
+
+    getFontURL(fontStyle){
+        return super.getFontURL(this.selectNewFontStyle())
+    }
+
+    setTitleFont(){
+        return super.setTitleFont(this.getFontURL(this.selectNewFontStyle()))
     }
 
     createButton(){

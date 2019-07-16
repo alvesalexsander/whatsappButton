@@ -1,3 +1,15 @@
+@keyframes titleIn {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 *,
 *::before,
 *::after {
@@ -16,6 +28,22 @@ body {
   position: relative;
 }
 
+h1, h2, h6 {
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  background: #fff no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 1000;
+  line-height: normal;
+  opacity: 0;
+  transform: translateX(40%);
+  animation: titleIn 2s ease-out 1s forwards;
+}
+
 .form_text {
   transition: 1s;
 }
@@ -32,9 +60,19 @@ body {
 .app {
   background: #7f7f7f;
   margin: 0;
-  padding: 2rem 4rem;
+  padding: 4rem 2rem 2rem 4rem;
   border-radius: 10px;
   box-shadow: 5px 5px 1px #000000;
+  position: relative;
+}
+.app h1 {
+  font-size: 3rem;
+  position: absolute;
+  line-height: normal;
+  letter-spacing: normal;
+  top: -3rem;
+  left: 0;
+  z-index: 999;
 }
 .app_panel {
   background-color: #c3c3c3;

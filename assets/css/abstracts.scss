@@ -4,3 +4,17 @@ $color-bg: #444444;
 $color-black: #000000;
 $color-white: #ffffff;
 
+@keyframes titleIn{
+    0%{
+        opacity: 0;
+    }
+
+    60%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateX(0)
+    }
+}
