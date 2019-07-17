@@ -146,6 +146,20 @@ export default class App extends FontShifter{
                         clearInterval(tries)
                     } else {
                         counter++
+                        $.ajax({
+                            url: fontFamily,
+                            cache: false
+                            })
+                            .done(function() {
+                                $('<link>',{
+                                    id: 'fontLink',
+                                    rel: 'stylesheet',
+                                    type: 'text/css',
+                                    href: fontFamily
+                                }).appendTo('head')
+                                $('.fontFamily').css('font-family', fontName)
+                                result = true
+                            });
                     }
                 } else {
                     $('.lds-ring').css('opacity', 0)
@@ -155,8 +169,9 @@ export default class App extends FontShifter{
             }, 1500);
         } else if (this.isSecureURL(this.mountFontURL(fontFamily))
          && this.extractFontFamily(this.mountFontURL(fontFamily))){
-            var url = this.mountFontURL(fontFamily)
-            var fontName = this.extractFontFamily(url)
+            var url = this.mountFontURL(this.extractFontFamily(fontFamily))
+            var fontName = this.extractFontFamily(fontFamily)
+            var refinedFontName = this.extractFontFamily(fontName)
             var result = false
             $.ajax({
                 url: url,
@@ -169,7 +184,7 @@ export default class App extends FontShifter{
                         type: 'text/css',
                         href: url
                     }).appendTo('head')
-                    $('.fontFamily').css('font-family', fontName)
+                    $('.fontFamily').css('font-family', refinedFontName)
                     result = true
                 });
                 $('.lds-ring').css('opacity', 1)
@@ -182,6 +197,20 @@ export default class App extends FontShifter{
                             clearInterval(tries)
                         } else {
                             counter++
+                            $.ajax({
+                                url: url,
+                                cache: false
+                                })
+                                .done(function() {
+                                    $('<link>',{
+                                        id: 'fontLink',
+                                        rel: 'stylesheet',
+                                        type: 'text/css',
+                                        href: url
+                                    }).appendTo('head')
+                                    $('.fontFamily').css('font-family', refinedFontName)
+                                    result = true
+                                });
                         }
                     } else {
                         $('.lds-ring').css('opacity', 0)
@@ -202,19 +231,39 @@ export default class App extends FontShifter{
     }
 
     extractFontFamily(URL){
-        let fontName = URL.substring(40, URL.length).split('&')[0]
+        if((URL.substring(0,5) === 'https')){
+            let fontName = URL.substring(40, URL.length).split('&')[0]
 
-        if(fontName.includes('|')){
-            return false
-        } else if(fontName.includes('+')){
-            let matches = (fontName.split('+').length) - 1
-            for(let i = 0; i < matches; i++){
-                fontName = fontName.replace('+', ' ')
+            if(fontName.includes('|')){
+                return false
+            } else if(fontName.includes('+')){
+                let matches = (fontName.split('+').length) - 1
+                for(let i = 0; i < matches; i++){
+                    fontName = fontName.replace('+', ' ')
+                }
+                return fontName
+            } else {
+                return fontName
             }
-            return fontName
-        } else {
-            return fontName
+        } else{
+            if(URL.includes(' ')){
+                let matches = (URL.split(' ').length) - 1
+                for(let i = 0; i < matches; i++){
+                    URL = URL.replace(' ', '+')
+                }
+                return URL
+            } else if(URL.includes('+')){
+                let matches = (URL.split('+').length) - 1
+                for(let i = 0; i < matches; i++){
+                    URL = URL.replace('+', ' ')
+                }
+                return URL
+            } else {
+                return URL
+            }
         }
+        
+        
     }
 
     mountFontURL(fontFamily){
