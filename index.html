@@ -13,8 +13,29 @@
 <body>
   <div id="app" class="container app">
     <div class="row">
-      <div class="col">
-        <h1 id="title">Whatsapp Button.js</h1>
+      <div class="col-md-7">
+        <a href="https://sashaclimax.github.io/whatsappButton/"><h1 id="title">Whatsapp Button.js</h1></a>
+      </div>
+      <div class="col-md-5">
+        <div id="sloganSlider" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <h6 class="sloganText">That represents your brand.</h6>
+            </div>
+            <div class="carousel-item">
+              <h6 class="sloganText">In harmony with your layout.</h6>
+            </div>
+            <div class="carousel-item">
+              <h6 class="sloganText">A new way to keep in touch.</h6>
+            </div>
+            <div class="carousel-item">
+              <h6 class="sloganText">That is ready to deployment.</h6>
+            </div>
+            <div class="carousel-item">
+              <h6 class="sloganText">Easily customizable.</h6>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="row">
@@ -28,12 +49,12 @@
                   <div class="form-group">
                     <label for="phoneNumber">Phone number:</label>
                     <input class="form-control" id="phoneNumber" type="tel" required>
-                    <small id="phoneHelp" class="form-text text-muted">Use only numbers. e.g: 5522123456789</small>
+                    <small id="phoneHelp" class="form-text text-muted">Only numbers. No symbols needed. e.g: 5522123456789</small>
                   </div>
                   <div class="form-group">
                     <label for="wMessage">Welcome Message:</label>
                     <input class="form-control" id="wMessage" type="text">
-                    <small id="wMessageHelp" class="form-text text-muted">Will be displayed when mouse is over the button.</small>
+                    <small id="wMessageHelp" class="form-text text-muted">Will be displayed when mouse is over the button.<br>Recommended: <=16 characters</small>
                   </div>
                   <div class="form-group">
                     <label for="phMessage">Placeholder Message:</label>
@@ -74,9 +95,9 @@
                         <small id="textColor" class="form-text text-muted">Pick a color for the typography!</small>
                       </div>
                       <div class="form-group ">
-                        <label for="fontFamily">Google Font Family URL:</label>
-                        <input class="form-control" id="fontFamily" type="text">
-                        <small id="fontFamily" class="form-text text-muted">Choose a font from https://fonts.google.com/<br>e.g: https://fonts.googleapis.com/css?family=Roboto&display=swap</small>
+                        <label for="fontFamily"><a href="https://fonts.google.com/" style="color: inherit"><i>Google Fonts</i></a> Family Name/URL:</label>
+                        <input class="form-control" id="fontFamily" type="text"><div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+                        <small id="fontFamily" class="form-text text-muted">Choose a font from https://fonts.google.com/. Either font name or URL e.g: https://fonts.googleapis.com/css?family=<strong>Roboto</strong>&display=swap</small>
                       </div>
                       <br>
                 </div>
@@ -133,6 +154,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="assets/jscolor/jscolor.js"></script>
+  <script src="./node_modules/jquery/dist/jquery.min.js"></script>
   <script type="module" src="assets/js/app.js"></script>
 
   <script src="wpp_js/wppButton.js"></script>

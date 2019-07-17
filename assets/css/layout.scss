@@ -1,10 +1,12 @@
 .app{
-    background: $color-main;
     margin: 0;
     padding: 4rem 2rem 2rem 4rem;
-    border-radius: 10px;
-    box-shadow: 5px 5px 1px $color-black;
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    visibility: hidden;
+    animation: appIn 1s ease-out 1s forwards;
 
     h1{
         font-size: 3rem;
@@ -17,11 +19,12 @@
     }
 
     &_panel{
-        background-color: $color-sub;
+        background-color: #111;
         padding: 2rem 4rem;
         border-radius: 10px;
         position: relative;
         height: 35rem;
+        box-shadow: 20px 20px 30px $color-black;
 
         &:last-of-type{
             right: 15px;
@@ -69,11 +72,28 @@
     }
 }
 
-.form-control {
-    display: inline;
-    width: 55%;
+#fontFamily{
+    width: 90%;
 }
 
-#fontFamily{
-    width: 100%;
+.bg-70{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    top: 0;
+    left: 0;
+    background: linear-gradient(purple 100%, rgba(0,0,0,0));
+    z-index: 1;
+    transition: 4s;
+}
+
+.bg-30{
+    width: 100vw;
+    height: 30vh;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(transparent, green);
+    z-index: 2;
+    transition: 4s;
 }

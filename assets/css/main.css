@@ -10,6 +10,29 @@
     transform: translateX(0);
   }
 }
+@-webkit-keyframes titleIn {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes appIn {
+  0% {
+    opacity: 0;
+    transform: translate(20%, 5%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0%, 0%);
+    visibility: visible;
+  }
+}
 *,
 *::before,
 *::after {
@@ -23,9 +46,10 @@ html {
 }
 
 body {
-  padding: 1rem;
   background: #444;
   position: relative;
+  color: #ffffff;
+  height: 100vh;
 }
 
 h1, h2, h6 {
@@ -33,15 +57,10 @@ h1, h2, h6 {
 }
 
 h1 {
-  background: #fff url("https://sashaclimax.github.io/whatsappButton/assets/img/15.png") top center no-repeat;
-  background-size: cover;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  font-weight: 1000;
   opacity: 0;
-  transform: translateX(40%);
+  transform: translateX(50%);
   animation: titleIn 2s ease-out 1s forwards;
+  text-shadow: 0rem 0rem 5rem rgba(255, 255, 255, 0.4);
 }
 
 .form_text {
@@ -57,13 +76,75 @@ h1 {
   border-color: #7f7f7f;
 }
 
+.form-control {
+  display: inline;
+  width: 55%;
+  box-shadow: 2px 2px 5px #000000;
+}
+
+#sloganSlider {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  background-color: #111;
+  width: 60%;
+  border-radius: 10px;
+  padding: 0.5rem 2rem;
+  text-align: center;
+}
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  opacity: 0;
+}
+
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  margin: 6px;
+  border: 6px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #444 transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .app {
-  background: #7f7f7f;
   margin: 0;
   padding: 4rem 2rem 2rem 4rem;
-  border-radius: 10px;
-  box-shadow: 5px 5px 1px #000000;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  visibility: hidden;
+  animation: appIn 1s ease-out 1s forwards;
 }
 .app h1 {
   font-size: 3rem;
@@ -75,11 +156,12 @@ h1 {
   z-index: 999;
 }
 .app_panel {
-  background-color: #c3c3c3;
+  background-color: #111;
   padding: 2rem 4rem;
   border-radius: 10px;
   position: relative;
   height: 35rem;
+  box-shadow: 20px 20px 30px #000000;
 }
 .app_panel:last-of-type {
   right: 15px;
@@ -116,13 +198,30 @@ h1 {
   transform: translate(-50%, -50%);
 }
 
-.form-control {
-  display: inline;
-  width: 55%;
+#fontFamily {
+  width: 90%;
 }
 
-#fontFamily {
-  width: 100%;
+.bg-70 {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  top: 0;
+  left: 0;
+  background: linear-gradient(purple 100%, rgba(0, 0, 0, 0));
+  z-index: 1;
+  transition: 4s;
+}
+
+.bg-30 {
+  width: 100vw;
+  height: 30vh;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(transparent, green);
+  z-index: 2;
+  transition: 4s;
 }
 
 /*# sourceMappingURL=main.css.map */

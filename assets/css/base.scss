@@ -11,24 +11,21 @@ html{
 }
 
 body{
-    padding: 1rem;
+    // padding: 1rem;
     background: #444;
     position: relative;
+    color: $color-white;
+    height: 100vh;
 }
 
 h1, h2, h6{
     font-family: 'Roboto', sans-serif;
+    
 }
 
 h1{
-    background: #fff url('https://sashaclimax.github.io/whatsappButton/assets/img/15.png') top center no-repeat;
-    background-size: cover;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    font-weight: 1000;
-    // line-height: normal;
     opacity: 0;
-    transform: translateX(40%);
+    transform: translateX(50%);
     animation: titleIn 2s ease-out 1s forwards;
+    text-shadow: 0rem 0rem 5rem rgba(255, 255, 255, 0.4);
 }

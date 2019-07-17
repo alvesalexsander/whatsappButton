@@ -12,6 +12,8 @@ export default class App extends FontShifter{
         this.subColor = ''
         this.textColor = ''
         this.fontFamily = ''
+        this.setBackground()
+        this.setTitleFont()
     }
 
     validatePhoneNumber(phoneNumber){
@@ -64,10 +66,15 @@ export default class App extends FontShifter{
             $('#circle').css('fill', $('#mainColor').val())
             $('#path').css('fill', $('#mainColor').val())
             $('#subColor-noFill').css('fill', '#000000')
-        } else {
+        } else if((iconStyle == 1) || (iconStyle == 2)){
             $('.iconStyle')[0].setAttributeNS("http://www.w3.org/1999/xlink", 'xlink:href', `wpp_icons/My icons collection-SVG-sprite.svg#whatsapp-${iconStyle}`)
             $('#circle').css('fill', $('#mainColor').val())
             $('#path').css('fill', $('#mainColor').val())
+            $('#subColor-noFill').css('fill', this.subColor)
+        } else {
+            $('.iconStyle')[0].setAttributeNS("http://www.w3.org/1999/xlink", 'xlink:href', `wpp_icons/My icons collection-SVG-sprite.svg#whatsapp-${iconStyle}`)
+            $('#circle').css('fill', 'transparent')
+            $('#path').css('fill', 'transparent')
         }
     }
 
@@ -76,9 +83,9 @@ export default class App extends FontShifter{
             $('.mainColor-fill').css('fill', mainColor)
         }
         $('.mainColor-bg').css('background-color', mainColor)
-        $('.app').css({
+        $('body').css({
             'background': mainColor,
-            'transition': 'background-color 14s'})
+            'transition': 'background-color 4s'})
         this.mainColor = mainColor
     }
 
@@ -93,7 +100,7 @@ export default class App extends FontShifter{
             $('.subColor-border').css('border-color', subColor)
             $('body').css({
                 'background': subColor,
-                'transition': 'background-color 14s'})
+                'transition': 'background-color 4s'})
         }
         this.subColor = subColor;
     }
@@ -104,18 +111,84 @@ export default class App extends FontShifter{
     }
 
     setFontFamily(fontFamily){
+        //Esta nova versão do método, também verifica se a fonte escolhida é válida antes de estilizar
+        //Para a versão da UI, existe a possibilidade de escolher a fonte apenas pelo Nome.
         if($('#fontLink')){
             $('#fontLink').remove()
         }
-        if(this.isSecureURL(fontFamily) && this.extractFontFamily(fontFamily)){
-            $('<link>',{
-                id: 'fontLink',
-                rel: 'stylesheet',
-                type: 'text/css',
-                href: fontFamily
-            }).appendTo('head')
-            $('.fontFamily').css('font-family', this.extractFontFamily(fontFamily))
-            this.fontFamily = fontFamily
+        var counter = 0;
+        if(this.isSecureURL(fontFamily)
+        && this.extractFontFamily(fontFamily)){
+            var url = fontFamily
+            var fontName = this.extractFontFamily(url)
+            var result = false
+            $.ajax({
+                url: fontFamily,
+                cache: false
+                })
+                .done(function() {
+                    $('<link>',{
+                        id: 'fontLink',
+                        rel: 'stylesheet',
+                        type: 'text/css',
+                        href: fontFamily
+                    }).appendTo('head')
+                    $('.fontFamily').css('font-family', fontName)
+                    result = true
+                });
+            $('.lds-ring').css('opacity', 1)
+            let tries = setInterval(() => {
+                if(counter < 4){
+                    if(result == true){
+                        this.fontFamily = fontFamily
+                        this.setValid('#fontFamily')
+                        $('.lds-ring').css('opacity', 0)
+                        clearInterval(tries)
+                    } else {
+                        counter++
+                    }
+                } else {
+                    $('.lds-ring').css('opacity', 0)
+                    this.setInvalid('#fontFamily')
+                    clearInterval(tries)
+                }
+            }, 1500);
+        } else if (this.isSecureURL(this.mountFontURL(fontFamily))
+         && this.extractFontFamily(this.mountFontURL(fontFamily))){
+            var url = this.mountFontURL(fontFamily)
+            var fontName = this.extractFontFamily(url)
+            var result = false
+            $.ajax({
+                url: url,
+                cache: false
+                })
+                .done(function() {
+                    $('<link>',{
+                        id: 'fontLink',
+                        rel: 'stylesheet',
+                        type: 'text/css',
+                        href: url
+                    }).appendTo('head')
+                    $('.fontFamily').css('font-family', fontName)
+                    result = true
+                });
+                $('.lds-ring').css('opacity', 1)
+                let tries = setInterval(() => {
+                    if(counter < 4){
+                        if(result == true){
+                            this.fontFamily = fontFamily
+                            this.setValid('#fontFamily')
+                            $('.lds-ring').css('opacity', 0)
+                            clearInterval(tries)
+                        } else {
+                            counter++
+                        }
+                    } else {
+                        $('.lds-ring').css('opacity', 0)
+                        this.setInvalid('#fontFamily')
+                        clearInterval(tries)
+                    }
+                }, 1500);
         }
     }
 
@@ -144,6 +217,10 @@ export default class App extends FontShifter{
         }
     }
 
+    mountFontURL(fontFamily){
+        return `https://fonts.googleapis.com/css?family=${fontFamily}&display=swap`
+    }
+
     selectNewFontStyle(){
         return super.selectNewFontStyle()
     }
@@ -154,6 +231,29 @@ export default class App extends FontShifter{
 
     setTitleFont(){
         return super.setTitleFont(this.getFontURL(this.selectNewFontStyle()))
+    }
+
+    setBackground(){
+        return super.setBackground()
+    }
+
+    setValid(element){
+        if($(element).hasClass('is-invalid')) {$(element).removeClass('is-invalid')}
+        if(!($(element).hasClass('is-valid'))) {
+            $(element).addClass('is-valid')
+        }
+    }
+
+    setInvalid(element){
+        if($(element).hasClass('is-valid')) {$(element).removeClass('is-valid')}
+        if(!($(element).hasClass('is-invalid'))) {
+            $(element).addClass('is-invalid')
+        }
+    }
+
+    removeValidation(element){
+        if($(element).hasClass('is-invalid')) {$(element).removeClass('is-invalid')}
+        if($(element).hasClass('is-valid')) {$(element).removeClass('is-valid')}
     }
 
     createButton(){

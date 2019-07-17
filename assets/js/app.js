@@ -1,8 +1,6 @@
 import App from './app.model.js';
 const app = new App()
 initEventHandlers();
-app.setTitleFont();
-    
 
 function initEventHandlers(){
     /* Event Handlers */
@@ -42,7 +40,7 @@ function initEventHandlers(){
     })
 
     //Font Family Input
-    $('#fontFamily').keyup(() => {
+    $('#fontFamily').focusout(() => {
         app.setFontFamily($('#fontFamily').val())
     })
 
