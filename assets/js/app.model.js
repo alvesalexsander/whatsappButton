@@ -13,7 +13,7 @@ export default class App extends FontShifter{
         this.textColor = ''
         this.fontFamily = ''
         this.setBackground()
-        this.setTitleFont()
+        this.setTitleFont();
     }
 
     validatePhoneNumber(phoneNumber){
