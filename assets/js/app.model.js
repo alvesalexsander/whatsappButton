@@ -13,7 +13,7 @@ export default class App extends FontShifter{
         this.textColor = ''
         this.fontFamily = ''
         this.setBackground()
-        this.setTitleFont()
+        this.setTitleFont();
     }
 
     validatePhoneNumber(phoneNumber){
@@ -191,7 +191,7 @@ export default class App extends FontShifter{
                 let tries = setInterval(() => {
                     if(counter < 4){
                         if(result == true){
-                            this.fontFamily = fontFamily
+                            this.fontFamily = url
                             this.setValid('#fontFamily')
                             $('.lds-ring').css('opacity', 0)
                             clearInterval(tries)
@@ -306,6 +306,16 @@ export default class App extends FontShifter{
     }
 
     createButton(){
-        return new WhatsappButton(this.phoneNumber, this.wMessage, this.phMessage, this.dMessage, this.iconStyle, this.mainColor, this.subColor, this.textColor, this.fontFamily)
+        $('.app_panel_preview_button').css('animation', 'buttonCreated 2s ease-in-out .5s forwards')
+        setTimeout(() => {
+            new WhatsappButton(this.phoneNumber, this.wMessage, this.phMessage, this.dMessage, this.iconStyle, this.mainColor, this.subColor, this.textColor, this.fontFamily)
+        }, 2400);
+        let interval = setInterval(() => {
+            if($('#whatsapp_wrapper').length){
+                $('.app_panel_preview_button').css({opacity: '0',
+                                                animation: 'none'})
+                clearInterval(interval)
+            }
+        }, 500)
     }
 }

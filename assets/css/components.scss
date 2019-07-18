@@ -3,8 +3,9 @@
 }
 
 .btn-primary{
-    background-color: $color-main !important;
+    background-color: $color-sub !important;
     border-color: $color-main;
+    color: #111;
 
     &:hover{
         background-color: $color-sub;

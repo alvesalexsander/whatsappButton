@@ -132,9 +132,6 @@ class WhatsappButton {
         if(elem.tagName == ("SPAN" || "H1" || "H2" || "H3")){
             elem.innerHTML = inHTML
         }
-
-        // console.log(typeof(elem))
-
         let HTMLElem = document.body.appendChild(elem)
         document.body.removeChild(elem)
 
@@ -155,7 +152,7 @@ class WhatsappButton {
             this.svgPath = this.newElem("path", ["d", "style"], ["M 7 51 l 10 7 l -11 3 z", "fill: #2d8b29"])
         }
 
-        this.buttonWrapper = this.newElem("div", "class", "whatsapp_cta")
+        this.buttonWrapper = this.newElem("div", ["id","class"], ["whatsapp_wrapper", "whatsapp_cta"])
         this.inputCheckbox = this.newElem("input", ["id", "class", "type"], ["form_checkbox", "form_checkbox", "checkbox"])
         this.linkButton = this.newElem("a", ["class", "href"], ["whatsapp_button", "https://api.whatsapp.com/send?phone="+ this.phoneNumber +"&text=" + encodeURIComponent(this.defaultMessage.trim())])
         this.svgButton = this.newElem("svg", "class", "icon")
@@ -218,8 +215,6 @@ class WhatsappButton {
             pair[parent].appendChild(pair[child])
             mounted = pair[parent]
         })
-
-        // console.log(mounted)
 
         return mounted;
     }
@@ -339,7 +334,6 @@ class WhatsappButton {
 
     isRBGAColor(color){
         var colorValues = color.substring(5, (color.length-1)).split(',')
-        // console.log(colorValues)
         var checkResult = true
 
         colorValues.forEach((valor) => {
@@ -413,8 +407,3 @@ class WhatsappButton {
     */
 
 }
-
-
-(function (){
-    // var run = new WhatsappButton('5522997055388')
-})();

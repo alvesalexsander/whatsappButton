@@ -33,6 +33,43 @@
     visibility: visible;
   }
 }
+@keyframes buttonExpand {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  80% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+@keyframes buttonCreated {
+  0% {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(30%, -50%) scale(1);
+  }
+  30% {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(30%, -50%) scale(0.1);
+  }
+  50% {
+    transform: translate(30%, -50%) scale(0.1);
+    position: fixed;
+    top: 78.4%;
+    left: 100%;
+  }
+  100% {
+    position: fixed;
+    top: 78.4%;
+    left: 100.75%;
+    transform: translate(30%, -50%) scale(1);
+  }
+}
 *,
 *::before,
 *::after {
@@ -68,8 +105,9 @@ h1 {
 }
 
 .btn-primary {
-  background-color: #7f7f7f !important;
+  background-color: #c3c3c3 !important;
   border-color: #7f7f7f;
+  color: #111;
 }
 .btn-primary:hover {
   background-color: #c3c3c3;
@@ -144,7 +182,7 @@ h1 {
   left: 0;
   z-index: 10;
   visibility: hidden;
-  animation: appIn 1s ease-out 1s forwards;
+  animation: appIn 0.7s ease-out 1s forwards;
 }
 .app h1 {
   font-size: 3rem;
@@ -191,11 +229,12 @@ h1 {
   width: 100%;
   position: relative;
 }
-.app_panel_preview .whatsapp_cta {
+.app_panel_preview_button {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0);
+  animation: buttonExpand 1s ease-in-out 2s forwards;
 }
 
 #fontFamily {

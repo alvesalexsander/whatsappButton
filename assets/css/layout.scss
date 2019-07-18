@@ -6,7 +6,7 @@
     left: 0;
     z-index: 10;
     visibility: hidden;
-    animation: appIn 1s ease-out 1s forwards;
+    animation: appIn .7s ease-out 1s forwards;
 
     h1{
         font-size: 3rem;
@@ -61,12 +61,13 @@
             width: 100%;
             position: relative;
 
-            .whatsapp_cta{
+            &_button{
                 position: absolute;
                 top: 50%;
                 left: 50%;
-                transform: translate(-50%,-50%);
-
+                transform: translate(-50%,-50%) scale(0);
+                animation: buttonExpand 1s ease-in-out 2s forwards;
+                // animation: buttonCreated 2s ease-in-out 3s forwards;
             }
         }
     }
