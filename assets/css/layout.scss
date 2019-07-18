@@ -62,17 +62,11 @@
             position: relative;
 
             &_button{
-                position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 22rem;
-    height: 14rem;
-    bottom: 0;
-    right: 0;
-    box-sizing: border-box;
-    z-index: 900;
-                // animation: buttonExpand 1s ease-in-out 2s forwards;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%) scale(1);
+                animation: buttonExpand 3s ease-in-out forwards;
                 // animation: buttonCreated 2s ease-in-out 3s forwards;
             }
         }
@@ -103,22 +97,4 @@
     background: linear-gradient(transparent, green);
     z-index: 2;
     transition: 4s;
-}
-
-.app_panel_preview_button{
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 22rem;
-    height: 14rem;
-    bottom: 42%;
-    right: 34%;
-    box-sizing: border-box;
-    z-index: 900;
-    // animation: buttonCreated 2s ease-in-out 3s forwards;
-
-    #preview_button{
-        
-    }
 }

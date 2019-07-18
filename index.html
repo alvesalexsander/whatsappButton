@@ -124,33 +124,32 @@
         <h2>Preview</h2>
         <h6>This is how your button are looking like:</h3>
         <div class="app_panel_preview">
-            
+            <div class="whatsapp_cta app_panel_preview_button">
+              <input id="form_checkbox" class="form_checkbox" type="checkbox">
+              <a class="whatsapp_button" href="https://api.whatsapp.com/send?phone=552299788&amp;text=Ol%C3%A1!%20Estou%20entrando%20em%20contato%20e%20gostaria%20de%20saber%3A">
+                <svg class="icon">
+                  <circle class="mainColor-fill" id="circle" cx="32" cy="32" r="31" style="fill: transparent;"></circle>
+                  <path class="mainColor-fill" id="path" d="M 7 51 l 10 7 l -11 3 z" style="fill: transparent;"></path>
+                  <use id="subColor-noFill" class="iconStyle subColor-fill" xlink:href="wpp_icons/My icons collection-SVG-sprite.svg#whatsapp" xlink:class="svgButtonUse"></use>
+                </svg>
+              </a>
+              <div class="whatsapp_hover">
+                <span class="hover_text wMessage mainColor-bg textColor fontFamily">Fale conosco</span>
+              </div>
+              <div class="whatsapp_form mainColor-bg">
+                <form class="form_container">
+                  <label id="send_label" class="send_label" for="send">
+                    <svg class="icon_send">
+                      <use id="subColor-fill-3"class="subColor-fill" xlink:href="wpp_icons/My icons collection-SVG-sprite.svg#send-button" xlink:class="svgLabelUse"></use>
+                    </svg>
+                  </label>
+                  <textarea id="mensagem" class="form_text phMessage mainColor-bg subColor-border textColor fontFamily" name="mensagem" placeholder="Como podemos te ajudar?" required=""></textarea>
+                </form>
+              </div>
+            </div>
         </div>
         <button id="createButton" class="btn btn-primary" disabled="disabled">I've done. Make my Button!</button>
       </div>
-    </div>
-  </div>
-  <div class="whatsapp_cta app_panel_preview_button">
-    <input id="form_checkbox" class="form_checkbox" type="checkbox">
-    <a id="preview_button" class="whatsapp_button" href="https://api.whatsapp.com/send?phone=552299788&amp;text=Ol%C3%A1!%20Estou%20entrando%20em%20contato%20e%20gostaria%20de%20saber%3A">
-      <svg class="icon">
-        <circle class="mainColor-fill" id="circle" cx="32" cy="32" r="31" style="fill: transparent;"></circle>
-        <path class="mainColor-fill" id="path" d="M 7 51 l 10 7 l -11 3 z" style="fill: transparent;"></path>
-        <use id="subColor-noFill" class="iconStyle subColor-fill" xlink:href="wpp_icons/My icons collection-SVG-sprite.svg#whatsapp" xlink:class="svgButtonUse"></use>
-      </svg>
-    </a>
-    <div class="whatsapp_hover">
-      <span class="hover_text wMessage mainColor-bg textColor fontFamily">Fale conosco</span>
-    </div>
-    <div class="whatsapp_form mainColor-bg">
-      <form class="form_container">
-        <label id="send_label" class="send_label">
-          <svg class="icon_send">
-            <use id="subColor-fill-3"class="subColor-fill" xlink:href="wpp_icons/My icons collection-SVG-sprite.svg#send-button" xlink:class="svgLabelUse"></use>
-          </svg>
-        </label>
-        <textarea id="mensagem" class="form_text phMessage mainColor-bg subColor-border textColor fontFamily" name="mensagem" placeholder="Como podemos te ajudar?" required=""></textarea>
-      </form>
     </div>
   </div>
 

@@ -1,6 +1,5 @@
-Fazer versão minificada.
+Implementar botão reset (e tratar o validatePhoneNumber para não liberar o disabled até apertar reset)
 Fazer versão ES5.
-Fazer versão CDN.
 Fazer documentação.
 Fazer UI.
 

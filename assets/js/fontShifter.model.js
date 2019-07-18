@@ -21,7 +21,7 @@ export default class FontShifter{
         return selectedFont;
     }
 
-    setBackground(){
+    setTitleBackground(){
         $('#title').css({background: `#fff url('https://sashaclimax.github.io/whatsappButton/assets/img/${this.selectNewBackground()}.png') top center no-repeat`,
                         'background-size': 'cover',
                         '-webkit-background-clip': 'text',

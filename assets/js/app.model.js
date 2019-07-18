@@ -9,10 +9,12 @@ export default class App extends FontShifter{
         this.dMessage = ''
         this.iconStyle = ''
         this.mainColor = ''
+        this.mainBgColor = '#444'
         this.subColor = ''
+        this.subBgColor = '#444'
         this.textColor = ''
         this.fontFamily = ''
-        this.setBackground()
+        this.setTitleBackground()
         this.setTitleFont();
     }
 
@@ -82,27 +84,30 @@ export default class App extends FontShifter{
         if ((this.iconStyle == 1) || (this.iconStyle == 2)){
             $('.mainColor-fill').css('fill', mainColor)
         }
-        $('.mainColor-bg').css('background-color', mainColor)
-        $('body').css({
-            'background': mainColor,
-            'transition': 'background-color 4s'})
         this.mainColor = mainColor
+        this.mainBgColor = mainColor
+        $('.mainColor-bg').css('background-color', mainColor)
+        this.setBackgroundColor(this.subBgColor, this.mainBgColor)
     }
 
     setSubColor(subColor){
+        this.subColor = subColor;
+        this.subBgColor = subColor;        
         if(this.iconStyle == 3){
             $('.subColor-border').css('border-color', subColor)
             $('.subColor-fill').css('fill', '#000000')
             $('#subColor-fill-3').css('fill', subColor)
-            $('body').css('background', subColor)
         } else {
             $('.subColor-fill').css('fill', subColor)
             $('.subColor-border').css('border-color', subColor)
-            $('body').css({
-                'background': subColor,
-                'transition': 'background-color 4s'})
         }
-        this.subColor = subColor;
+        this.setBackgroundColor(this.subBgColor, this.mainBgColor)
+    }
+
+    setBackgroundColor(subBgColor, mainBgColor){
+        $('body').css({
+            'background': `linear-gradient(110deg, ${subBgColor} 60%, ${mainBgColor} 60%)`,
+            'transition': 'background 4s'})
     }
 
     setTextColor(textColor){
@@ -282,8 +287,8 @@ export default class App extends FontShifter{
         return super.setTitleFont(this.getFontURL(this.selectNewFontStyle()))
     }
 
-    setBackground(){
-        return super.setBackground()
+    setTitleBackground(){
+        return super.setTitleBackground()
     }
 
     setValid(element){
@@ -309,17 +314,11 @@ export default class App extends FontShifter{
         if($('#form_checkbox').prop('checked')){
             $('#form_checkbox').prop('checked', !$('#form_checkbox').prop('checked'))
         }
-        $('.app_panel_preview_button').css('animation', 'buttonCreated 3s ease-in-out .5s forwards')
+        $('#createButton').attr('disabled', 'disabled')
+        $('.app_panel_preview_button').css('animation', 'buttonCreated 2s ease-in-out .5s forwards')
         setTimeout(() => {
             new WhatsappButton(this.phoneNumber, this.wMessage, this.phMessage, this.dMessage, this.iconStyle, this.mainColor, this.subColor, this.textColor, this.fontFamily)
-        }, 1000);
-        let interval = setInterval(() => {
-            if($('#whatsapp_wrapper').length){
-                $('.app_panel_preview_button').css({opacity: '1',
-                                                // animation: 'none'
-                                            })
-                clearInterval(interval)
-            }
-        }, 500)
+        }, 2000);
+
     }
 }

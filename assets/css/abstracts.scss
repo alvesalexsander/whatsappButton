@@ -48,10 +48,27 @@ $color-white: #ffffff;
 
 @keyframes buttonExpand{
     0%{
+        opacity: 0;
+        transform: translate(-50%,-50%) scale(1);
+    }
+
+    1%{
+        opacity: 1;
+    }
+
+    20%{
+        transform: translate(-50%,-50%) scale(0);
+    }
+
+    50%{
         transform: translate(-50%,-50%) scale(0);
     }
 
     80%{
+        transform: translate(-50%,-50%) scale(1);
+    }
+
+    90%{
         transform: translate(-50%,-50%) scale(1.1)
     }
 
@@ -62,54 +79,18 @@ $color-white: #ffffff;
 
 @keyframes buttonCreated{
     0%{
-        position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 22rem;
-    height: 14rem;
-    bottom: 42%;
-    right: 34%;
-    box-sizing: border-box;
-    z-index: 900;
+        transform: translate(-50%,-50%) scale(1);
     }
 
     30%{
-        position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 22rem;
-    height: 14rem;
-    bottom: 42%;
-    right: 34%;
-    box-sizing: border-box;
-    z-index: 900;
+        transform: translate(-50%,-50%) scale(1.1);
     }
 
     50%{
-        position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 22rem;
-    height: 14rem;
-    bottom: 42%;
-    right: 34%;
-    box-sizing: border-box;
-    z-index: 900;
+        // transform: translate(-50%,-50%) scale(0);
     }
 
     100%{
-        position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 22rem;
-    height: 14rem;
-    bottom: 12.8%;
-    right: -4.6%;
-    box-sizing: border-box;
-    z-index: 900;
+        transform: translate(-50%,-50%) scale(0);
     }
 }
