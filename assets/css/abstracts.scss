@@ -62,30 +62,54 @@ $color-white: #ffffff;
 
 @keyframes buttonCreated{
     0%{
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(30%, -50%) scale(1);
+        position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 22rem;
+    height: 14rem;
+    bottom: 42%;
+    right: 34%;
+    box-sizing: border-box;
+    z-index: 900;
     }
 
     30%{
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(30%, -50%) scale(.1);
+        position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 22rem;
+    height: 14rem;
+    bottom: 42%;
+    right: 34%;
+    box-sizing: border-box;
+    z-index: 900;
     }
 
     50%{
-        transform: translate(30%, -50%) scale(.1);
-        position: fixed;
-        top: 78.4%;
-        left: 100%;
+        position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 22rem;
+    height: 14rem;
+    bottom: 42%;
+    right: 34%;
+    box-sizing: border-box;
+    z-index: 900;
     }
 
     100%{
-        position: fixed;
-        top: 78.4%;
-        left: 100.75%;
-        transform: translate(30%,-50%) scale(1);
+        position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 22rem;
+    height: 14rem;
+    bottom: 12.8%;
+    right: -4.6%;
+    box-sizing: border-box;
+    z-index: 900;
     }
 }

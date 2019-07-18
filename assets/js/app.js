@@ -49,6 +49,6 @@ function initEventHandlers(){
     })
 
     setTimeout(() => {
-        $('.app_panel_preview_button').css('transform', 'translate(-50%,-50%) scale(1)')
+        // $('.app_panel_preview_button').css('transform', 'translate(-50%,-50%) scale(1)')
     }, 3000);
 }

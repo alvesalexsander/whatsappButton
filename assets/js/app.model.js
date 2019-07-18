@@ -306,14 +306,18 @@ export default class App extends FontShifter{
     }
 
     createButton(){
-        $('.app_panel_preview_button').css('animation', 'buttonCreated 2s ease-in-out .5s forwards')
+        if($('#form_checkbox').prop('checked')){
+            $('#form_checkbox').prop('checked', !$('#form_checkbox').prop('checked'))
+        }
+        $('.app_panel_preview_button').css('animation', 'buttonCreated 3s ease-in-out .5s forwards')
         setTimeout(() => {
             new WhatsappButton(this.phoneNumber, this.wMessage, this.phMessage, this.dMessage, this.iconStyle, this.mainColor, this.subColor, this.textColor, this.fontFamily)
-        }, 2400);
+        }, 1000);
         let interval = setInterval(() => {
             if($('#whatsapp_wrapper').length){
-                $('.app_panel_preview_button').css({opacity: '0',
-                                                animation: 'none'})
+                $('.app_panel_preview_button').css({opacity: '1',
+                                                // animation: 'none'
+                                            })
                 clearInterval(interval)
             }
         }, 500)

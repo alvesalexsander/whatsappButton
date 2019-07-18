@@ -46,28 +46,52 @@
 }
 @keyframes buttonCreated {
   0% {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(30%, -50%) scale(1);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 22rem;
+    height: 14rem;
+    bottom: 42%;
+    right: 34%;
+    box-sizing: border-box;
+    z-index: 900;
   }
   30% {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(30%, -50%) scale(0.1);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 22rem;
+    height: 14rem;
+    bottom: 42%;
+    right: 34%;
+    box-sizing: border-box;
+    z-index: 900;
   }
   50% {
-    transform: translate(30%, -50%) scale(0.1);
-    position: fixed;
-    top: 78.4%;
-    left: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 22rem;
+    height: 14rem;
+    bottom: 42%;
+    right: 34%;
+    box-sizing: border-box;
+    z-index: 900;
   }
   100% {
-    position: fixed;
-    top: 78.4%;
-    left: 100.75%;
-    transform: translate(30%, -50%) scale(1);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 22rem;
+    height: 14rem;
+    bottom: 12.8%;
+    right: -4.6%;
+    box-sizing: border-box;
+    z-index: 900;
   }
 }
 *,
@@ -230,11 +254,16 @@ h1 {
   position: relative;
 }
 .app_panel_preview_button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  animation: buttonExpand 1s ease-in-out 2s forwards;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 22rem;
+  height: 14rem;
+  bottom: 0;
+  right: 0;
+  box-sizing: border-box;
+  z-index: 900;
 }
 
 #fontFamily {
@@ -261,6 +290,19 @@ h1 {
   background: linear-gradient(transparent, green);
   z-index: 2;
   transition: 4s;
+}
+
+.app_panel_preview_button {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 22rem;
+  height: 14rem;
+  bottom: 42%;
+  right: 34%;
+  box-sizing: border-box;
+  z-index: 900;
 }
 
 /*# sourceMappingURL=main.css.map */
