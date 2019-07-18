@@ -160,10 +160,10 @@ class WhatsappButton {
         this.hoverText = this.newElem("div", "class", "whatsapp_hover")
         this.spanHoverText = this.newElem("span", "class", "hover_text", this.welcomeMessage)
         this.formWrapper = this.newElem("div", "class", "whatsapp_form")
-        this.buttonForm = this.newElem("form", ["class", "onsubmit"], ["form_container", "return sendMessage()"])
+        this.buttonForm = this.newElem("form", ["class"], ["form_container"]) //antes: this.newElem("form", ["class", "onsubmit"], ["form_container", "return sendMessage()"])
         this.textarea = this.newElem("textarea", ["id", "class", "name", "placeholder", "required"], ["message", "form_text", "mensagem", this.placeHolder_Message, ""])
-        this.label = this.newElem("label", ["id", "class", "for"], ["send_label", "send_label", "send"])
-        this.labelInput = this.newElem("input", ["id", "type", "name", "value", "class"], ["send", "submit", "send", "", "labelInput"])
+        this.label = this.newElem("label", ["id", "class", "for", "onclick"], ["send_label", "send_label", "send", "return sendMessage()"])
+        this.labelInput = this.newElem("input", ["id", "type", "name", "value", "class"], ["send", "checkbox", "send", "", "labelInput"])
         this.svgLabelSend = this.newElem("svg", "class", "icon_send")
         this.svgLabelUse = this.newElem("use", ["xlink:href", "class"], ["wpp_icons/My icons collection-SVG-sprite.svg#send-button", "svgLabelUse"])
 
@@ -283,7 +283,9 @@ class WhatsappButton {
         //Função para enviar/abrir mensagem através da WhatsApp Web API
 
         return function(){
-            let apiURL = `https://api.whatsapp.com/send?phone=${pNumber}&text=${encodeURIComponent((document.getElementById("message").value).trim())}`;
+            let userInput = document.getElementById("message").value
+            userInput = encodeURIComponent(userInput.trim())
+            let apiURL = `https://api.whatsapp.com/send?phone=${pNumber}&text=${userInput}`;
             window.open(apiURL, "height=200", "width=200");
             document.getElementById("message").value = "";
             return false;
