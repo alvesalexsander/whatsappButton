@@ -13,8 +13,8 @@ We have a friendly user interface for you!
 ## Table of contents
 
 1. [Features](#features)
-2. [Disclaimer](#disclaimer)
-3. [Forwarding](#forwarding)
+2. [Usage](#disclaimer)
+3. [Building](#forwarding)
 4. [Configuration](#configuration)
 5. [Known bugs](#known-bugs)
 6. [Credits and support](#credits-and-support)
@@ -29,7 +29,13 @@ Here is some info about it:
 
 - **Dependency-free**:  Built with pure javascript and css. No need of match other dependencies to have you whatsappButton.
 
-- **Dependency-free**:  Built with pure javascript and css. No need of match other dependencies to have you whatsappButton.
+- **Highly customizable**:  *whatsappButton.js* wears the colors and fits along with your product. Create personalized phrases to welcome your public, pick the color of your choice to style your button and, of course, a font style to carry your message!
+
+- **Easy-to-use**:  Your users will be a click away from you. And you, a few little steps to implement. *whatsappButton.js* is ready for deployment.
+
+- **Open-source code**:  This is an open-source project. It means that you are free to download, edit and share improvements. If possible, please credit the original author.
+
+- **Easy-to-use**:  Your users will be a click away from you. And you, a few little steps to implement. *whatsappButton.js* is ready for deployment.
 
 
 
