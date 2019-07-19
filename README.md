@@ -73,14 +73,14 @@ This section is a more techinical insight that explains how the whatsappButton.j
 ### Parameters
 These are the parameters in sequence of object instantiation:
 
-| Parameter  | Type                          | Description                                                                          |
-|------------|-------------------------------|--------------------------------------------------------------------------------------|
+| Parameter  | Type                          | Description                                                                            |
+|------------|-------------------------------|----------------------------------------------------------------------------------------|
 | pNumber *  | string(preferred), number     | Enter only numbers of an phone number to received messages. For example: 5522123456789 |
-| wMessage   | string                        | Will be displayed when mouse is over the button. Recommended: <=16 characters.       |
-| phMessage  | string                        | This one will be shown while the user didn't type in the input field yet.            |
+| wMessage   | string                        | Will be displayed when mouse is over the button. Recommended: <=16 characters.         |
+| phMessage  | string                        | This one will be shown while the user didn't type in the input field yet.              |
 | dMessage   | string                        | At mobile, Whatsapp will be automatically launch with this message in chat input field |
-| iconStyle  | string(preferred), number     | Pick an icon style of your choice. Values 0-4.
+| iconStyle  | string(preferred), number     | Pick an icon style of your choice. Values 0-4.                                         |
 | color      | string(#xxxxxx/#xxx/rgb/rgba) | Pick a main color for the backgrounds. HEX and rgb/rgba formats are supported.         |
 | subColor   | string(#xxxxxx/#xxx/rgb/rgba) | Pick a main color for the details. HEX and rgb/rgba formats are supported.             |
 | textColor  | string(#xxxxxx/#xxx/rgb/rgba) | Pick a color for the texts. HEX and rgb/rgba formats are supported.                    |
-| fontFamily | string(Google Fonts Name/URL) | Enter a font name or font URL from any of the available at **[Google Fonts API](https://fonts.google.com/)**|
+| fontFamily | string(Google Fonts Name/URL) | Enter a font name or font URL from any of the available ** at **[Google Fonts API](https://fonts.google.com/)**.<br>For example: 'Squada One' or 'https://fonts.googleapis.com/css?family=Squada+One&display=swap'|
