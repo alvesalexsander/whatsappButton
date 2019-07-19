@@ -108,10 +108,10 @@ These are the basic building informations about whatsappButton.js plugin.
 This is the whatsappButton.js User Interface.
 <br>
 <br>
-![User Interface0](https://sashaclimax.github.io/whatsappButton/assets/documentation_images/social_preview_0.PNG)
+![User Interface0](https://sashaclimax.github.io/whatsappButton/assets/documentation_images/social_preview_0_subbed.png)
 <br>
 <br>
-![User Interface1](https://sashaclimax.github.io/whatsappButton/assets/documentation_images/social_preview_1.PNG)
+![User Interface1](https://sashaclimax.github.io/whatsappButton/assets/documentation_images/social_preview_1_subbed.png)
 <br>
 <br>The UI will help you with a live-preview version check how it is going to be.
 <br>It was and is tested often to ensure a fail-proof result at creating your button.
