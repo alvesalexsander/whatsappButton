@@ -23,7 +23,11 @@ We have a friendly user interface for you!
 
 ## Features
 
-whatsappButton.js is a dependency-free plugin that will provide a new channel to communicate with your public through the internet.
+whatsappButton.js is a tool that will provide a new way to get to your public through the internet.
+
+hese are its main features:
+
+- **SD card browser**:  A simple but fully equiped file browser for the SD card, supporting several file formats (such as NSP, NRO, NACP, NXTheme, JPEG, tickets...), and with support for copying, pasting, renaming, deleting and creating files and directories.
 
 
 
