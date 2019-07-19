@@ -121,7 +121,7 @@ This is the whatsappButton.js User Interface.
 <br>And if you did not liked the final result, a "Reset" button will become available, so you can restart right away where you stopped!
 <br>
 <br>
-![User Interface2](https://sashaclimax.github.io/whatsappButton/assets/documentation_images/social_preview_2.png)
+![User Interface2](https://sashaclimax.github.io/whatsappButton/assets/documentation_images/social_preview_2_subbed.png)
 
 ------------------------------------------------
 
