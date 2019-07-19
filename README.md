@@ -71,19 +71,16 @@ This section is a more techinical insight that explains how the whatsappButton.j
  **2. Instantiation Parameters** - WhatsappButton is the class that handles some parameters at object instantiation.<br>These parameters are in charge of shaping up the button layout.
 
 ### Parameters
-hese are the options supported on the INI file (not found boolean options are defaulted to false):
+These are the parameters in sequence of object instantiation:
 
-| Parameter | Type               | Description                                                                          |
-|---------|----------------------|--------------------------------------------------------------------------------------|
-| pNumber | string(preffered), number | { true, false }  If not true,'customLanguage' will be ignored.                       |
-| General | customLanguage       | { en, es, de, fr, it } Ignores the console's language and use this one.              |
-| General | keysPath             | { (path starting with "/") } Key file path, defaults to "/switch/prod.keys".         |
-| UI      | romfsReplace         | { true, false } If not true, 'romfsReplacePath' will be ignored.                     |
-| UI      | romfsReplacePath     | { (path starting with "/") } Path to search RomFs resources, if it's a valid one.    |
-| UI      | useCustomColors      | { true, false } If not true, colors' options will be ignored.                        |
-| UI      | colorBackground      | { (color in 4 bytes, example: "55,125,255,255") } Background color.                  |
-| UI      | colorBase            | { (color in 4 bytes, example: "55,125,255,255") } Base display color.                |
-| UI      | colorBaseFocus       | { (color in 4 bytes, example: "55,125,255,255") } Base display  color, when focused. |
-| UI      | colorText            | { (color in 4 bytes, example: "55,125,255,255") } Text color.                        |
-| UI      | useCustomSizes       | { true, false } If not true, sizes' options will be ignored.                         |
-| UI      | fileBrowserItemsSize | { (number, divisible by 5) } Size of the items on file browsers, 50 by default.      |
+| Parameter  | Type                          | Description                                                                          |
+|------------|-------------------------------|--------------------------------------------------------------------------------------|
+| pNumber *  | string(preferred), number     | Enter only numbers of an phone number to received messages. For example: 5522123456789 |
+| wMessage   | string                        | Will be displayed when mouse is over the button. Recommended: <=16 characters.       |
+| phMessage  | string                        | This one will be shown while the user didn't type in the input field yet.            |
+| dMessage   | string                        | At mobile, Whatsapp will be automatically launch with this message in chat input field |
+| iconStyle  | string(preferred), number     | Pick an icon style of your choice. Values 0-4.
+| color      | string(#xxxxxx/#xxx/rgb/rgba) | Pick a main color for the backgrounds. HEX and rgb/rgba formats are supported.         |
+| subColor   | string(#xxxxxx/#xxx/rgb/rgba) | Pick a main color for the details. HEX and rgb/rgba formats are supported.             |
+| textColor  | string(#xxxxxx/#xxx/rgb/rgba) | Pick a color for the texts. HEX and rgb/rgba formats are supported.                    |
+| fontFamily | string(Google Fonts Name/URL) | Enter a font name or font URL from any of the available at **[Google Fonts API](https://fonts.google.com/)**|
