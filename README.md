@@ -8,6 +8,8 @@
 Try it out at: https://sashaclimax.github.io/whatsappButton/
 We have a friendly user interface for you!
 
+## **[Download it from here!](https://github.com/sashaclimax/whatsappButton.js)**
+
 ------------------------------------------------
 
 ## Table of contents
@@ -19,7 +21,6 @@ We have a friendly user interface for you!
 5. [Known bugs](#known-bugs)
 6. [Credits and support](#credits-and-support)
 
-## **[Download it from here!](https://github.com/sashaclimax/whatsappButton.js)**
 
 ## Features
 
