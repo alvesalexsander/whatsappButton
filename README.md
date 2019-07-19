@@ -1,12 +1,12 @@
 # whatsappButton
 *Em desenvolvimento*<br>
-whatsappButton.js é um plugin que cria de forma fácil, rápida e confiável um botão personalizado<br>que utiliza a Whatsapp Web API para enviar mensagens
+<br>whatsappButton.js is a plugin made with javascript that creates a interactive button for your web aplications.
+<br>It is easy-to-use, customizable and resilient.
 
 ------------------------------------------------
 
-Apesar de estar em desenvolvimento, você já pode testar o progresso em:
-
-https://sashaclimax.github.io/whatsappButton/
+Try it out at: https://sashaclimax.github.io/whatsappButton/
+And
 
 simplesmente abrindo o Dev Tools (F12) e entrando o seguinte comando no console:
 
