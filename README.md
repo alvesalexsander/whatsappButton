@@ -25,9 +25,11 @@ We have a friendly user interface for you!
 
 whatsappButton.js is a tool that will provide a new way to get to your public through the internet.
 
-hese are its main features:
+Here is some info about it:
 
-- **SD card browser**:  A simple but fully equiped file browser for the SD card, supporting several file formats (such as NSP, NRO, NACP, NXTheme, JPEG, tickets...), and with support for copying, pasting, renaming, deleting and creating files and directories.
+- **Dependency-free**:  Built with pure javascript and css. No need of match other dependencies to have you whatsappButton.
+
+- **Dependency-free**:  Built with pure javascript and css. No need of match other dependencies to have you whatsappButton.
 
 
 
