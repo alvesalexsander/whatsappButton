@@ -85,4 +85,8 @@ These are the parameters in sequence of object instantiation:
 | textColor  | string(#xxxxxx/#xxx/rgb/rgba) | Pick a color for the texts. HEX and rgb/rgba formats are supported.                    |
 | fontFamily | string(Google Fonts Name/URL) | Enter a font name or font URL from any of the available ** at **[Google Fonts API](https://fonts.google.com/)**.<br>For example: 'Squada One' or 'https://fonts.googleapis.com/css?family=Squada+One&display=swap'|
 
-***** - phNumber is the only requiredDo not enter symbols or other characters than numbers in this parameter field.
+**pNumber** * - It is the only <strong>required</strong> parameter. Buttons called with this minimal requirement will have the default style applied.
+<br>Please, do not enter symbols or other characters than numbers in this parameter field.
+
+**fontFamily** ** - For some reason, Press Start 2P is a known font style that does not work well.
+<br>It is possible that there may be a few more incompatible font styles.
