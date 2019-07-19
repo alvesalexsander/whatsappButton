@@ -63,4 +63,4 @@ Then, you can call your created button on any .js file or in a <script> tag.
 
 ## Building
 
-This section is 
+This section is a more techinical insight that explains how the whatsappButton.js works
