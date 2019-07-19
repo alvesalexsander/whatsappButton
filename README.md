@@ -89,8 +89,8 @@ These are the parameters in sequence of object instantiation:
 
 **fontFamily** ** - For some reason, Press Start 2P is a known font style that does not work well.
 <br>It is possible that there may be a few more incompatible font styles.
-
-<br><br>**Default styles**:
+<br><br>
+**3. Default styles**:
 <br>
 ![Default Closed](https://sashaclimax.github.io/whatsappButton/assets/documentation_images/default_style_closed.png)
 <br>
@@ -104,3 +104,5 @@ These are the basic building informations about whatsappButton.js plugin.
 ------------------------------------------------
 
 ## User Interface
+
+This is the whatsappButton.js UI. 
