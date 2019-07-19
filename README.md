@@ -44,5 +44,14 @@ Here is some info about it:
 
 ## Usage
 
-Sinta-se livre para dar fork e utilizar o projeto.
-Caso queira contribuir com o desenvolvimento, seja bem-vindo. (E eu agradeço!).
+How To Use:
+
+- **1.** Download plugin files at: whatsappButton.js page OR Use the CDN Links: 
+https://sashaclimax.github.io/whatsappButton.js/dist/wpp_css/whatsappButton.css https://sashaclimax.github.io/whatsappButton.js/dist/wpp_js/whatsappButton.js 
+
+#2 - Link the .CSS file with a link tag in the head tag of your application. 
+
+#3 - Link the .JS file with a script tag in the head or body tags of your application. 
+
+#4 - Use the User Interface at https://sashaclimax.github.io/whatsappButton/ to create your button layout 
+OR check the documentation at https://github.com/sashaclimax/whatsappButton
