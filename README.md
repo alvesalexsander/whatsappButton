@@ -105,8 +105,11 @@ These are the basic building informations about whatsappButton.js plugin.
 
 ## User Interface
 
-This is the whatsappButton.js UI.
+This is the whatsappButton.js User Interface.
 <br>
-![User Interface]https://sashaclimax.github.io/whatsappButton/assets/documentation_images/social_preview.PNG
+![User Interface](https://sashaclimax.github.io/whatsappButton/assets/documentation_images/social_preview.PNG)
 <br>
-
+<br>
+The UI will help you in a interactive way to build your button.
+<br>It was and is tested often to ensure a fail-proof result at creating your button.
+<br>When you finish
