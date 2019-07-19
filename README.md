@@ -17,8 +17,7 @@ We have a friendly user interface for you!
 1. [Features](#features)
 2. [Usage](#usage)
 3. [Building](#building)
-4. [Configuration](#configuration)
-5. [Known bugs](#known-bugs)
+4. [User Interface](#user-interface)
 6. [Credits and support](#credits-and-support)
 
 
@@ -94,6 +93,8 @@ These are the parameters in sequence of object instantiation:
 These are the basic building informations about whatsappButton.js plugin.
 <br>Please, feel free to download and explore more about it.
 <br>If you have any tips, report or compliment(or complain) to add, do not hesitate to contact us.
-You can e-mail the author at: alvesalexsander@live.com OR contato@alexsanderalves.com
+<br>You can e-mail the author at: alvesalexsander@live.com OR contato@alexsanderalves.com
 
 ------------------------------------------------
+
+## User Interface
