@@ -27,11 +27,11 @@ whatsappButton.js is a tool that will provide a new way to get to your public th
 
 Here is some info about it:
 
-- **Dependency-free**:  Built with pure javascript and css. No need of match other dependencies to have your whatsappButton.
+- **Dependency-free**:  Built with pure javascript and css. No need of match other dependencies to have your **[*whatsappButton.js*](https://sashaclimax.github.io/whatsappButton/)**.
 
 - **Highly customizable**:  **[*whatsappButton.js*](https://sashaclimax.github.io/whatsappButton/)** wears the colors and fits along with your product.<br>Create personalized phrases to welcome your public, pick the color of your choice to style your button and, of course, a font style to carry your message!
 
-- **Easy-to-use**:  Your users will be a click away from you. And you, a few little steps to implement.<br>*whatsappButton.js* is ready for deployment.
+- **Easy-to-use**:  Your users will be a click away from you. And you, a few little steps to implement.<br>**[*whatsappButton.js*](https://sashaclimax.github.io/whatsappButton/)** is ready for deployment.
 
 - **Open-source code**:  This is an open-source project. It means that you are free to download, edit and share improvements.<br>If possible, please credit the original author.
 
