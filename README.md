@@ -23,6 +23,8 @@ We have a friendly user interface for you!
 
 ## Features
 
+whatsappButton.js is a dependency-free plugin that will provide a new channel to communicate with your public through the internet.
+
 
 
 ------------------------------------------------
