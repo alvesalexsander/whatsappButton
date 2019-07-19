@@ -1,4 +1,4 @@
-# whatsappButton
+# whatsappButton.js
 *Em desenvolvimento*<br>
 
 ## Presentation
@@ -10,14 +10,20 @@ We have a friendly user interface for you!
 
 ------------------------------------------------
 
-<h1><strong>Table of contents</strong></h1>
+## Table of contents
 
-<<strong></strong>
+1. [Features](#features)
+2. [Disclaimer](#disclaimer)
+3. [Forwarding](#forwarding)
+4. [Configuration](#configuration)
+5. [Known bugs](#known-bugs)
+6. [Credits and support](#credits-and-support)
+
+## **[Download it from here!](https://github.com/sashaclimax/whatsappButton.js)**
+
+## Features
 
 
-simplesmente abrindo o Dev Tools (F12) e entrando o seguinte comando no console:
-
-new WhatsappButton();
 
 ------------------------------------------------
 
