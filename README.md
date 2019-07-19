@@ -90,13 +90,26 @@ These are the parameters in sequence of object instantiation:
 **fontFamily** ** - For some reason, Press Start 2P is a known font style that does not work well.
 <br>It is possible that there may be a few more incompatible font styles.
 <br><br>
+**3. Default styles**:
+<br>
+![Default Closed](https://sashaclimax.github.io/whatsappButton/assets/documentation_images/default_style_closed.png)
+<br>
+![Default Opened](https://sashaclimax.github.io/whatsappButton/assets/documentation_images/default_style_opened.PNG)
+<br><br>
 These are the basic building informations about whatsappButton.js plugin.
 <br>Please, feel free to download and explore more about it.
 <br>If you have any tips, report or compliment(or complain) to add, do not hesitate to contact us.
 <br>You can e-mail the author at: alvesalexsander@live.com OR contato@alexsanderalves.com
 
-![Dafault Closed](whatsappButton/assets/documentation%20images/default_style_closed.png)
-
 ------------------------------------------------
 
 ## User Interface
+
+This is the whatsappButton.js User Interface.
+<br>
+![User Interface](https://sashaclimax.github.io/whatsappButton/assets/documentation_images/social_preview.PNG)
+<br>
+<br>
+The UI will help you in a interactive way to build your button.
+<br>It was and is tested often to ensure a fail-proof result at creating your button.
+<br>When you finish
