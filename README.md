@@ -2,7 +2,7 @@
 *still in development*<br>
 
 ## Presentation
-<br>whatsappButton.js is a plugin made with javascript that creates a interactive button for your web aplications.
+<br>*whatsappButton.js* is a plugin made with javascript that creates a interactive button for your web aplications.
 <br>It is easy-to-use, customizable and resilient.
 
 Try it out at: https://sashaclimax.github.io/whatsappButton/
@@ -23,7 +23,7 @@ Try it out at: https://sashaclimax.github.io/whatsappButton/
 
 ## Features
 
-whatsappButton.js is a tool that will provide a new way to get to your public through the internet.
+*whatsappButton.js* is a tool that will provide a new way to get to your public through the internet.
 
 Here is some info about it:
 
@@ -43,7 +43,7 @@ Here is some info about it:
 
 How To Use:
 
-- **1.** Download plugin files at: whatsappButton.js page OR Use the CDN Links: 
+- **1.** Download plugin files at: *whatsappButton.js* page OR Use the CDN Links: 
 https://sashaclimax.github.io/whatsappButton.js/dist/wpp_css/whatsappButton.css https://sashaclimax.github.io/whatsappButton.js/dist/wpp_js/whatsappButton.js 
 
 - **2.** Link the .CSS file with a link tag in the head tag of your application. 
@@ -62,7 +62,7 @@ Then, you can call your created button on any .js file or in a <script> tag.
 
 ## Building
 
-This section is a more techinical insight that explains how the whatsappButton.js works
+This section is a more technical insight that explains how the *whatsappButton.js* works.
 
  **1. Technology Stack** - The plugin is fully developed with front-end technology. Made with Vanilla JavaScript and CSS Rules.
  <br>There is no other dependency that a web browser capable of parsing JavaScript ES6 and CSS3 specifications to run *whatsappButton.js*.
@@ -96,7 +96,7 @@ These are the parameters in sequence of object instantiation:
 <br>
 ![Default Opened](https://sashaclimax.github.io/whatsappButton/assets/documentation_images/default_style_opened.PNG)
 <br><br>
-These are the basic building informations about whatsappButton.js plugin.
+These are the basic building informations about *whatsappButton.js* plugin.
 <br>Please, feel free to download and explore more about it.
 <br>If you have any tips, report or compliment(or complain) to add, do not hesitate to contact us.
 <br>You can e-mail the author at: alvesalexsander@live.com OR contato@alexsanderalves.com
@@ -105,7 +105,7 @@ These are the basic building informations about whatsappButton.js plugin.
 
 ## User Interface
 
-This is the whatsappButton.js User Interface.
+This is the *whatsappButton.js* User Interface.
 <br>
 <br>
 ![User Interface0](https://sashaclimax.github.io/whatsappButton/assets/documentation_images/social_preview_0_subbed.png)
