@@ -1,6 +1,6 @@
-# whatsappButton.js
-*still in development*<br>
-
+# *whatsappButton.js*
+*still in development*
+<br>
 ## Presentation
 <br>*whatsappButton.js* is a plugin made with javascript that creates a interactive button for your web aplications.
 <br>It is easy-to-use, customizable and resilient.
