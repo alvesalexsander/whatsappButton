@@ -66,7 +66,7 @@ Then, you can call your created button on any .js file or in a <script> tag.
 This section is a more techinical insight that explains how the whatsappButton.js works
 
  **1. Technology Stack** - The plugin is fully developed with front-end technology. Made with Vanilla JavaScript and CSS Rules.
- <br>There is no other dependency that a web browser capable of parsing JavaScript ES6 and CSS3 to run *whatsappButton.js*.
+ <br>There is no other dependency that a web browser capable of parsing JavaScript ES6 and CSS3 specifications to run *whatsappButton.js*.
  
  **2. Instantiation Parameters** - WhatsappButton is the class that handles some parameters at object instantiation.<br>These parameters are in charge of shaping up the button layout.
 
@@ -84,3 +84,5 @@ These are the parameters in sequence of object instantiation:
 | subColor   | string(#xxxxxx/#xxx/rgb/rgba) | Pick a main color for the details. HEX and rgb/rgba formats are supported.             |
 | textColor  | string(#xxxxxx/#xxx/rgb/rgba) | Pick a color for the texts. HEX and rgb/rgba formats are supported.                    |
 | fontFamily | string(Google Fonts Name/URL) | Enter a font name or font URL from any of the available ** at **[Google Fonts API](https://fonts.google.com/)**.<br>For example: 'Squada One' or 'https://fonts.googleapis.com/css?family=Squada+One&display=swap'|
+
+***** - phNumber is the only requiredDo not enter symbols or other characters than numbers in this parameter field.
