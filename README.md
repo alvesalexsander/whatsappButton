@@ -95,7 +95,7 @@ These are the basic building informations about whatsappButton.js plugin.
 <br>If you have any tips, report or compliment(or complain) to add, do not hesitate to contact us.
 <br>You can e-mail the author at: alvesalexsander@live.com OR contato@alexsanderalves.com
 
-![Default Closed](https://sashaclimax.github.io/whatsappButton/assets/documentation%20images/default_style_closed.png)
+![Default Closed](https://sashaclimax.github.io/whatsappButton/assets/documentation_images/default_style_closed.png)
 
 ------------------------------------------------
 
