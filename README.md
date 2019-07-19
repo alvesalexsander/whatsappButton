@@ -6,7 +6,7 @@
 <br>It is easy-to-use, customizable and resilient.
 
 Try it out at: https://sashaclimax.github.io/whatsappButton/
-We have a friendly user interface for you!
+<br>We have a friendly user interface for you!
 
 ## **[Download it from here!](https://github.com/sashaclimax/whatsappButton.js)**
 
@@ -94,6 +94,8 @@ These are the basic building informations about whatsappButton.js plugin.
 <br>Please, feel free to download and explore more about it.
 <br>If you have any tips, report or compliment(or complain) to add, do not hesitate to contact us.
 <br>You can e-mail the author at: alvesalexsander@live.com OR contato@alexsanderalves.com
+
+![Dafault Closed](whatsappButton/assets/documentation%20images/default_style_closed.png)
 
 ------------------------------------------------
 
