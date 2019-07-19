@@ -42,5 +42,7 @@ Here is some info about it:
 
 ------------------------------------------------
 
+## Usage
+
 Sinta-se livre para dar fork e utilizar o projeto.
 Caso queira contribuir com o desenvolvimento, seja bem-vindo. (E eu agradeço!).
