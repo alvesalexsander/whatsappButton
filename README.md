@@ -108,10 +108,10 @@ These are the basic building informations about whatsappButton.js plugin.
 This is the whatsappButton.js User Interface.
 <br>
 <br>
-![User Interface](https://sashaclimax.github.io/whatsappButton/assets/documentation_images/social_preview_0.PNG)
+![User Interface0](https://sashaclimax.github.io/whatsappButton/assets/documentation_images/social_preview_0.PNG)
 <br>
 <br>
-![User Interface](https://sashaclimax.github.io/whatsappButton/assets/documentation_images/social_preview_1.PNG)
+![User Interface1](https://sashaclimax.github.io/whatsappButton/assets/documentation_images/social_preview_1.PNG)
 <br>
 <br>The UI will help you with a live-preview version check how it is going to be.
 <br>It was and is tested often to ensure a fail-proof result at creating your button.
@@ -119,3 +119,21 @@ This is the whatsappButton.js User Interface.
 <br>When you are finished, click on the "I've done. Make my Button!" and the UI will make an instance of your ready-to-use whatsappButton! You may test your button to see how it works at will!
 <br>For last, the UI will also display instructions of how to use your button.
 <br>And if you did not liked the final result, a "Reset" button will become available, so you can restart right away where you stopped!
+<br>
+<br>
+![User Interface2](https://sashaclimax.github.io/whatsappButton/assets/documentation_images/social_preview_2.png)
+
+------------------------------------------------
+
+## Credits and support
+
+Hi, my name is Alexsander Alves and I am a front-end developer.
+<br>I am the developer behind *whatsappButton.js* plugin.
+<br>
+<br>First of all, I would like to thanks you for coming and seeing my job. It is very valuable to me.
+<br>My purpose working on this project is to bring to the community a solid and at the same time flexible solution on establishing a good and beautiful communication channel with their public.
+<br>*whatsappButton.js* is meant to be simple and effective at what is has born to be: connecting people.
+<br>
+<br>I would appreciate if you use it, test it, share your thoughts and spread the plugin.
+<br>Just like I said before, you all are welcome to participate with new ideias to the plugin!
+
