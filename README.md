@@ -90,3 +90,10 @@ These are the parameters in sequence of object instantiation:
 
 **fontFamily** ** - For some reason, Press Start 2P is a known font style that does not work well.
 <br>It is possible that there may be a few more incompatible font styles.
+<br><br>
+These are the basic building informations about whatsappButton.js plugin.
+<br>Please, feel free to download and explore more about it.
+<br>If you have any tips, report or compliment(or complain) to add, do not hesitate to contact us.
+You can e-mail the author at: alvesalexsander@live.com OR contato@alexsanderalves.com
+
+------------------------------------------------
