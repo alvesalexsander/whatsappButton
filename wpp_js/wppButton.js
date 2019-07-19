@@ -55,7 +55,7 @@ class WhatsappButton {
         }
 
         if(subColor){
-            this.styleSubColor(subColor)
+            this.styleSubColor(subColor, iconStyle)
         }
 
         if(textColor){
@@ -148,8 +148,8 @@ class WhatsappButton {
         if((background == 1) || (background == 2)){
             /* Parametro background checa a necessidade de instanciação dos elementos HTML
             que fazem a cor de fundo do SVG de acordo com o iconStyle escolhido*/
-            this.svgCircle = this.newElem("circle", ["cx", "cy", "r", "style"], ["32", "32", "31", "fill: #2d8b29"])
-            this.svgPath = this.newElem("path", ["d", "style"], ["M 7 51 l 10 7 l -11 3 z", "fill: #2d8b29"])
+            this.svgCircle = this.newElem("circle", ["cx", "cy", "r", "style"], ["32", "32", "31", "fill: #fff"])
+            this.svgPath = this.newElem("path", ["d", "style"], ["M 7 51 l 10 7 l -11 3 z", "fill: #fff"])
         }
 
         this.buttonWrapper = this.newElem("div", ["id","class"], ["whatsapp_wrapper", "whatsapp_cta"])
@@ -255,8 +255,12 @@ class WhatsappButton {
         }
     }
 
-    styleSubColor(subColor){
-        if(this.checkColorFormat(subColor)){
+    styleSubColor(subColor, background){
+        if(background == '3'){
+            this.svgButtonUse.style.cssText += `fill: #000000 !important;`
+            this.textarea.style.cssText += `border-color: ${subColor} !important;;`
+            this.svgLabelSend.style.cssText += `fill: ${subColor} !important;`
+        }else if(this.checkColorFormat(subColor)){
             this.svgButtonUse.style.cssText += `fill: ${subColor} !important;`
             this.textarea.style.cssText += `border-color: ${subColor} !important;;`
             this.svgLabelSend.style.cssText += `fill: ${subColor} !important;`
@@ -390,6 +394,11 @@ class WhatsappButton {
         }
 
         if((!isNaN(data)) && (typeof(data) === "string")){
+            if((data.includes('+'))){
+                data = data.replace('+', '')
+            } else if((data.includes('-'))){
+                data = data.replace('-', '')
+            }
             return data
         } else {
             throw new Error("Missing phone number or it has a wrong format. Please, use only numbers: eg. 5522123456789.\nFor more information, check the documentation at: https://github.com/sashaclimax/whatsappButton")

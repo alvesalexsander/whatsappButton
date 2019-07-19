@@ -46,6 +46,22 @@ $color-white: #ffffff;
     }
 }
 
+// .expand-grow{
+//     animation: buttonExpand 2s ease-in-out forwards;
+// }
+
+// .expand-shrink{
+//     animation: buttonExpand 2s ease-in-out forwards reverse;
+// }
+
+// .create-shrink{
+//     animation: buttonCreated 2s ease-in-out 1.5s forwards reverse;
+// }
+
+// .create-grow{
+//     animation: buttonCreated 1s ease-in-out .5s forwards;
+// }
+
 @keyframes buttonExpand{
     0%{
         opacity: 0;

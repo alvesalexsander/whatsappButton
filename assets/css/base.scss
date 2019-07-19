@@ -12,20 +12,31 @@ html{
 
 body{
     // padding: 1rem;
-    background: #444;
+    background: linear-gradient(110deg, #444 60%, #333 60%);
     position: relative;
     color: $color-white;
     height: 100vh;
 }
 
-h1, h2, h6{
+h2, h6{
     font-family: 'Roboto', sans-serif;
     
 }
 
 h1{
+    font-family: 'Monoton', sans-serif;
     opacity: 0;
     transform: translateX(50%);
     animation: titleIn 2s ease-out 1s forwards;
     text-shadow: 0rem 0rem 5rem rgba(255, 255, 255, 0.4);
+}
+
+a{
+    color: $color-white;
+    font-weight: 500;
+
+    &:hover{
+        color: $color-white;
+        font-weight: 1000;
+    }
 }

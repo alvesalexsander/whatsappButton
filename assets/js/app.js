@@ -24,6 +24,11 @@ function initEventHandlers(){
         app.setPhMessage($('#phMessage').val())
     })
 
+    //Default Message Input
+    $('#dMessage').keyup(() => {
+        app.setDMessage($('#dMessage').val())
+    })
+
     //Main Color Input
     $('#mainColor').change(() => {
         app.setMainColor($('#mainColor').val())
@@ -48,7 +53,7 @@ function initEventHandlers(){
         app.createButton()
     })
 
-    setTimeout(() => {
-        // $('.app_panel_preview_button').css('transform', 'translate(-50%,-50%) scale(1)')
-    }, 3000);
+    $('#resetButton').click(() => {
+        app.resetButton()
+    })
 }

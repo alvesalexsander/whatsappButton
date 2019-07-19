@@ -7,6 +7,7 @@
   <title>whatsapp Button Plugin - Dev Build</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/9bebcca292.js"></script>
   <link rel="stylesheet" href="wpp_css/styles.css">
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
@@ -51,22 +52,22 @@
               <div class="app_panel_form-1 carousel-item active">
                   <div class="form-group">
                     <label for="phoneNumber">Phone number:</label>
-                    <input class="form-control" id="phoneNumber" type="tel" required>
+                    <input class="form-control" id="phoneNumber" type="tel" placeholder="Enter only numbers." required>
                     <small id="phoneHelp" class="form-text text-muted">Only numbers. No symbols needed. e.g: 5522123456789</small>
                   </div>
                   <div class="form-group">
                     <label for="wMessage">Welcome Message:</label>
-                    <input class="form-control" id="wMessage" type="text">
+                    <input class="form-control" id="wMessage" type="text" placeholder="Average of 16 characters.">
                     <small id="wMessageHelp" class="form-text text-muted">Will be displayed when mouse is over the button.<br>Recommended: <=16 characters</small>
                   </div>
                   <div class="form-group">
                     <label for="phMessage">Placeholder Message:</label>
-                    <input class="form-control" id="phMessage" type="text">
+                    <input class="form-control" id="phMessage" type="text" placeholder="No characters limit.">
                     <small id="phMessageHelp" class="form-text text-muted">This one will be shown while the user didn't type.</small>
                   </div>
                   <div class="form-group">
                     <label for="dMessage">Default Message:</label>
-                    <input class="form-control" id="dMessage" type="text">
+                    <input class="form-control" id="dMessage" type="text" placeholder="Starts mobile chat.">
                     <small id="dMessageHelp" class="form-text text-muted">At mobile, this message will start user's conversation.</small>
                   </div>
                   <div class="form-group">
@@ -100,7 +101,7 @@
                       <div class="form-group ">
                         <label for="fontFamily"><a href="https://fonts.google.com/" style="color: inherit"><i>Google Fonts</i></a> Family Name/URL:</label>
                         <input class="form-control" id="fontFamily" type="text"><div class="lds-ring"><div></div><div></div><div></div><div></div></div>
-                        <small id="fontFamily" class="form-text text-muted">Choose a font from https://fonts.google.com/. Either font name or URL e.g: https://fonts.googleapis.com/css?family=<strong>Roboto</strong>&display=swap</small>
+                        <small id="fontFamily" class="form-text text-muted">Choose a font from <a href="https://fonts.google.com/" style="color: inherit"><strong>https://fonts.google.com/</strong></a>. Either font name or URL e.g: https://fonts.googleapis.com/css?family=<strong>Roboto</strong>&display=swap</small>
                       </div>
                       <br>
                 </div>
@@ -124,7 +125,7 @@
         <h2>Preview</h2>
         <h6>This is how your button are looking like:</h3>
         <div class="app_panel_preview">
-            <div class="whatsapp_cta app_panel_preview_button">
+            <div id="previewButton" class="whatsapp_cta app_panel_preview_button">
               <input id="form_checkbox" class="form_checkbox" type="checkbox">
               <a class="whatsapp_button" href="https://api.whatsapp.com/send?phone=552299788&amp;text=Ol%C3%A1!%20Estou%20entrando%20em%20contato%20e%20gostaria%20de%20saber%3A">
                 <svg class="icon">
@@ -147,8 +148,23 @@
                 </form>
               </div>
             </div>
+            <div id="howToUse" class="app_panel_preview_howToUse">
+              How To Use:<br>#1 - <strong>Download plugin files</strong> at: 
+              <i><a href="https://github.com/sashaclimax/whatsappButton.js">whatsappButton.js page</a></i>
+              <br>OR Use the <strong>CDN Links</strong>:
+              <i><br><a href="https://sashaclimax.github.io/whatsappButton.js/dist/wpp_css/whatsappButton.css" target="_blank" rel="noopener noreferrer">whatsappButton.css</a></i>
+              <i><br><a href="https://sashaclimax.github.io/whatsappButton.js/dist/wpp_js/whatsappButton.js" target="_blank" rel="noopener noreferrer">whatsappButton.js</a></i>
+              <br>#2 - Link the <strong>.CSS</strong> file with a <strong>link tag</strong> in the <strong>head tag</strong> of your application.
+              <br>#3 - Link the <strong>.JS</strong> file with a <strong>script tag</strong> in the <strong>head or body tags</strong> of your application.
+              <br>#4 - Call your button by inserting the following command in a <strong>script tag</strong> of .js file:
+              <br><i><strong><span id="jsCode"></span></strong></i>
+            </div>
         </div>
-        <button id="createButton" class="btn btn-primary" disabled="disabled">I've done. Make my Button!</button>
+        <div class="d-flex justify-content-center mt-md-4">
+            <button id="createButton" class="btn btn-primary align-self-center" disabled="disabled">I've done. Make my Button!</button>
+            <button id="resetButton" class="btn btn-primary" disabled="disabled"><i class="fas fa-redo-alt"></i></button>
+        </div>
+        <div id="errorMessage" class="d-flex justify-content-center">asdad</div>
       </div>
     </div>
   </div>

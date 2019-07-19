@@ -14,6 +14,7 @@ export default class App extends FontShifter{
         this.subBgColor = '#444'
         this.textColor = ''
         this.fontFamily = ''
+        this.jsCode = ''
         this.setTitleBackground()
         this.setTitleFont();
     }
@@ -23,38 +24,45 @@ export default class App extends FontShifter{
             phoneNumber = phoneNumber.toString()
         }
 
-        if((!isNaN(phoneNumber)) && (typeof(phoneNumber) === "string") && (phoneNumber != '')){
+        if((!isNaN(phoneNumber)) && (typeof(phoneNumber) === "string") && (phoneNumber != '') && (!phoneNumber.includes('+')) && (!phoneNumber.includes('-'))){
             if($('#phoneNumber').hasClass('is-invalid')) {$('#phoneNumber').removeClass('is-invalid')}
             if(!($('#phoneNumber').hasClass('is-valid'))) {
                 $('#phoneNumber').addClass('is-valid')
                 $('#createButton').removeAttr('disabled')
             }
             this.setPhoneNumber(phoneNumber)
+            return true
         } else {
             if($('#phoneNumber').hasClass('is-valid')) {$('#phoneNumber').removeClass('is-valid')}
             if(!($('#phoneNumber').hasClass('is-invalid'))) {
                 $('#phoneNumber').addClass('is-invalid')
                 $('#createButton').attr('disabled', 'disabled')
             }
+            this.setPhoneNumber(phoneNumber)
+            return false
         }
     }
 
     setPhoneNumber(phoneNumber){
         this.phoneNumber = phoneNumber
+        this.updateJsCode()
     }
 
     setWMessage(wMessage){
         $('.wMessage').html(wMessage)
         this.wMessage = wMessage
+        this.updateJsCode()
     }
 
     setPhMessage(phMessage){
         $('.phMessage').attr('placeholder', phMessage);
         this.phMessage = phMessage
+        this.updateJsCode()
     }
 
     setDMessage(dMessage){
         this.dMessage = dMessage
+        this.updateJsCode()
     }
 
     setIconStyle(iconStyle){    
@@ -78,6 +86,7 @@ export default class App extends FontShifter{
             $('#circle').css('fill', 'transparent')
             $('#path').css('fill', 'transparent')
         }
+        this.updateJsCode()
     }
 
     setMainColor(mainColor){
@@ -88,6 +97,7 @@ export default class App extends FontShifter{
         this.mainBgColor = mainColor
         $('.mainColor-bg').css('background-color', mainColor)
         this.setBackgroundColor(this.subBgColor, this.mainBgColor)
+        this.updateJsCode()
     }
 
     setSubColor(subColor){
@@ -102,6 +112,7 @@ export default class App extends FontShifter{
             $('.subColor-border').css('border-color', subColor)
         }
         this.setBackgroundColor(this.subBgColor, this.mainBgColor)
+        this.updateJsCode()
     }
 
     setBackgroundColor(subBgColor, mainBgColor){
@@ -113,6 +124,7 @@ export default class App extends FontShifter{
     setTextColor(textColor){
         $('.textColor').css('color', textColor)
         this.textColor = textColor;
+        this.updateJsCode()
     }
 
     setFontFamily(fontFamily){
@@ -146,6 +158,7 @@ export default class App extends FontShifter{
                 if(counter < 4){
                     if(result == true){
                         this.fontFamily = fontFamily
+                        this.updateJsCode()
                         this.setValid('#fontFamily')
                         $('.lds-ring').css('opacity', 0)
                         clearInterval(tries)
@@ -197,6 +210,7 @@ export default class App extends FontShifter{
                     if(counter < 4){
                         if(result == true){
                             this.fontFamily = url
+                            this.updateJsCode()
                             this.setValid('#fontFamily')
                             $('.lds-ring').css('opacity', 0)
                             clearInterval(tries)
@@ -305,20 +319,42 @@ export default class App extends FontShifter{
         }
     }
 
-    removeValidation(element){
-        if($(element).hasClass('is-invalid')) {$(element).removeClass('is-invalid')}
-        if($(element).hasClass('is-valid')) {$(element).removeClass('is-valid')}
+    updateJsCode(){
+        this.jsCode = `new WhatsappButton('${this.phoneNumber}', '${this.wMessage}', '${this.phMessage}', '${this.dMessage}', '${this.iconStyle}', '${this.mainColor}', '${this.subColor}', '${this.textColor}', '${this.fontFamily}')`
+    }
+
+    getJsCode(){
+        return this.jsCode
     }
 
     createButton(){
-        if($('#form_checkbox').prop('checked')){
-            $('#form_checkbox').prop('checked', !$('#form_checkbox').prop('checked'))
+        if(this.validatePhoneNumber(this.phoneNumber) === true){
+            if($('#form_checkbox').prop('checked')){
+                $('#form_checkbox').prop('checked', !$('#form_checkbox').prop('checked'))
+            }
+            $('#jsCode').html(this.getJsCode())
+            $('#createButton').attr('disabled', 'disabled')
+            $('#errorMessage').css('visibility', 'hidden')
+            $('#previewButton').css('animation', 'buttonCreated 1s ease-in-out .5s forwards')
+            $('#howToUse').css('animation', 'buttonCreated 2s ease-in-out 1.5s forwards reverse')
+            setTimeout(() => {
+                new WhatsappButton(this.phoneNumber, this.wMessage, this.phMessage, this.dMessage, this.iconStyle, this.mainColor, this.subColor, this.textColor, this.fontFamily)
+                $('#resetButton').removeAttr('disabled')
+            }, 1000);
+        } else {
+            $('#errorMessage').html('Phone number is not valid')
+            $('#errorMessage').css('visibility', 'visible')
         }
-        $('#createButton').attr('disabled', 'disabled')
-        $('.app_panel_preview_button').css('animation', 'buttonCreated 2s ease-in-out .5s forwards')
-        setTimeout(() => {
-            new WhatsappButton(this.phoneNumber, this.wMessage, this.phMessage, this.dMessage, this.iconStyle, this.mainColor, this.subColor, this.textColor, this.fontFamily)
-        }, 2000);
+    }
 
+    resetButton(){
+        this.updateJsCode()
+        $('#howToUse').css('animation', 'none')
+        $('#previewButton').css('animation', 'none')
+        $('#whatsapp_wrapper').remove()
+        $('#resetButton').attr('disabled', 'disabled')
+        if(this.validatePhoneNumber(this.phoneNumber) == true){
+            $('#createButton').removeAttr('disabled')
+        }
     }
 }

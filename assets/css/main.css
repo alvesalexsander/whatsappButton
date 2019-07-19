@@ -81,21 +81,31 @@ html {
 }
 
 body {
-  background: #444;
+  background: linear-gradient(110deg, #444 60%, #333 60%);
   position: relative;
   color: #ffffff;
   height: 100vh;
 }
 
-h1, h2, h6 {
+h2, h6 {
   font-family: "Roboto", sans-serif;
 }
 
 h1 {
+  font-family: "Monoton", sans-serif;
   opacity: 0;
   transform: translateX(50%);
   animation: titleIn 2s ease-out 1s forwards;
   text-shadow: 0rem 0rem 5rem rgba(255, 255, 255, 0.4);
+}
+
+a {
+  color: #ffffff;
+  font-weight: 500;
+}
+a:hover {
+  color: #ffffff;
+  font-weight: 1000;
 }
 
 .form_text {
@@ -202,11 +212,13 @@ h1 {
 .app_panel:last-of-type {
   right: 15px;
 }
-.app_panel #createButton {
-  position: absolute;
-  top: 80%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.app_panel #resetButton {
+  margin-left: 2rem;
+}
+.app_panel #errorMessage {
+  visibility: hidden;
+  color: red;
+  font-size: 1rem;
 }
 .app_panel_form .carousel-indicators {
   position: absolute;
@@ -232,33 +244,20 @@ h1 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
-  animation: buttonExpand 3s ease-in-out forwards;
+  animation: buttonExpand 2s ease-in-out forwards;
+}
+.app_panel_preview_howToUse {
+  font-size: 0.8rem;
+  text-align: center;
+  width: 85%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
 }
 
 #fontFamily {
   width: 90%;
-}
-
-.bg-70 {
-  width: 100vw;
-  height: 100vh;
-  position: relative;
-  top: 0;
-  left: 0;
-  background: linear-gradient(purple 100%, rgba(0, 0, 0, 0));
-  z-index: 1;
-  transition: 4s;
-}
-
-.bg-30 {
-  width: 100vw;
-  height: 30vh;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background: linear-gradient(transparent, green);
-  z-index: 2;
-  transition: 4s;
 }
 
 /*# sourceMappingURL=main.css.map */

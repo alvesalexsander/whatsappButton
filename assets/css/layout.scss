@@ -30,12 +30,14 @@
             right: 15px;
         }
 
-        #createButton{
-            position: absolute;
-            top: 80%;
-            left: 50%;
-            transform: translate(-50%,-50%);
+        #resetButton{
+            margin-left: 2rem;
+        }
 
+        #errorMessage{
+            visibility: hidden;
+            color: red;
+            font-size: 1rem;
         }
 
         &_form .carousel-indicators{
@@ -66,8 +68,21 @@
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%,-50%) scale(1);
-                animation: buttonExpand 3s ease-in-out forwards;
-                // animation: buttonCreated 2s ease-in-out 3s forwards;
+                animation: buttonExpand 2s ease-in-out forwards;
+                // quando o botão é criado, muda para animation: buttonCreated 1s ease-in-out .5s forwards;
+                //enquanto crio o howToUse
+                // display: none;
+            }
+
+            &_howToUse{
+                font-size: .8rem;
+                text-align: center;
+                width: 85%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%) scale(0);
+                // animation: buttonCreated 2s ease-in-out 2s forwards reverse;
             }
         }
     }
@@ -75,26 +90,4 @@
 
 #fontFamily{
     width: 90%;
-}
-
-.bg-70{
-    width: 100vw;
-    height: 100vh;
-    position: relative;
-    top: 0;
-    left: 0;
-    background: linear-gradient(purple 100%, rgba(0,0,0,0));
-    z-index: 1;
-    transition: 4s;
-}
-
-.bg-30{
-    width: 100vw;
-    height: 30vh;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(transparent, green);
-    z-index: 2;
-    transition: 4s;
 }

@@ -1,7 +1,7 @@
-Implementar botão reset (e tratar o validatePhoneNumber para não liberar o disabled até apertar reset)
+fazer #jsCode click to clipboard (ctrl c/v)
 Fazer versão ES5.
+Fazer versão React.js.
 Fazer documentação.
-Fazer UI.
 
 
 Extra:Implementar utilização de custom svg icons passando URL que aponta para arquivo .svg
