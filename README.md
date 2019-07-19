@@ -86,13 +86,15 @@ These are the parameters in sequence of object instantiation:
 
 **pNumber** * - It is the only <strong>required</strong> parameter. Buttons called with this minimal requirement will have the default style applied.
 <br>Please, do not enter symbols or other characters than numbers in this parameter field.
-<br><br>Default styles:
-<br>
-![Default Closed](https://sashaclimax.github.io/whatsappButton/assets/documentation_images/default_style_closed.png)
-![Default Opened](https://sashaclimax.github.io/whatsappButton/assets/documentation_images/default_style_opened.PNG)
 
 **fontFamily** ** - For some reason, Press Start 2P is a known font style that does not work well.
 <br>It is possible that there may be a few more incompatible font styles.
+
+<br><br>**Default styles**:
+<br>
+![Default Closed](https://sashaclimax.github.io/whatsappButton/assets/documentation_images/default_style_closed.png)
+<br>
+![Default Opened](https://sashaclimax.github.io/whatsappButton/assets/documentation_images/default_style_opened.PNG)
 <br><br>
 These are the basic building informations about whatsappButton.js plugin.
 <br>Please, feel free to download and explore more about it.
