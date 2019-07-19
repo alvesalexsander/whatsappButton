@@ -15,8 +15,8 @@ We have a friendly user interface for you!
 ## Table of contents
 
 1. [Features](#features)
-2. [Usage](#disclaimer)
-3. [Building](#forwarding)
+2. [Usage](#usage)
+3. [Building](#building)
 4. [Configuration](#configuration)
 5. [Known bugs](#known-bugs)
 6. [Credits and support](#credits-and-support)
@@ -38,8 +38,6 @@ Here is some info about it:
 
 - **Friendly UI**:  Use our user interface that helps your on the creative process of your button. It will help you at setting and shaping up your button.<br>Check it out at: https://sashaclimax.github.io/whatsappButton/
 
-
-
 ------------------------------------------------
 
 ## Usage
@@ -54,9 +52,15 @@ https://sashaclimax.github.io/whatsappButton.js/dist/wpp_css/whatsappButton.css 
 - **3.** Link the .JS file with a script tag in the head or body tags of your application. 
 
 - **4.** Use the User Interface at https://sashaclimax.github.io/whatsappButton/ to create your button layout 
-OR check the building section for further information.
+OR check the [Building](#building) section for further information.
 
-- **5.** At least to the creation process, the UI will give you an javascript code like this one:
+- **5.** At the end of the creation process, the UI will give you an javascript code like this one:
 <br><br>
 new WhatsappButton('5522123456789', 'Could we help you?', 'We are at your service! Want help at choosing a wine? Any other thing we could help?', 'netWinez, could we help?', '1', '#6f2045', '#000000', '', 'https://fonts.googleapis.com/css?family=Satisfy&display=swap')<br><br>
 Then, you can call your created button on any .js file or in a <script> tag.
+  
+------------------------------------------------
+
+## Building
+
+This section is 
