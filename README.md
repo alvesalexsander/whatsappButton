@@ -64,3 +64,26 @@ Then, you can call your created button on any .js file or in a <script> tag.
 ## Building
 
 This section is a more techinical insight that explains how the whatsappButton.js works
+
+ **1. Technology Stack** - The plugin is fully developed with front-end technology. Made with Vanilla JavaScript and CSS Rules.
+ <br>There is no other dependency that a web browser capable of parsing JavaScript ES6 and CSS3 to run *whatsappButton.js*.
+ 
+ **2. Instantiation Parameters** - WhatsappButton is the class that handles some parameters at object instantiation.<br>These parameters are in charge of shaping up the button layout.
+
+### Parameters
+hese are the options supported on the INI file (not found boolean options are defaulted to false):
+
+| Parameter | Type               | Description                                                                          |
+|---------|----------------------|--------------------------------------------------------------------------------------|
+| pNumber | string(preffered), number | { true, false }  If not true,'customLanguage' will be ignored.                       |
+| General | customLanguage       | { en, es, de, fr, it } Ignores the console's language and use this one.              |
+| General | keysPath             | { (path starting with "/") } Key file path, defaults to "/switch/prod.keys".         |
+| UI      | romfsReplace         | { true, false } If not true, 'romfsReplacePath' will be ignored.                     |
+| UI      | romfsReplacePath     | { (path starting with "/") } Path to search RomFs resources, if it's a valid one.    |
+| UI      | useCustomColors      | { true, false } If not true, colors' options will be ignored.                        |
+| UI      | colorBackground      | { (color in 4 bytes, example: "55,125,255,255") } Background color.                  |
+| UI      | colorBase            | { (color in 4 bytes, example: "55,125,255,255") } Base display color.                |
+| UI      | colorBaseFocus       | { (color in 4 bytes, example: "55,125,255,255") } Base display  color, when focused. |
+| UI      | colorText            | { (color in 4 bytes, example: "55,125,255,255") } Text color.                        |
+| UI      | useCustomSizes       | { true, false } If not true, sizes' options will be ignored.                         |
+| UI      | fileBrowserItemsSize | { (number, divisible by 5) } Size of the items on file browsers, 50 by default.      |
