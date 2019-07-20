@@ -57,7 +57,7 @@ OR check the [Building](#building) section for further information.
 <br><br>
 new WhatsappButton('5522123456789', 'Could we help you?', 'We are at your service! Want help at choosing a wine? Any other thing we could help?', 'netWinez, could we help?', '1', '#6f2045', '#000000', '', 'https://fonts.googleapis.com/css?family=Satisfy&display=swap')<br><br>
 Then, you can call your created button on any .js file or in a <script> tag.
-*Compatible with Google Chrome, Mozilla Firefox, Microsoft Edge and the most modern browsers.*
+<br>*Compatible with Google Chrome, Mozilla Firefox, Microsoft Edge and the most modern browsers.*
   
 ------------------------------------------------
 
