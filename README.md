@@ -6,7 +6,7 @@
 <br>It is easy-to-use, customizable and resilient.
 
 Try it out at: https://sashaclimax.github.io/whatsappButton/
-<br>We have a friendly user interface for you!
+<br>We have a friendly user interface to help you!
 
 ## **[Download it from here!](https://github.com/sashaclimax/whatsappButton.js)**
 
@@ -25,17 +25,17 @@ Try it out at: https://sashaclimax.github.io/whatsappButton/
 
 *whatsappButton.js* is a tool that will provide a new way to get to your public through the internet.
 
-Here is some info about it:
+Here is some information about it:
 
-- **Dependency-free**:  Built with pure javascript and css. No need of match other dependencies to have your *whatsappButton.js*.
+- **Dependency-free**:  Built with pure javascript and css. No need of match other dependencies to have your *whatsappButton.js* live.
 
 - **Highly customizable**:  *whatsappButton.js* wears the colors and fits along with your product.<br>Create personalized phrases to welcome your public, pick the color of your choice to style your button and, of course, a font style to carry your message!
 
-- **Easy-to-use**:  Your users will be a click away from you. And you, a few little steps to implement.<br>*whatsappButton.js* is ready for deployment.
+- **Easy-to-use**:  Your users will be a click away from you. And you, just a few little steps to implementation.<br>*whatsappButton.js* is ready for deployment.
 
 - **Open-source code**:  This is an open-source project. It means that you are free to download, edit and share improvements.<br>If possible, please credit the original author.
 
-- **Friendly UI**:  Use our user interface that helps your on the creative process of your button. It will help you at setting and shaping up your button.<br>Check it out at: https://sashaclimax.github.io/whatsappButton/
+- **Friendly UI**:  Use our user interface that helps you on the creative process of your button. It will help you at setting and shaping up your button.<br>Check it out at: https://sashaclimax.github.io/whatsappButton/
 
 ------------------------------------------------
 
@@ -56,7 +56,7 @@ OR check the [Building](#building) section for further information.
 - **5.** At the end of the creation process, the UI will give you an javascript code like this one:
 <br><br>
 new WhatsappButton('5522123456789', 'Could we help you?', 'We are at your service! Want help at choosing a wine? Any other thing we could help?', 'netWinez, could we help?', '1', '#6f2045', '#000000', '', 'https://fonts.googleapis.com/css?family=Satisfy&display=swap')<br><br>
-Then, you can call your created button on any .js file or in a <script> tag.
+Then, you can call this code on any .js file or in a <script> tag to create your button.
 <br>*Compatible with Google Chrome, Mozilla Firefox, Microsoft Edge and the most modern browsers.*
   
 ------------------------------------------------
@@ -66,13 +66,15 @@ Then, you can call your created button on any .js file or in a <script> tag.
 This section is a more technical insight that explains how the *whatsappButton.js* works.
 
  **1. Technology Stack** - The plugin is fully developed with front-end technology. Made with Vanilla JavaScript and CSS Rules.
- <br>There is no other dependency that a web browser capable of parsing JavaScript ES5 (ES6 version is also available) and CSS3 specifications to run *whatsappButton.js*.
+ <br>There is no other dependency than a web browser capable of parsing JavaScript ES5 (ES6 version is also available) and CSS3 specifications to run *whatsappButton.js*.
 <br>*Compatible with Google Chrome, Mozilla Firefox, Microsoft Edge and the most modern browsers.*
  
  **2. Instantiation Parameters** - WhatsappButton is the class that handles some parameters at object instantiation.<br>These parameters are in charge of shaping up the button layout.
 
 ### Parameters
 These are the parameters in sequence of object instantiation:
+<br>*new* **WhatsappButton**(pNumber, wMessage, phMessage, dMessage, iconStyle, color, subColor, textColor, fontFamily)
+
 
 | Parameter  | Type                          | Description                                                                            |
 |------------|-------------------------------|----------------------------------------------------------------------------------------|
@@ -115,7 +117,7 @@ This is the *whatsappButton.js* User Interface.
 <br>
 ![User Interface1](https://sashaclimax.github.io/whatsappButton/assets/documentation_images/social_preview_1_subbed.png)
 <br>
-<br>The UI will help you with a live-preview version check how it is going to be.
+<br>The UI will help you with a live-preview version of your button. You can sneak peek at it before creating.
 <br>It was and is tested often to ensure a fail-proof result at creating your button.
 <br>
 <br>When you are finished, click on the "I've done. Make my Button!" and the UI will make an instance of your ready-to-use whatsappButton! You may test your button to see how it works at will!
