@@ -1,132 +1,98 @@
 @keyframes titleIn {
   0% {
-    opacity: 0;
-  }
+    opacity: 0; }
   60% {
-    opacity: 0;
-  }
+    opacity: 0; }
   100% {
     opacity: 1;
-    transform: translateX(0);
-  }
-}
+    transform: translateX(0); } }
 @-webkit-keyframes titleIn {
   0% {
-    opacity: 0;
-  }
+    opacity: 0; }
   60% {
-    opacity: 0;
-  }
+    opacity: 0; }
   100% {
     opacity: 1;
-    transform: translateX(0);
-  }
-}
+    transform: translateX(0); } }
 @keyframes appIn {
   0% {
     opacity: 0;
-    transform: translate(20%, 5%);
-  }
+    transform: translate(20%, 5%); }
   100% {
     opacity: 1;
     transform: translate(0%, 0%);
-    visibility: visible;
-  }
-}
+    visibility: visible; } }
 @keyframes buttonExpand {
   0% {
     opacity: 0;
-    transform: translate(-50%, -50%) scale(1);
-  }
+    transform: translate(-50%, -50%) scale(1); }
   1% {
-    opacity: 1;
-  }
+    opacity: 1; }
   20% {
-    transform: translate(-50%, -50%) scale(0);
-  }
+    transform: translate(-50%, -50%) scale(0); }
   50% {
-    transform: translate(-50%, -50%) scale(0);
-  }
+    transform: translate(-50%, -50%) scale(0); }
   80% {
-    transform: translate(-50%, -50%) scale(1);
-  }
+    transform: translate(-50%, -50%) scale(1); }
   90% {
-    transform: translate(-50%, -50%) scale(1.1);
-  }
+    transform: translate(-50%, -50%) scale(1.1); }
   100% {
-    transform: translate(-50%, -50%) scale(1);
-  }
-}
+    transform: translate(-50%, -50%) scale(1); } }
 @keyframes buttonCreated {
   0% {
-    transform: translate(-50%, -50%) scale(1);
-  }
+    transform: translate(-50%, -50%) scale(1); }
   30% {
-    transform: translate(-50%, -50%) scale(1.1);
-  }
+    transform: translate(-50%, -50%) scale(1.1); }
   100% {
-    transform: translate(-50%, -50%) scale(0);
-  }
-}
+    transform: translate(-50%, -50%) scale(0); } }
 *,
 *::before,
 *::after {
   box-sizing: border-box;
   padding: 0;
-  margin: 0;
-}
+  margin: 0; }
 
 html {
-  overflow: hidden;
-}
+  overflow: hidden; }
 
 body {
   background: linear-gradient(110deg, #444 60%, #333 60%);
   position: relative;
   color: #ffffff;
-  height: 100vh;
-}
+  height: 100vh; }
 
 h2, h6 {
-  font-family: "Roboto", sans-serif;
-}
+  font-family: 'Roboto', sans-serif; }
 
 h1 {
-  font-family: "Monoton", sans-serif;
+  font-family: 'Monoton', sans-serif;
   opacity: 0;
   transform: translateX(50%);
   animation: titleIn 2s ease-out 1s forwards;
-  text-shadow: 0rem 0rem 5rem rgba(255, 255, 255, 0.4);
-}
+  text-shadow: 0rem 0rem 5rem rgba(255, 255, 255, 0.4); }
 
 a {
   color: #ffffff;
-  font-weight: 500;
-}
-a:hover {
-  color: #ffffff;
-  font-weight: 1000;
-}
+  font-weight: 500; }
+  a:hover {
+    color: #ffffff;
+    font-weight: 1000; }
 
 .form_text {
-  transition: 1s;
-}
+  transition: 1s; }
 
 .btn-primary {
   background-color: #c3c3c3 !important;
   border-color: #7f7f7f;
-  color: #111;
-}
-.btn-primary:hover {
-  background-color: #c3c3c3;
-  border-color: #7f7f7f;
-}
+  color: #111; }
+  .btn-primary:hover {
+    background-color: #c3c3c3;
+    border-color: #7f7f7f; }
 
 .form-control {
   display: inline;
   width: 55%;
-  box-shadow: 2px 2px 5px #000000;
-}
+  box-shadow: 2px 2px 5px #000000; }
 
 #sloganSlider {
   position: absolute;
@@ -137,17 +103,15 @@ a:hover {
   background-color: #111;
   width: 60%;
   border-radius: 10px;
-  padding: 0.5rem 2rem;
-  text-align: center;
-}
+  padding: .5rem 2rem;
+  text-align: center; }
 
 .lds-ring {
   display: inline-block;
   position: relative;
   width: 2rem;
   height: 2rem;
-  opacity: 0;
-}
+  opacity: 0; }
 
 .lds-ring div {
   box-sizing: border-box;
@@ -159,29 +123,22 @@ a:hover {
   border: 6px solid #fff;
   border-radius: 50%;
   animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: #444 transparent transparent transparent;
-}
+  border-color: #444 transparent transparent transparent; }
 
 .lds-ring div:nth-child(1) {
-  animation-delay: -0.45s;
-}
+  animation-delay: -0.45s; }
 
 .lds-ring div:nth-child(2) {
-  animation-delay: -0.3s;
-}
+  animation-delay: -0.3s; }
 
 .lds-ring div:nth-child(3) {
-  animation-delay: -0.15s;
-}
+  animation-delay: -0.15s; }
 
 @keyframes lds-ring {
   0% {
-    transform: rotate(0deg);
-  }
+    transform: rotate(0deg); }
   100% {
-    transform: rotate(360deg);
-  }
-}
+    transform: rotate(360deg); } }
 .app {
   margin: 0;
   padding: 4rem 2rem 2rem 4rem;
@@ -190,74 +147,61 @@ a:hover {
   left: 0;
   z-index: 10;
   visibility: hidden;
-  animation: appIn 0.7s ease-out 1s forwards;
-}
-.app h1 {
-  font-size: 3rem;
-  position: absolute;
-  line-height: normal;
-  letter-spacing: normal;
-  top: -3rem;
-  left: 0;
-  z-index: 999;
-}
-.app_panel {
-  background-color: #111;
-  padding: 2rem 4rem;
-  border-radius: 10px;
-  position: relative;
-  height: 35rem;
-  box-shadow: 20px 20px 30px #000000;
-}
-.app_panel:last-of-type {
-  right: 15px;
-}
-.app_panel #resetButton {
-  margin-left: 2rem;
-}
-.app_panel #errorMessage {
-  visibility: hidden;
-  color: red;
-  font-size: 1rem;
-}
-.app_panel_form .carousel-indicators {
-  position: absolute;
-  top: 100%;
-}
-.app_panel .carousel-control-next {
-  height: 30rem;
-  left: 100%;
-}
-.app_panel .carousel-control-prev {
-  height: 30rem;
-  left: -15%;
-}
-.app_panel_preview {
-  background-color: #444;
-  border-radius: 4px;
-  height: 300px;
-  width: 100%;
-  position: relative;
-}
-.app_panel_preview_button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1);
-  animation: buttonExpand 2s ease-in-out forwards;
-}
-.app_panel_preview_howToUse {
-  font-size: 0.8rem;
-  text-align: center;
-  width: 90%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0);
-}
+  animation: appIn .7s ease-out 1s forwards; }
+  .app h1 {
+    font-size: 3rem;
+    position: absolute;
+    line-height: normal;
+    letter-spacing: normal;
+    top: -3rem;
+    left: 0;
+    z-index: 999; }
+  .app_panel {
+    background-color: #111;
+    padding: 2rem 4rem;
+    border-radius: 10px;
+    position: relative;
+    height: 35rem;
+    box-shadow: 20px 20px 30px #000000; }
+    .app_panel:last-of-type {
+      right: 15px; }
+    .app_panel #resetButton {
+      margin-left: 2rem; }
+    .app_panel #errorMessage {
+      visibility: hidden;
+      color: red;
+      font-size: 1rem; }
+    .app_panel_form .carousel-indicators {
+      position: absolute;
+      top: 100%; }
+    .app_panel .carousel-control-next {
+      height: 30rem;
+      left: 100%; }
+    .app_panel .carousel-control-prev {
+      height: 30rem;
+      left: -15%; }
+    .app_panel_preview {
+      background-color: #444;
+      border-radius: 4px;
+      height: 300px;
+      width: 100%;
+      position: relative; }
+      .app_panel_preview_button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1);
+        animation: buttonExpand 2s ease-in-out forwards; }
+      .app_panel_preview_howToUse {
+        font-size: .8rem;
+        text-align: center;
+        width: 90%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0); }
 
 #fontFamily {
-  width: 90%;
-}
+  width: 90%; }
 
 /*# sourceMappingURL=main.css.map */
