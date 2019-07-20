@@ -65,7 +65,8 @@ Then, you can call your created button on any .js file or in a <script> tag.
 This section is a more technical insight that explains how the *whatsappButton.js* works.
 
  **1. Technology Stack** - The plugin is fully developed with front-end technology. Made with Vanilla JavaScript and CSS Rules.
- <br>There is no other dependency that a web browser capable of parsing JavaScript ES6 and CSS3 specifications to run *whatsappButton.js*.
+ <br>There is no other dependency that a web browser capable of parsing JavaScript ES5 and CSS3 specifications to run *whatsappButton.js*.
+<br>*Works well on Google Chrome and Mozilla Firefox.*
  
  **2. Instantiation Parameters** - WhatsappButton is the class that handles some parameters at object instantiation.<br>These parameters are in charge of shaping up the button layout.
 
