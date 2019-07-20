@@ -44,7 +44,7 @@ Here is some info about it:
 How To Use:
 
 - **1.** Download plugin files at: *whatsappButton.js* page OR Use the CDN Links: 
-https://sashaclimax.github.io/whatsappButton.js/dist/wpp_css/whatsappButton.css https://sashaclimax.github.io/whatsappButton.js/dist/wpp_js/whatsappButton.js 
+https://sashaclimax.github.io/whatsappButton.js/dist/wpp_css/whatsappButton.min.css https://sashaclimax.github.io/whatsappButton.js/dist/wpp_js/whatsappButton.min.js 
 
 - **2.** Link the .CSS file with a link tag in the head tag of your application. 
 
@@ -57,6 +57,7 @@ OR check the [Building](#building) section for further information.
 <br><br>
 new WhatsappButton('5522123456789', 'Could we help you?', 'We are at your service! Want help at choosing a wine? Any other thing we could help?', 'netWinez, could we help?', '1', '#6f2045', '#000000', '', 'https://fonts.googleapis.com/css?family=Satisfy&display=swap')<br><br>
 Then, you can call your created button on any .js file or in a <script> tag.
+<br>*Compatible with Google Chrome, Mozilla Firefox, Microsoft Edge and the most modern browsers.*
   
 ------------------------------------------------
 
@@ -65,8 +66,8 @@ Then, you can call your created button on any .js file or in a <script> tag.
 This section is a more technical insight that explains how the *whatsappButton.js* works.
 
  **1. Technology Stack** - The plugin is fully developed with front-end technology. Made with Vanilla JavaScript and CSS Rules.
- <br>There is no other dependency that a web browser capable of parsing JavaScript ES5 and CSS3 specifications to run *whatsappButton.js*.
-<br>*Works well on Google Chrome and Mozilla Firefox.*
+ <br>There is no other dependency that a web browser capable of parsing JavaScript ES5 (ES6 version is also available) and CSS3 specifications to run *whatsappButton.js*.
+<br>*Compatible with Google Chrome, Mozilla Firefox, Microsoft Edge and the most modern browsers.*
  
  **2. Instantiation Parameters** - WhatsappButton is the class that handles some parameters at object instantiation.<br>These parameters are in charge of shaping up the button layout.
 
