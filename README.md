@@ -138,6 +138,6 @@ Hi, my name is Alexsander Alves and I am a front-end developer.
 <br>My purpose working on this project is to bring to the community a solid and at the same time flexible solution on establishing a good and beautiful communication channel with their public.
 <br>*whatsappButton.js* is meant to be simple and effective at what is has born to be: connecting people.
 <br>
-<br>I would appreciate if you use it, test it, share your thoughts and spread the plugin.
+<br>I would appreciate if you use it, test it, share your thoughts and spread the ideia.
 <br>Just like I said before, you all are welcome to participate with new ideias to the plugin!
 
