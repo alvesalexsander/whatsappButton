@@ -78,7 +78,7 @@ These are the parameters in sequence of object instantiation:
 
 | Parameter  | Type                          | Description                                                                            |
 |------------|-------------------------------|----------------------------------------------------------------------------------------|
-| pNumber *  | string(preferred), number     | Enter only numbers of an phone number to received messages. For example: 5522123456789 |
+| pNumber *  | string(preferred), number     | Enter only numbers of a phone number to received messages. For example: 5522123456789  |
 | wMessage   | string                        | Will be displayed when mouse is over the button. Recommended: <=16 characters.         |
 | phMessage  | string                        | This one will be shown while the user didn't type in the input field yet.              |
 | dMessage   | string                        | At mobile, Whatsapp will be automatically launch with this message in chat input field |
