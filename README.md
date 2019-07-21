@@ -27,7 +27,7 @@ Try it out at: https://sashaclimax.github.io/whatsappButton/
 
 Here is some information about it:
 
-- **Dependency-free**:  Built with pure javascript and css. No need of match other dependencies to have your *whatsappButton.js* live.
+- **Dependency-free**:  Built with pure javascript and css. No need to match other dependencies to have your *whatsappButton.js* live.
 
 - **Highly customizable**:  *whatsappButton.js* wears the colors and fits along with your product.<br>Create personalized phrases to welcome your public, pick the color of your choice to style your button and, of course, a font style to carry your message!
 
