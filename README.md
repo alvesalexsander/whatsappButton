@@ -134,10 +134,15 @@ This is the *whatsappButton.js* User Interface.
 Hi, my name is Alexsander Alves and I am a front-end developer.
 <br>I am the developer behind *whatsappButton.js* plugin.
 <br>
-<br>First of all, I would like to thanks you for coming and seeing my job. It is very valuable to me.
+<br>First of all, I would like to thank you for coming and seeing my job. It is very valuable to me.
 <br>My purpose working on this project is to bring to the community a solid and at the same time flexible solution on establishing a good and beautiful communication channel with their public.
 <br>*whatsappButton.js* is meant to be simple and effective at what is has born to be: connecting people.
 <br>
 <br>I would appreciate if you use it, test it, share your thoughts and spread the plugin.
 <br>Just like I said before, you all are welcome to participate bringing new ideias to *whatsappButton.js*!
+
+A great thanks for this amazing tools used at *whatsappButton.js*:
+<br>HEX Color picker by jscolor - http://jscolor.com/
+<br>Free SVG Icons by FlatIcon - https://www.flaticon.com/
+<br>Icons by Font Awesome - https://github.com/FortAwesome/Font-Awesome | https://fontawesome.com/
 
