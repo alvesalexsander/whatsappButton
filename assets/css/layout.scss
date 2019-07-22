@@ -182,22 +182,5 @@
             left:50%;
             transform: translate(-50%, -50%);
         }
-
-        .understood{
-            position: relative;
-        }
-
-        #understoodCheck{
-            position: absolute;
-            top: -40px;
-            height: 200px;
-            width: 122px;
-            // opacity: 0;
-            cursor: pointer;
-        }
-
-        .understood:checked ~ #notCompatible{
-            display: none;
-        }
     }
 }

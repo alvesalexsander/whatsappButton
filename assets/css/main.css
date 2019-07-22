@@ -258,16 +258,6 @@ a {
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%); }
-    #notCompatible .understood {
-      position: relative; }
-    #notCompatible #understoodCheck {
-      position: absolute;
-      top: -40px;
-      height: 200px;
-      width: 122px;
-      cursor: pointer; }
-    #notCompatible .understood:checked ~ #notCompatible {
-      display: none; } }
+      transform: translate(-50%, -50%); } }
 
 /*# sourceMappingURL=main.css.map */
