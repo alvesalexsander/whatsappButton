@@ -12,10 +12,22 @@
   <link rel="stylesheet" href="assets/css/main.min.css">
 </head>
 <body>
+  <div id="notCompatible" class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <div class="d-flex flex-column">
+            <h1 class="title">Whatsapp Button.js</h1>
+            <h6>is a development tool.<br>Its best use is on Desktop PCs/Notebooks.</h6>
+            <small class="text-muted">Some features like full live-preview may be disabled.</small>
+            <button id="understoodButton" class="btn btn-primary mt-4 align-self-center">I Understand.</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <div id="app" class="container app">
     <div class="row">
       <div class="col-md-7">
-        <a href="https://sashaclimax.github.io/whatsappButton/"><h1 id="title">Whatsapp Button.js</h1></a>
+        <a href="https://sashaclimax.github.io/whatsappButton/"><h1 id="title" class="title">Whatsapp Button.js</h1></a>
       </div>
       <div class="col-md-5">
         <div id="sloganSlider" class="carousel slide" data-ride="carousel">
@@ -43,7 +55,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-6 app_panel">
+      <div class="col-lg-6 app_panel">
         <form id="formPages" class="app_panel_form carousel slide" data-interval="false">
           <h2>Customize your button!</h2>
           <h6>Fill the fields below to fit Whatsapp Button to your needs</h3>
@@ -108,11 +120,11 @@
             </div>
           </div>
           
-          <a class="carousel-control-prev" href="#formPages" role="button" data-slide="prev">
+          <a id="prevArrow" class="carousel-control-prev" href="#formPages" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
           </a>
-          <a class="carousel-control-next" href="#formPages" role="button" data-slide="next">
+          <a id="nextArrow" class="carousel-control-next" href="#formPages" role="button" data-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
           </a>
@@ -122,7 +134,7 @@
           </ol>
         </form>
       </div>
-      <div id="resultPages" class="col-md-6 app_panel carousel slide" data-interval="false">
+      <div id="resultPages" class="col-lg-6 app_panel carousel slide" data-interval="false">
         <div class="carousel-inner">
           <div id="previewPage" class="carousel-item active">
             <h2>Preview</h2>

@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$color-black".
-        on line 27 of C:\Users\alves\Documents\whatsappButton\assets\css\layout.scss
+        on line 24 of C:\Users\alves\Documents\whatsappButton\assets\css\layout.scss
 
-22:         background-color: #111;
-23:         padding: 2rem 4rem;
-24:         border-radius: 10px;
-25:         position: relative;
-26:         height: 35rem;
-27:         box-shadow: 20px 20px 30px $color-black;
-28: 
-29:         &:last-of-type{
-30:             right: 15px;
-31:         }
-32: 
+19:         background-color: #111;
+20:         padding: 2rem 4rem;
+21:         border-radius: 10px;
+22:         position: relative;
+23:         height: 35rem;
+24:         box-shadow: 20px 20px 30px $color-black;
+25: 
+26:         &:last-of-type{
+27:             right: 15px;
+28:         }
+29: 
 
 Backtrace:
-C:\Users\alves\Documents\whatsappButton\assets\css\layout.scss:27
+C:\Users\alves\Documents\whatsappButton\assets\css\layout.scss:24
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/script/tree/variable.rb:49:in `_perform'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/script/tree/node.rb:50:in `perform'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/script/tree/list_literal.rb:75:in `block in _perform'
@@ -77,4 +77,4 @@ C:/Program Files (x86)/Koala/bin/sass:22:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$color-black\".\A         on line 27 of C:\Users\alves\Documents\whatsappButton\assets\css\layout.scss\A \A 22:         background-color: #111;\A 23:         padding: 2rem 4rem;\A 24:         border-radius: 10px;\A 25:         position: relative;\A 26:         height: 35rem;\A 27:         box-shadow: 20px 20px 30px $color-black;\A 28: \A 29:         &:last-of-type{\A 30:             right: 15px;\A 31:         }\A 32: "; }
+  content: "Error: Undefined variable: \"$color-black\".\A         on line 24 of C:\Users\alves\Documents\whatsappButton\assets\css\layout.scss\A \A 19:         background-color: #111;\A 20:         padding: 2rem 4rem;\A 21:         border-radius: 10px;\A 22:         position: relative;\A 23:         height: 35rem;\A 24:         box-shadow: 20px 20px 30px $color-black;\A 25: \A 26:         &:last-of-type{\A 27:             right: 15px;\A 28:         }\A 29: "; }

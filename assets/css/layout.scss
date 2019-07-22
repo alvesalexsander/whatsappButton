@@ -9,13 +9,10 @@
     animation: appIn .7s ease-out 1s forwards;
 
     h1{
-        font-size: 3rem;
         position: absolute;
-        line-height: normal;
-        letter-spacing: normal;
         top: -3rem;
         left: 0;
-        z-index: 999;
+        z-index: 90;
     }
 
     &_panel{
@@ -45,12 +42,12 @@
             top: 100%;
         }
 
-        .carousel-control-next{
+        #nextArrow{
             height: 30rem;
             left: 100%;
         }
 
-        .carousel-control-prev{
+        #prevArrow{
             height: 30rem;
             left: -15%;
 
@@ -71,7 +68,6 @@
                 animation: buttonExpand 2s ease-in-out forwards;
                 // quando o botão é criado, muda para animation: buttonCreated 1s ease-in-out .5s forwards;
                 //enquanto crio o howToUse
-                // display: none;
             }
 
             &_howToUse{
@@ -94,4 +90,114 @@
 #searchFont{
     position: relative;
     left: 1rem;
+}
+
+#notCompatible{
+    display: none;
+}
+
+@media (min-width: 992px) and (max-width: 1199px){
+    .app{
+
+        h1{
+            font-size: 2.5rem;
+        }
+        
+        &_panel{
+            padding: 1rem 1rem 1rem 3rem;
+            box-shadow: 20px 20px 30px #000000;
+
+            #nextArrow{
+                left: 96%;
+            }
+
+            #prevArrow{
+                left: -14%;
+            }
+        }
+
+    }
+}
+
+@media (max-width: 992px){
+    html{
+        overflow: initial;
+    }
+
+    body{
+        background: linear-gradient(110deg, #444 60%, #333 60%);
+        background-size: cover;
+    }
+
+    .app{
+
+        h1{
+            font-size: 1.8rem;
+        }
+
+        &_panel{
+
+            &:last-of-type{
+                right: 0px;
+                bottom: 20px;
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px){
+
+    .app{
+
+        h1{
+            z-index: 90;
+            top: -4rem;
+        }
+
+        &_panel{
+
+            &:first-of-type{
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+
+            &:last-of-type{
+                bottom: 0px;
+            }
+        }
+    }
+
+    #notCompatible{
+        display: block;
+        position: fixed;
+        background-color: #000;
+        height: 100vh;
+        z-index: 100;
+    
+        .row{
+            position: absolute;
+            top: 50%;
+            left:50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .understood{
+            position: relative;
+        }
+
+        #understoodCheck{
+            position: absolute;
+            top: -40px;
+            height: 200px;
+            width: 122px;
+            // opacity: 0;
+            cursor: pointer;
+        }
+
+        .understood:checked ~ #notCompatible{
+            display: none;
+        }
+    }
 }

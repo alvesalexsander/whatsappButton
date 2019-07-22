@@ -65,7 +65,11 @@ h2, h6 {
   font-family: 'Roboto', sans-serif; }
 
 h1 {
+  font-size: 3rem;
   font-family: 'Monoton', sans-serif;
+  line-height: normal;
+  letter-spacing: normal;
+  z-index: 90;
   opacity: 0;
   transform: translateX(50%);
   animation: titleIn 2s ease-out 1s forwards;
@@ -99,7 +103,7 @@ a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 999;
+  z-index: 60;
   background-color: #111;
   width: 60%;
   border-radius: 10px;
@@ -150,13 +154,10 @@ a {
   visibility: hidden;
   animation: appIn .7s ease-out 1s forwards; }
   .app h1 {
-    font-size: 3rem;
     position: absolute;
-    line-height: normal;
-    letter-spacing: normal;
     top: -3rem;
     left: 0;
-    z-index: 999; }
+    z-index: 90; }
   .app_panel {
     background-color: #111;
     padding: 2rem 4rem;
@@ -175,10 +176,10 @@ a {
     .app_panel_form .carousel-indicators {
       position: absolute;
       top: 100%; }
-    .app_panel .carousel-control-next {
+    .app_panel #nextArrow {
       height: 30rem;
       left: 100%; }
-    .app_panel .carousel-control-prev {
+    .app_panel #prevArrow {
       height: 30rem;
       left: -15%; }
     .app_panel_preview {
@@ -208,5 +209,65 @@ a {
 #searchFont {
   position: relative;
   left: 1rem; }
+
+#notCompatible {
+  display: none; }
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .app h1 {
+    font-size: 2.5rem; }
+  .app_panel {
+    padding: 1rem 1rem 1rem 3rem;
+    box-shadow: 20px 20px 30px #000000; }
+    .app_panel #nextArrow {
+      left: 96%; }
+    .app_panel #prevArrow {
+      left: -14%; } }
+@media (max-width: 992px) {
+  html {
+    overflow: initial; }
+
+  body {
+    background: linear-gradient(110deg, #444 60%, #333 60%);
+    background-size: cover; }
+
+  .app h1 {
+    font-size: 1.8rem; }
+  .app_panel:last-of-type {
+    right: 0px;
+    bottom: 20px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0; } }
+@media (max-width: 768px) {
+  .app h1 {
+    z-index: 90;
+    top: -4rem; }
+  .app_panel:first-of-type {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0; }
+  .app_panel:last-of-type {
+    bottom: 0px; }
+
+  #notCompatible {
+    display: block;
+    position: fixed;
+    background-color: #000;
+    height: 100vh;
+    z-index: 100; }
+    #notCompatible .row {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+    #notCompatible .understood {
+      position: relative; }
+    #notCompatible #understoodCheck {
+      position: absolute;
+      top: -40px;
+      height: 200px;
+      width: 122px;
+      cursor: pointer; }
+    #notCompatible .understood:checked ~ #notCompatible {
+      display: none; } }
 
 /*# sourceMappingURL=main.css.map */

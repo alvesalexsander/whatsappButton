@@ -269,6 +269,12 @@
 
 /* para mobile */
 @media (max-width: 768px) {
+
+    .whatsapp_cta{
+        width: 100px;
+        height: 100px;
+    }
+
     #form_checkbox{
         display: none;
     }
@@ -281,7 +287,7 @@
         right: 0%;
         z-index: 20;
         box-sizing: border-box;
-        transform: scale(.8) translateY(8rem);
+        transform: scale(.8);
     }
     
     @keyframes moveDown{

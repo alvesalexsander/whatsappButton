@@ -56,4 +56,8 @@ function initEventHandlers(){
     $('#resetButton').click(() => {
         app.resetButton()
     })
+
+    $('#understoodButton').click(() => {
+        $('#notCompatible').css('display', 'none')
+    })
 }

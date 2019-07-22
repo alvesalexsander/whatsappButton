@@ -24,7 +24,11 @@ h2, h6{
 }
 
 h1{
+    font-size: 3rem;
     font-family: 'Monoton', sans-serif;
+    line-height: normal;
+    letter-spacing: normal;
+    z-index: 90;
     opacity: 0;
     transform: translateX(50%);
     animation: titleIn 2s ease-out 1s forwards;

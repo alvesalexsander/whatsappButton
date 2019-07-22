@@ -12,7 +12,7 @@ export default class FontShifter{
             type: 'text/css',
             href: URL
         }).appendTo('head')
-        $('#title').css('font-family', this.extractFontFamily(URL))
+        $('.title').css('font-family', this.extractFontFamily(URL))
     }
 
     selectNewFontStyle(){
@@ -22,7 +22,7 @@ export default class FontShifter{
     }
 
     setTitleBackground(){
-        $('#title').css({background: `#fff url('https://sashaclimax.github.io/whatsappButton/assets/img/${this.selectNewBackground()}.png') top center no-repeat`,
+        $('.title').css({background: `#fff url('https://sashaclimax.github.io/whatsappButton/assets/img/${this.selectNewBackground()}.png') top center no-repeat`,
                         'background-size': 'cover',
                         '-webkit-background-clip': 'text',
                         'background-clip': 'text',
@@ -38,5 +38,5 @@ export default class FontShifter{
     getFontURL(fontStyle){
         return `https://fonts.googleapis.com/css?family=${fontStyle}&display=swap`
     }
-    
+
 }
