@@ -1,7 +1,7 @@
 export default class FontShifter{
 
     constructor(){
-        this.fontList = new Array('Alfa+Slab+One', 'Slackey', 'Fascinate','Knewave','Monoton','Playball','Press+Start+2P','Righteous','Sigmar+One')
+        this.fontList = new Array('Alfa+Slab+One', 'Slackey', 'Fascinate','Knewave','Monoton','Playball','Righteous','Sigmar+One')
         this.backgroundList = new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14')
     }
 
@@ -38,6 +38,5 @@ export default class FontShifter{
     getFontURL(fontStyle){
         return `https://fonts.googleapis.com/css?family=${fontStyle}&display=swap`
     }
-
     
 }

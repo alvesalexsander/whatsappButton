@@ -111,7 +111,8 @@ a {
   position: relative;
   width: 2rem;
   height: 2rem;
-  opacity: 0; }
+  opacity: 0;
+  left: 1.2rem; }
 
 .lds-ring div {
   box-sizing: border-box;
@@ -202,6 +203,10 @@ a {
         transform: translate(-50%, -50%) scale(0); }
 
 #fontFamily {
-  width: 90%; }
+  width: 70%; }
+
+#searchFont {
+  position: relative;
+  left: 1rem; }
 
 /*# sourceMappingURL=main.css.map */

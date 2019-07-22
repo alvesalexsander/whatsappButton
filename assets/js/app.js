@@ -45,7 +45,7 @@ function initEventHandlers(){
     })
 
     //Font Family Input
-    $('#fontFamily').focusout(() => {
+    $('#searchFont').click(() => {
         app.setFontFamily($('#fontFamily').val())
     })
 

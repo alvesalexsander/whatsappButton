@@ -154,6 +154,7 @@ export default class App extends FontShifter{
                     result = true
                 });
             $('.lds-ring').css('opacity', 1)
+            $('#searchFont').attr('disabled', 'disabled')
             let tries = setInterval(() => {
                 if(counter < 4){
                     if(result == true){
@@ -161,6 +162,7 @@ export default class App extends FontShifter{
                         this.updateJsCode()
                         this.setValid('#fontFamily')
                         $('.lds-ring').css('opacity', 0)
+                        $('#searchFont').removeAttr('disabled')
                         clearInterval(tries)
                     } else {
                         counter++
@@ -181,6 +183,7 @@ export default class App extends FontShifter{
                     }
                 } else {
                     $('.lds-ring').css('opacity', 0)
+                    $('#searchFont').removeAttr('disabled')
                     this.setInvalid('#fontFamily')
                     clearInterval(tries)
                 }
@@ -206,6 +209,7 @@ export default class App extends FontShifter{
                     result = true
                 });
                 $('.lds-ring').css('opacity', 1)
+                $('#searchFont').attr('disabled', 'disabled')
                 let tries = setInterval(() => {
                     if(counter < 4){
                         if(result == true){
@@ -213,6 +217,7 @@ export default class App extends FontShifter{
                             this.updateJsCode()
                             this.setValid('#fontFamily')
                             $('.lds-ring').css('opacity', 0)
+                            $('#searchFont').removeAttr('disabled')
                             clearInterval(tries)
                         } else {
                             counter++
@@ -233,6 +238,7 @@ export default class App extends FontShifter{
                         }
                     } else {
                         $('.lds-ring').css('opacity', 0)
+                        $('#searchFont').removeAttr('disabled')
                         this.setInvalid('#fontFamily')
                         clearInterval(tries)
                     }
@@ -335,6 +341,8 @@ export default class App extends FontShifter{
             $('#jsCode').html(this.getJsCode())
             $('#createButton').attr('disabled', 'disabled')
             $('#errorMessage').css('visibility', 'hidden')
+            $('#previewPage').removeClass('active')
+            $('#howToPage').addClass('active')
             $('#previewButton').css('animation', 'buttonCreated 1s ease-in-out .5s forwards')
             $('#howToUse').css('animation', 'buttonCreated 2s ease-in-out 1.5s forwards reverse')
             setTimeout(() => {
@@ -349,6 +357,8 @@ export default class App extends FontShifter{
 
     resetButton(){
         this.updateJsCode()
+        $('#howToPage').removeClass('active')
+        $('#previewPage').addClass('active')
         $('#howToUse').css('animation', 'none')
         $('#previewButton').css('animation', 'none')
         $('#whatsapp_wrapper').remove()

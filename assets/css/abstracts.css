@@ -1,0 +1,49 @@
+@keyframes titleIn {
+  0% {
+    opacity: 0; }
+  60% {
+    opacity: 0; }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+@-webkit-keyframes titleIn {
+  0% {
+    opacity: 0; }
+  60% {
+    opacity: 0; }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+@keyframes appIn {
+  0% {
+    opacity: 0;
+    transform: translate(20%, 5%); }
+  100% {
+    opacity: 1;
+    transform: translate(0%, 0%);
+    visibility: visible; } }
+@keyframes buttonExpand {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1); }
+  1% {
+    opacity: 1; }
+  20% {
+    transform: translate(-50%, -50%) scale(0); }
+  50% {
+    transform: translate(-50%, -50%) scale(0); }
+  80% {
+    transform: translate(-50%, -50%) scale(1); }
+  90% {
+    transform: translate(-50%, -50%) scale(1.1); }
+  100% {
+    transform: translate(-50%, -50%) scale(1); } }
+@keyframes buttonCreated {
+  0% {
+    transform: translate(-50%, -50%) scale(1); }
+  30% {
+    transform: translate(-50%, -50%) scale(1.1); }
+  100% {
+    transform: translate(-50%, -50%) scale(0); } }
+
+/*# sourceMappingURL=abstracts.css.map */
