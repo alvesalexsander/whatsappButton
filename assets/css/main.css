@@ -258,6 +258,17 @@ a {
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%); } }
+      transform: translate(-50%, -50%); }
+    #notCompatible .notUsable {
+      display: none; }
+    #notCompatible .usable {
+      display: block; } }
+@media (max-width: 529px) {
+  #notCompatible #understoodButton {
+    display: none; }
+  #notCompatible .usable {
+    display: none; }
+  #notCompatible .notUsable {
+    display: block; } }
 
 /*# sourceMappingURL=main.css.map */

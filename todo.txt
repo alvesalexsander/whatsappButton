@@ -1,7 +1,6 @@
-fazer #jsCode click to clipboard (ctrl c/v)
-Fazer versão ES5.
+﻿Fazer #jsCode click to clipboard (ctrl c/v)
 Fazer versão React.js.
-Fazer documentação.
+Verificar z-index da versão desktop do whatsappButton.js
 
 
 Extra:Implementar utilização de custom svg icons passando URL que aponta para arquivo .svg
