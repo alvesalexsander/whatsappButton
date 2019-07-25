@@ -293,6 +293,11 @@
         box-sizing: border-box;
         transform: scale(.8);
     }
+
+    .form_checkbox:checked ~ .whatsapp_form{
+        visibility: hidden;
+        opacity: 0;
+    }    
     
     @keyframes moveDown{
         0%{
