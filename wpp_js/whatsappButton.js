@@ -162,7 +162,7 @@ function () {
 
       this.buttonWrapper = this.newElem("div", ["id", "class"], ["whatsapp_wrapper", "whatsapp_cta"]);
       this.inputCheckbox = this.newElem("input", ["id", "class", "type"], ["form_checkbox", "form_checkbox", "checkbox"]);
-      this.linkButton = this.newElem("a", ["class", "href"], ["whatsapp_button", "https://api.whatsapp.com/send?phone=" + this.phoneNumber + "&text=" + encodeURIComponent(this.defaultMessage.trim())]);
+      this.linkButton = this.newElem("a", ["class", "href", "target", "rel"], ["whatsapp_button", "https://api.whatsapp.com/send?phone=" + this.phoneNumber + "&text=" + encodeURIComponent(this.defaultMessage.trim()), "_blank", "noopener noreferrer"]);
       this.svgButton = this.newElem("svg", "class", "icon");
       this.svgButtonUse = this.newElem("use", ["xlink:href", "class"], [this.svgWhatsappPath, "svgButtonUse"]);
       this.hoverText = this.newElem("div", "class", "whatsapp_hover");

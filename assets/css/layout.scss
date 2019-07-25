@@ -161,10 +161,15 @@
             &:first-of-type{
                 border-bottom-left-radius: 0;
                 border-bottom-right-radius: 0;
+                height: 100%;
             }
 
             &:last-of-type{
                 bottom: 0px;
+            }
+
+            .form-control{
+                width: 100%;
             }
         }
     }
@@ -182,33 +187,23 @@
             left:50%;
             transform: translate(-50%, -50%);
         }
-
-        .notUsable{
-            display: none;
-        }
-
-        .usable{
-            display: block;
-        }
     }
 }
 
-@media (max-width: 529px){
+@media (max-width: 480px){
     
-    #notCompatible{
+    .app{
+        padding: 4rem 2rem 2rem 1rem;
 
-        #understoodButton{
-            display: none;
+        &_panel{
+
+            &:first-of-type{
+                height: 100%;
+            }
+
+            &_preview{
+                width: 100%;
+            }
         }
-
-        .usable{
-            display: none;
-        }
-
-        .notUsable{
-            display: block;
-        }
-
     }
-
 }
