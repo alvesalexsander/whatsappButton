@@ -297,7 +297,12 @@
     .form_checkbox:checked ~ .whatsapp_form{
         visibility: hidden;
         opacity: 0;
-    }    
+    }
+
+    .form_checkbox:hover ~ .whatsapp_hover, .hover_text{
+        visibility: hidden;
+        opacity: 0;
+    }
     
     @keyframes moveDown{
         0%{

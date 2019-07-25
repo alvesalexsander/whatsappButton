@@ -1,6 +1,3 @@
 ﻿Fazer #jsCode click to clipboard (ctrl c/v)
-Fazer versão React.js.
-Verificar pointer-events da versão desktop do whatsappButton.js - RESOLVIDO. FAZER TRANSPILE COM BABEL.JS E PUSH PARA O REPO
-
 
 Extra:Implementar utilização de custom svg icons passando URL que aponta para arquivo .svg
