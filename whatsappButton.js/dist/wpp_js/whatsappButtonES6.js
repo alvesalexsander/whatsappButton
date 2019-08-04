@@ -5,7 +5,8 @@ Whatsapp Button Plugin
 Utilização básica ->
 
 1 - Insira o seguinte código HTML na página que desejar implementar o Whatsapp Button:
-<script src="https://sashaclimax.github.io/whatsappButton/wpp_js/wppButton.js"></script>
+
+<script src="https://sashaclimax.github.io/whatsappButton.js/dist/wpp_js/wppButton.js"></script> (ao final do <body>)
 
 2 - Crie ou adicione em um arquivo .js para instanciar um objeto WhatsappButton:
 new WhatsappButton()
@@ -31,13 +32,14 @@ class WhatsappButton {
     defaultMessage = "Olá! Estou entrando em contato e gostaria de saber:"
     HTMLElementsPairs = new Array()
     preDefColors = new Array("black", "white", "green","orange", "yellow", "red", "blue", "purple", "gray")
+    resourcesURL = 'https://sashaclimax.github.io/whatsappButton.js/dist/'
     
     constructor(pNumber, wMessage, phMessage, dMessage, iconStyle, color, subColor, textColor, fontFamily){
         
         //Inicia a class com valores personalizados para as
         //propriedades principais 
         this.whatsappIcon = ((iconStyle != 0) && (iconStyle != undefined)) ? "whatsapp-"+iconStyle : "whatsapp"
-        this.svgWhatsappPath = (this.whatsappIcon ? `https://sashaclimax.github.io/whatsappButton.js/dist/wpp_icons/My icons collection-SVG-sprite.svg#${this.whatsappIcon}` : "https://sashaclimax.github.io/whatsappButton.js/dist/wpp_icons/My icons collection-SVG-sprite.svg#whatsapp")
+        this.svgWhatsappPath = (this.whatsappIcon ? `${this.resourcesURL}wpp_icons/My icons collection-SVG-sprite.svg#${this.whatsappIcon}` : this.resourcesURL+"wpp_icons/My icons collection-SVG-sprite.svg#whatsapp")
 
         this.phoneNumber = pNumber ? this.setPhoneNumber(pNumber) : this.setPhoneNumber('error')
         
@@ -165,7 +167,7 @@ class WhatsappButton {
         this.label = this.newElem("label", ["id", "class", "for", "onclick"], ["send_label", "send_label", "send", "return sendMessage()"])
         this.labelInput = this.newElem("input", ["id", "type", "name", "value", "class"], ["send", "checkbox", "send", "", "labelInput"])
         this.svgLabelSend = this.newElem("svg", "class", "icon_send")
-        this.svgLabelUse = this.newElem("use", ["xlink:href", "class"], ["https://sashaclimax.github.io/whatsappButton.js/dist/wpp_icons/My icons collection-SVG-sprite.svg#send-button", "svgLabelUse"])
+        this.svgLabelUse = this.newElem("use", ["xlink:href", "class"], [this.resourcesURL+"wpp_icons/My icons collection-SVG-sprite.svg#send-button", "svgLabelUse"])
 
     }
 
