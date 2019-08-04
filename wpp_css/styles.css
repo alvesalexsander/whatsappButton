@@ -132,7 +132,6 @@
 }
 
 .form_checkbox:checked ~ .whatsapp_button{
-    position: absolute;
     animation: moveUp .4s ease-out forwards;
 }
 
@@ -141,6 +140,10 @@
     top: 0;
     right: 0;
     animation: moveDown .4s .4s ease-out forwards;
+}
+
+.form_checkbox:checked ~ .whatsapp_button{
+    animation: moveUp .4s ease-out forwards;
 }
 
 .icon{
