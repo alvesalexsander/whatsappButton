@@ -69,21 +69,21 @@ export default class App extends FontShifter{
     setIconStyle(iconStyle){    
         this.iconStyle = iconStyle
         if((iconStyle == 0)){
-            $('.iconStyle')[0].setAttributeNS("http://www.w3.org/1999/xlink", 'xlink:href', `${resourcesURL}wpp_icons/My icons collection-SVG-sprite.svg#whatsapp`)
+            $('.iconStyle')[0].setAttributeNS("http://www.w3.org/1999/xlink", 'xlink:href', `${this.resourcesURL}wpp_icons/My icons collection-SVG-sprite.svg#whatsapp`)
             $('#circle').css('fill', 'transparent')
             $('#path').css('fill', 'transparent')
         } else if((iconStyle == 3)) {
-            $('.iconStyle')[0].setAttributeNS("http://www.w3.org/1999/xlink", 'xlink:href', `${resourcesURL}wpp_icons/My icons collection-SVG-sprite.svg#whatsapp-${iconStyle}`)
+            $('.iconStyle')[0].setAttributeNS("http://www.w3.org/1999/xlink", 'xlink:href', `${this.resourcesURL}wpp_icons/My icons collection-SVG-sprite.svg#whatsapp-${iconStyle}`)
             $('#circle').css('fill', $('#mainColor').val())
             $('#path').css('fill', $('#mainColor').val())
             $('#subColor-noFill').css('fill', '#000000')
         } else if((iconStyle == 1) || (iconStyle == 2)){
-            $('.iconStyle')[0].setAttributeNS("http://www.w3.org/1999/xlink", 'xlink:href', `${resourcesURL}wpp_icons/My icons collection-SVG-sprite.svg#whatsapp-${iconStyle}`)
+            $('.iconStyle')[0].setAttributeNS("http://www.w3.org/1999/xlink", 'xlink:href', `${this.resourcesURL}wpp_icons/My icons collection-SVG-sprite.svg#whatsapp-${iconStyle}`)
             $('#circle').css('fill', $('#mainColor').val())
             $('#path').css('fill', $('#mainColor').val())
             $('#subColor-noFill').css('fill', this.subColor)
         } else {
-            $('.iconStyle')[0].setAttributeNS("http://www.w3.org/1999/xlink", 'xlink:href', `${resourcesURL}wpp_icons/My icons collection-SVG-sprite.svg#whatsapp-${iconStyle}`)
+            $('.iconStyle')[0].setAttributeNS("http://www.w3.org/1999/xlink", 'xlink:href', `${this.resourcesURL}wpp_icons/My icons collection-SVG-sprite.svg#whatsapp-${iconStyle}`)
             $('#circle').css('fill', 'transparent')
             $('#path').css('fill', 'transparent')
         }
