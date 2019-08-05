@@ -17,7 +17,7 @@ export default class App extends FontShifter{
         this.jsCode = ''
         this.setTitleBackground()
         this.setTitleFont()
-        this.resourcesURL = 'node_modules/whatsapp-button.js/dist/'
+        this.resourcesURL = 'node_modules/whatsapp-buttosn.js/dist/'
     }
 
     validatePhoneNumber(phoneNumber){
