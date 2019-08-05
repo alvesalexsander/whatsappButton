@@ -8,7 +8,8 @@
 Try it out at: https://sashaclimax.github.io/whatsappButton/
 <br>We have a friendly user interface to help you!
 
-## **[Download it from here!](https://github.com/sashaclimax/whatsappButton.js)**
+## **[Install via NPM!](https://npmjs.com/package/whatsapp-button.js)** running command: npm install whatsapp-button.js
+## **[Download files from here!](https://github.com/sashaclimax/whatsappButton.js)**
 
 ------------------------------------------------
 
@@ -43,17 +44,17 @@ Here is some information about it:
 
 How To Use:
 
-- **1.** Download plugin files at: *whatsappButton.js* page OR Use the CDN Links: 
-https://sashaclimax.github.io/whatsappButton.js/dist/wpp_css/whatsappButton.min.css https://sashaclimax.github.io/whatsappButton.js/dist/wpp_js/whatsappButton.min.js 
+- **1.** **[Install via NPM!](https://npmjs.com/package/whatsapp-button.js)**: npm install whatsapp-button.js OR download plugin files at: **[whatsappButton.js](https://github.com/sashaclimax/whatsappButton.js)** page and put it inside your node_modules folder (path must to be node_modules/whatsapp-button.js) then use the CDN Links: 
+https://unpkg.com/whatsapp-button.js/dist/wpp_css/whatsappButton.min.css https://unpkg.com/whatsapp-button.js/dist/wpp_js/whatsappButton.min.js 
 
-- **2.** Link the .CSS file with a link tag in the head tag of your application. 
+- **2.** Link the .CSS file or CDN .CSS URL with a link tag in the head tag of your application. 
 
-- **3.** Link the .JS file with a script tag in the head or body tags of your application. 
+- **3.** Link the .JS file or CDN .JS URL with a script tag in the head or body tags of your application. 
 
 - **4.** Use the User Interface at https://sashaclimax.github.io/whatsappButton/ to create your button layout 
 OR check the [Building](#building) section for further information.
 
-- **5.** At the end of the creation process, the UI will give you an javascript code like this one:
+- **5.** At the end of the creation process, the UI will present you an javascript code like this one:
 <br><br>
 new WhatsappButton('5522123456789', 'Could we help you?', 'We are at your service! Want help at choosing a wine? Any other thing we could help?', 'netWinez, could we help?', '1', '#6f2045', '#000000', '', 'https://fonts.googleapis.com/css?family=Satisfy&display=swap')<br><br>
 Then, you can call this code on any .js file or in a <script> tag to create your button.
