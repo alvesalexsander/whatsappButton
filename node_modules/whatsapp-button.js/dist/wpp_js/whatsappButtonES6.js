@@ -29,7 +29,7 @@ class WhatsappButton {
         //Inicia a class com valores personalizados para as
         //propriedades principais 
         this.whatsappIcon = ((iconStyle != 0) && (iconStyle != undefined)) ? "whatsapp-"+iconStyle : "whatsapp"
-        this.svgWhatsappPath = (this.whatsappIcon ? `node_modules/whatsappButton.js/dist/wpp_icons/My icons collection-SVG-sprite.svg#${this.whatsappIcon}` : "node_modules/whatsappButton.js/dist/wpp_icons/My icons collection-SVG-sprite.svg#whatsapp")
+        this.svgWhatsappPath = (this.whatsappIcon ? `node_modules/whatsapp-button.js/dist/wpp_icons/My icons collection-SVG-sprite.svg#${this.whatsappIcon}` : "node_modules/whatsapp-button.js/dist/wpp_icons/My icons collection-SVG-sprite.svg#whatsapp")
 
         this.phoneNumber = pNumber ? this.setPhoneNumber(pNumber) : this.setPhoneNumber('error')
         
@@ -157,7 +157,7 @@ class WhatsappButton {
         this.label = this.newElem("label", ["id", "class", "for", "onclick"], ["send_label", "send_label", "send", "return sendMessage()"])
         this.labelInput = this.newElem("input", ["id", "type", "name", "value", "class"], ["send", "checkbox", "send", "", "labelInput"])
         this.svgLabelSend = this.newElem("svg", "class", "icon_send")
-        this.svgLabelUse = this.newElem("use", ["xlink:href", "class"], ["node_modules/whatsappButton.js/dist/wpp_icons/My icons collection-SVG-sprite.svg#send-button", "svgLabelUse"])
+        this.svgLabelUse = this.newElem("use", ["xlink:href", "class"], ["node_modules/whatsapp-button.js/dist/wpp_icons/My icons collection-SVG-sprite.svg#send-button", "svgLabelUse"])
 
     }
 

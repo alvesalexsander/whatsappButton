@@ -25,7 +25,6 @@ iconStyle (number/string) = Opções de icones para a exibição no plugin.
 color(string) = Opções para cores. Aceita cores hexadecimais (#xxxxxx ou #xxx)
 
 */
-
 var WhatsappButton =
 /*#__PURE__*/
 function () {
@@ -419,29 +418,21 @@ function () {
       return data;
     }
     /* 
-        Criado por Alexsander Alves (https://github.com/sashaclimax)
-        Este plugin é e sempre será de graça para usar. Por favor, não remova os créditos do autor.
+     This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+     This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+     You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>
+         Developed by Alexsander Alves (https://github.com/sashaclimax)
+        The developer does not claim any copyright related to whatsappButton.js plugin since it is an open-source software
     */
 
   }]);
 
   return WhatsappButton;
 }();
-
-/* 
-     This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <https://www.gnu.org/licenses/>
-
-        Developed by Alexsander Alves (https://github.com/sashaclimax)
-        The developer does not claim any copyright related to whatsappButton.js plugin since it is an open-source software
-    */
