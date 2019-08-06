@@ -9,7 +9,7 @@ Try it out at: https://sashaclimax.github.io/whatsappButton/
 <br>We have a friendly user interface to help you!
 
 ## **[Install via NPM!](https://npmjs.com/package/whatsapp-button.js)** running command: npm install whatsapp-button.js
-## **[Download files from here!](https://github.com/sashaclimax/whatsappButton.js)**
+## **[Download files from here!](https://github.com/sashaclimax/whatsapp-button.js)**
 
 ------------------------------------------------
 
@@ -44,8 +44,9 @@ Here is some information about it:
 
 How To Use:
 
-- **1.** **[Install via NPM!](https://npmjs.com/package/whatsapp-button.js)**: npm install whatsapp-button.js OR download plugin files at: **[whatsappButton.js](https://github.com/sashaclimax/whatsappButton.js)** page and put it inside your node_modules folder (path must to be node_modules/whatsapp-button.js) then use the CDN Links: 
-https://unpkg.com/whatsapp-button.js/dist/wpp_css/whatsappButton.min.css https://unpkg.com/whatsapp-button.js/dist/wpp_js/whatsappButton.min.js 
+- **1.** **[Install via NPM!](https://npmjs.com/package/whatsapp-button.js)**: npm install whatsapp-button.js OR download plugin files at: **[whatsappButton.js](https://github.com/sashaclimax/whatsapp-button.js)** page and put it inside your node_modules folder (path must to be node_modules/whatsapp-button.js) then use the CDN Links: 
+https://unpkg.com/whatsapp-button.js/dist/wpp_css/whatsappButton.min.css
+https://unpkg.com/whatsapp-button.js/dist/wpp_js/whatsappButton.min.js 
 
 - **2.** Link the .CSS file or CDN .CSS URL with a link tag in the head tag of your application. 
 
