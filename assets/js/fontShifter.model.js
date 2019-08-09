@@ -30,7 +30,7 @@ export default class FontShifter{
                         'background-clip': 'text',
                         color: 'transparent',
                         'font-weight': '1000'})
-        $('.menu_expand').css({background: `url('https://sashaclimax.github.io/whatsappButton/assets/img/${this.background}full.png') center center no-repeat`,
+        $('.menu_expand').css({background: `url('https://sashaclimax.github.io/whatsappButton/assets/img/${this.background}full.jpg') center center no-repeat`,
                         'background-size': 'cover'})
     }
 
