@@ -1,4 +1,6 @@
 import App from './app.model.js';
+import Menu from './Menu.model.js';
+
 const app = new App()
 initEventHandlers();
 
@@ -61,3 +63,15 @@ function initEventHandlers(){
         $('#notCompatible').css('display', 'none')
     })
 }
+
+const menu = new Menu();
+
+$('#menuAbout').hover(menu.hoveredButton('#menuAbout'));
+$('#menuDocumentation').hover(menu.hoveredButton('#menuDocumentation'));
+$('#menuCredits').hover(menu.hoveredButton('#menuCredits'));
+$('#menuContact').hover(menu.hoveredButton('#menuContact'));
+
+$('#menuAbout').click(() => {menu.selectedButton('#menuAbout')});
+$('#menuDocumentation').click(() => {menu.selectedButton('#menuDocumentation')});
+$('#menuCredits').click(() => {menu.selectedButton('#menuCredits')});
+$('#menuContact').click(() => {menu.selectedButton('#menuContact')});

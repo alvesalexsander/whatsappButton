@@ -1,2 +1,2 @@
-All photos have their original file name Unsplash. 
+All photos have their original Unsplash file name inside originals folder. 
 The names in the file names are from the original photographers.

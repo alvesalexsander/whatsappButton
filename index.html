@@ -12,7 +12,7 @@
   <!-- <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
   <script src="https://kit.fontawesome.com/9bebcca292.js"></script>
   <link rel="stylesheet" href="node_modules/whatsapp-button.js/dist/wpp_css/whatsappButton.min.css">
-  <link rel="stylesheet" href="assets/css/main.min.css">
+  <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
   <div id="notCompatible" class="container-fluid">
@@ -27,10 +27,35 @@
       </div>
     </div>
   </div>
+  <div class="menu">
+    <input type="checkbox" id="menuToggle">
+    <div class="menu_background"></div>
+    <label id="menuToggleLabel" for="menuToggle" class="menu_toggle menu_button">
+        <div class="menu_toggle-icon"></div>
+    </label>
+    <div class="menu_expand"></div>
+    <nav class="menu_nav">
+      <div id="menuTitle" class="menu_nav_title">Menu</div>
+      <div class="menu_nav_content">
+        <div class="menu_nav_content-front">
+          <span class="front-content"></span>
+        </div>
+        <!-- <div class="menu_nav_content-back">
+          <span class="back-content"></span>
+        </div> -->
+      </div>
+      <ul class="menu_nav_list">
+        <li class="menu_nav_list-item"><button id="menuAbout" class="menu_nav_list-item-button">About</button></li>
+        <li class="menu_nav_list-item"><button id="menuDocumentation" class="menu_nav_list-item-button">Documentation</button></li>
+        <li class="menu_nav_list-item"><button id="menuCredits" class="menu_nav_list-item-button">Credits</button></li>
+        <li class="menu_nav_list-item"><button id="menuContact" class="menu_nav_list-item-button">Contact</button></li>
+      </ul>
+    </nav>
+  </div>
   <div id="app" class="container app">
     <div class="row">
       <div class="col-md-7">
-        <a href="https://sashaclimax.github.io/whatsappButton/"><h1 id="title" class="title">Whatsapp Button.js</h1></a>
+        <main><a href="https://sashaclimax.github.io/whatsappButton/"><h1 id="title" class="title">Whatsapp Button.js</h1></a></main>
       </div>
       <div class="col-md-5">
         <div id="sloganSlider" class="carousel slide" data-ride="carousel">

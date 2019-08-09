@@ -46,22 +46,6 @@ $color-white: #ffffff;
     }
 }
 
-// .expand-grow{
-//     animation: buttonExpand 2s ease-in-out forwards;
-// }
-
-// .expand-shrink{
-//     animation: buttonExpand 2s ease-in-out forwards reverse;
-// }
-
-// .create-shrink{
-//     animation: buttonCreated 2s ease-in-out 1.5s forwards reverse;
-// }
-
-// .create-grow{
-//     animation: buttonCreated 1s ease-in-out .5s forwards;
-// }
-
 @keyframes buttonExpand{
     0%{
         opacity: 0;
@@ -110,3 +94,36 @@ $color-white: #ffffff;
         transform: translate(-50%,-50%) scale(0);
     }
 }
+
+@keyframes menuInOut{
+    0%{
+        right: -30rem;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    100%{
+        right: 5rem;
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes selectedButtonSlide{
+    0%{
+
+    }
+
+    100%{
+        
+    }
+}
+
+@mixin menu-positioning {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 4rem;
+    height: 4rem;
+}
+
