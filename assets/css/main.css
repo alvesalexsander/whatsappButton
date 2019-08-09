@@ -409,6 +409,7 @@ a:hover {
 }
 .menu_nav .menu_nav_title {
   position: absolute;
+  color: #444444;
   cursor: default;
   font-family: "Roboto", sans-serif;
   font-size: 10rem;

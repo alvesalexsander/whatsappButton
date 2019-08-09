@@ -236,6 +236,7 @@
 
         .menu_nav_title{
             position: absolute;
+            color: $color-bg;
             cursor: default;
             font-family: 'Roboto', sans-serif;
             font-size: 10rem;
@@ -243,8 +244,6 @@
             top: 10%;
             left: -35rem;
             transition: .2s;
-            // transform: rotateY(180deg);
-            // backface-visibility: hidden;
         }
 
         &_content{
