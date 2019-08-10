@@ -9,35 +9,39 @@ export default class Menu{
     }
 
     hoveredButton(elem){
-            $(elem).hover(() =>{
-                $(elem).toggleClass('hoveredButton')
-            })        
+        $(elem).hover(() =>{
+            $(elem).toggleClass('hoveredButton')
+        })    
     }
 
     selectedButton(elem){
-            if($('.selectedButton').length == 0){
-                let timer = setTimeout(() => {
-                    $(elem).addClass('selectedButton')
-                    clearTimeout(timer)
-                }, 200);
-
-                if($('.front-content').html() == ''){
-                    $('.front-content').html(this.selectContent(elem))
-                    $('.menu_nav_content-front').css('transform', 'scale(1)')
-                    $('.menu_nav_title').css('opacity', '.3')
-                } else {
-                    $('.front-content').html(this.selectContent(elem))
-                }
-
-            } else if($(elem).hasClass('selectedButton')){
-                $(elem).removeClass('selectedButton')
-                $('.menu_nav_content-front').css('transform', 'scale(0)')
-                $('.menu_nav_title').css('opacity', '1')
-                $('.front-content').html('')
+        var closeMark = '<span id="closeMark" style="pointer-events: none"> | X</span>'
+        if($('.selectedButton').length == 0){
+            let timer = setTimeout(() => {
+                $(elem).addClass('selectedButton')
+                $(elem).append(closeMark)
+                
+                clearTimeout(timer)
+            }, 200);
+            if($('.front-content').html() == ''){
+                $('.front-content').html(this.selectContent(elem))
+                $('.menu_nav_content-front').css('transform', 'scale(1)')
+                $('.menu_nav_title').css('opacity', '.3')
             } else {
-                $('.selectedButton').removeClass('selectedButton')
-                this.selectedButton(elem)
+                $('.front-content').html(this.selectContent(elem))
             }
+
+        } else if($(elem).hasClass('selectedButton')){
+            $(elem).removeClass('selectedButton')
+            $('#closeMark').remove()
+            $('.menu_nav_content-front').css('transform', 'scale(0)')
+            $('.menu_nav_title').css('opacity', '1')
+            $('.front-content').html('')
+        } else {
+            $('#closeMark').remove()
+            $('.selectedButton').removeClass('selectedButton')
+            this.selectedButton(elem)
+        }
     }
 
     selectContent(elem){

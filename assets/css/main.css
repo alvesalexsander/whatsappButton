@@ -415,8 +415,8 @@ a:hover {
   font-size: 10rem;
   opacity: 1;
   top: 10%;
-  left: -35rem;
-  transition: 0.2s;
+  left: -33rem;
+  transition: 1s;
 }
 .menu_nav_content > * {
   position: absolute;
@@ -489,11 +489,12 @@ a:hover {
   background: 0;
   border: 0;
   padding: 1rem 1rem;
-  width: 100%;
+  width: 18.4rem;
   transition: 0.2s;
   transform: skewY(8deg);
   background-color: #444444;
   color: #ffffff;
+  box-shadow: 7px 7px 11px #000000;
 }
 .menu_nav_list-item-button:focus {
   outline: 0;
