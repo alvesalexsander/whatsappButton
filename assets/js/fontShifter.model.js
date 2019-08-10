@@ -32,7 +32,7 @@ export default class FontShifter{
                         'font-weight': '1000'})
         $('.menu_expand').css({background: `url('https://sashaclimax.github.io/whatsappButton/assets/img/${this.background}full.jpg') center center no-repeat`,
                         'background-size': 'cover'})
-        if(this.background == 3){
+        if((this.background == 3) || (this.background == 13)){
             $('.menu_nav_title').css('color', '#444444')
         }
     }
