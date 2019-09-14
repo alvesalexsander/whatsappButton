@@ -1,4 +1,7 @@
 # *whatsappButton.js*
+v1.0.6
+Main changes:
+- Changed metric system from rem to px for extensible compatibility.
 
 ------------------------------------------------
 
