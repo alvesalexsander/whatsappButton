@@ -11,8 +11,8 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <!-- <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
   <script src="https://kit.fontawesome.com/9bebcca292.js"></script>
-  <link rel="stylesheet" href="node_modules/whatsapp-button.js/dist/wpp_css/whatsappButton.min.css">
-  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="node_modules/whatsapp-button.js/dist/wpp_css/whatsappButton.css">
+  <link rel="stylesheet" href="assets/css/main.min.css">
 </head>
 <body>
   <div id="notCompatible" class="container-fluid">
@@ -95,7 +95,7 @@
               <div class="form-group">
                 <label for="wMessage">Welcome Message:</label>
                 <input class="form-control" id="wMessage" type="text" placeholder="Average of 16 characters.">
-                <small id="wMessageHelp" class="form-text text-muted">Will be displayed when mouse is over the button.<br>Recommended: <=16 characters</small>
+                <small id="wMessageHelp" class="form-text text-muted">Will be displayed when mouse is over the button.<br>Recommended: 20 or less characters</small>
               </div>
               <div class="form-group">
                 <label for="phMessage">Placeholder Message:</label>
@@ -206,7 +206,7 @@
         </div>
         <div class="d-flex justify-content-center mt-4">
             <button id="createButton" class="btn btn-primary align-self-center" disabled="disabled">I've done. Make my Button!</button>
-            <button id="resetButton" class="btn btn-primary" disabled="disabled"><i class="fas fa-redo-alt"></i></button>
+            <button id="resetButton" class="btn btn-primary" disabled="disabled"><i class="fas fa-redo-alt" aria-hidden="true"></i></button>
         </div>
         <div id="errorMessage" class="d-flex justify-content-center"></div>
       </div>
@@ -214,7 +214,7 @@
   </div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <!-- <script src="./node_modules/jquery/dist/jquery.min.js"></script>
 <script src="./node_modules/popper.js/dist/umd/popper.min.js"></script>
@@ -223,7 +223,7 @@
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script type="module" src="assets/js/app.js"></script>
 
-  <script src="node_modules/whatsapp-button.js/dist/wpp_js/whatsappButton.min.js"></script>
+  <script src="node_modules/whatsapp-button.js/dist/wpp_js/whatsappButtonES6.js"></script>
 
 </body>
 </html>
