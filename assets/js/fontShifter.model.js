@@ -4,6 +4,7 @@ export default class FontShifter{
         this.fontList = new Array('Alfa+Slab+One', 'Slackey', 'Fascinate','Knewave','Monoton','Playball','Righteous','Sigmar+One')
         this.backgroundList = new Array('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14')
         this.background = this.selectNewBackground()
+        this.fontShifterResourcesURL = "https://alvesalexsander.github.io"
     }
 
     setTitleFont(URL){
@@ -24,13 +25,13 @@ export default class FontShifter{
     }
 
     setTitleBackground(){
-        $('.title').css({background: `#fff url('https://sashaclimax.github.io/whatsappButton/assets/img/${this.background}.png') top center no-repeat`,
+        $('.title').css({background: `#fff url('${this.fontShifterResourcesURL}/whatsappButton/assets/img/${this.background}.png') top center no-repeat`,
                         'background-size': 'cover',
                         '-webkit-background-clip': 'text',
                         'background-clip': 'text',
                         color: 'transparent',
                         'font-weight': '1000'})
-        $('.menu_expand').css({background: `url('https://sashaclimax.github.io/whatsappButton/assets/img/${this.background}full.jpg') center center no-repeat`,
+        $('.menu_expand').css({background: `url('${this.fontShifterResourcesURL}/whatsappButton/assets/img/${this.background}full.jpg') center center no-repeat`,
                         'background-size': 'cover'})
         if((this.background == 3) || (this.background == 13)){
             $('.menu_nav_title').css('color', '#444444')
